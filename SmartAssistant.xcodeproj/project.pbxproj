@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9561EEE2238FD3DA00B5194F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561EEE1238FD3DA00B5194F /* AppDelegate.swift */; };
 		9561EEEB238FD3DB00B5194F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9561EEEA238FD3DB00B5194F /* Assets.xcassets */; };
 		9561EEEE238FD3DB00B5194F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9561EEEC238FD3DB00B5194F /* LaunchScreen.storyboard */; };
 		9561EEFE238FD41600B5194F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9561EEF7238FD41500B5194F /* HomeViewController.xib */; };
@@ -16,11 +15,15 @@
 		9561EF01238FD41600B5194F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561EEFB238FD41500B5194F /* BaseViewController.swift */; };
 		9561EF02238FD41600B5194F /* SABaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561EEFC238FD41500B5194F /* SABaseNavigationController.swift */; };
 		9561EF03238FD41600B5194F /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561EEFD238FD41500B5194F /* BaseNavigationController.swift */; };
+		9561EF06238FD7D800B5194F /* HomeSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561EF05238FD7D800B5194F /* HomeSubView.swift */; };
+		9561EF09238FD93400B5194F /* Log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9561EF08238FD93400B5194F /* Log.framework */; };
+		9561EF38238FE0B500B5194F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561EF37238FE0B500B5194F /* AppDelegate.swift */; };
+		9561EF3A238FE0DD00B5194F /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561EF39238FE0DD00B5194F /* AppConstant.swift */; };
+		95D2274C238FEB3100A85E6B /* TencentAiBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D2274B238FEB3100A85E6B /* TencentAiBase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9561EEDE238FD3DA00B5194F /* SmartAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9561EEE1238FD3DA00B5194F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9561EEEA238FD3DB00B5194F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9561EEED238FD3DB00B5194F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9561EEEF238FD3DB00B5194F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -30,6 +33,12 @@
 		9561EEFB238FD41500B5194F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9561EEFC238FD41500B5194F /* SABaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABaseNavigationController.swift; sourceTree = "<group>"; };
 		9561EEFD238FD41500B5194F /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		9561EF05238FD7D800B5194F /* HomeSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSubView.swift; sourceTree = "<group>"; };
+		9561EF08238FD93400B5194F /* Log.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Log.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9561EF37238FE0B500B5194F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9561EF39238FE0DD00B5194F /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
+		9561EF6D238FE6A800B5194F /* TencentAIBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TencentAIBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95D2274B238FEB3100A85E6B /* TencentAiBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TencentAiBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +46,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95D2274C238FEB3100A85E6B /* TencentAiBase.framework in Frameworks */,
+				9561EF09238FD93400B5194F /* Log.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +59,7 @@
 			children = (
 				9561EEE0238FD3DA00B5194F /* SmartAssistant */,
 				9561EEDF238FD3DA00B5194F /* Products */,
+				9561EF07238FD93400B5194F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,7 +74,7 @@
 		9561EEE0238FD3DA00B5194F /* SmartAssistant */ = {
 			isa = PBXGroup;
 			children = (
-				9561EEE1238FD3DA00B5194F /* AppDelegate.swift */,
+				9561EF36238FE0B500B5194F /* Application */,
 				9561EEF5238FD41500B5194F /* Scenes */,
 				9561EF04238FD42700B5194F /* Supporting Files */,
 			);
@@ -83,6 +95,7 @@
 			children = (
 				9561EEF8238FD41500B5194F /* HomeViewController.swift */,
 				9561EEF7238FD41500B5194F /* HomeViewController.xib */,
+				9561EF05238FD7D800B5194F /* HomeSubView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -106,6 +119,25 @@
 				9561EEEF238FD3DB00B5194F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9561EF07238FD93400B5194F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95D2274B238FEB3100A85E6B /* TencentAiBase.framework */,
+				9561EF6D238FE6A800B5194F /* TencentAIBase.framework */,
+				9561EF08238FD93400B5194F /* Log.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9561EF36238FE0B500B5194F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				9561EF37238FE0B500B5194F /* AppDelegate.swift */,
+				9561EF39238FE0DD00B5194F /* AppConstant.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,11 +212,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9561EF03238FD41600B5194F /* BaseNavigationController.swift in Sources */,
-				9561EEE2238FD3DA00B5194F /* AppDelegate.swift in Sources */,
 				9561EF00238FD41600B5194F /* SABaseViewController.swift in Sources */,
 				9561EEFF238FD41600B5194F /* HomeViewController.swift in Sources */,
 				9561EF01238FD41600B5194F /* BaseViewController.swift in Sources */,
+				9561EF38238FE0B500B5194F /* AppDelegate.swift in Sources */,
+				9561EF06238FD7D800B5194F /* HomeSubView.swift in Sources */,
 				9561EF02238FD41600B5194F /* SABaseNavigationController.swift in Sources */,
+				9561EF3A238FE0DD00B5194F /* AppConstant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,12 +355,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = $PROJECT_DIR/Frameworks/;
 				INFOPLIST_FILE = SmartAssistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.huawei.wear.iosguard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.louis.smartassistant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -338,12 +373,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = $PROJECT_DIR/Frameworks/;
 				INFOPLIST_FILE = SmartAssistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.huawei.wear.iosguard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.louis.smartassistant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

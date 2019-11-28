@@ -2,17 +2,22 @@
 //  AppDelegate.swift
 //  SmartAssistant
 //
-//  Created by 路标 on 2019/11/28.
+//  Created by Louis.B on 2019/11/28.
 //  Copyright © 2019 Louis.B. All rights reserved.
 //
 
 import UIKit
+@_exported import Log
+@_exported import TencentAiBase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        TencentAiConfig.register(appId: TENCENT_AI_APP_ID, appKey: TENCENT_AI_APP_KEY)
+        
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = UIColor.white
         let home = HomeViewController()
