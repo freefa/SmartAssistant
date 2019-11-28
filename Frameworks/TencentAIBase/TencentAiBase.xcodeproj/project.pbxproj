@@ -13,6 +13,8 @@
 		9561EF6C238FE60D00B5194F /* TencentAiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561EF6B238FE60D00B5194F /* TencentAiConfig.swift */; };
 		9561EF70238FE70500B5194F /* TLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561EF6F238FE70400B5194F /* TLog.swift */; };
 		9561EF73238FE89A00B5194F /* TencentAiSignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561EF72238FE89A00B5194F /* TencentAiSignature.swift */; };
+		95CAFDB62390216A0093E5B4 /* StringUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CAFDB52390216A0093E5B4 /* StringUtil.swift */; };
+		95CAFDB8239021BC0093E5B4 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CAFDB7239021BC0093E5B4 /* DateUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,9 @@
 		9561EF6B238FE60D00B5194F /* TencentAiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TencentAiConfig.swift; sourceTree = "<group>"; };
 		9561EF6F238FE70400B5194F /* TLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLog.swift; sourceTree = "<group>"; };
 		9561EF72238FE89A00B5194F /* TencentAiSignature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TencentAiSignature.swift; sourceTree = "<group>"; };
+		95CAFDB52390216A0093E5B4 /* StringUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtil.swift; sourceTree = "<group>"; };
+		95CAFDB7239021BC0093E5B4 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		95CAFDBA239022420093E5B4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +67,7 @@
 				9561EF4C238FE52600B5194F /* TencentAIBase */,
 				9561EF57238FE52600B5194F /* TencentAIBaseTests */,
 				9561EF4B238FE52600B5194F /* Products */,
+				95CAFDB9239022420093E5B4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +86,7 @@
 				9561EF71238FE86000B5194F /* Signature */,
 				9561EF64238FE5B100B5194F /* Configuration */,
 				9561EF68238FE5B100B5194F /* Network */,
+				95CAFDB4239021520093E5B4 /* Utils */,
 				9561EF66238FE5B100B5194F /* Log */,
 				9561EF4D238FE52600B5194F /* TencentAIBase.h */,
 				9561EF4E238FE52600B5194F /* Info.plist */,
@@ -125,6 +132,23 @@
 				9561EF72238FE89A00B5194F /* TencentAiSignature.swift */,
 			);
 			path = Signature;
+			sourceTree = "<group>";
+		};
+		95CAFDB4239021520093E5B4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				95CAFDB52390216A0093E5B4 /* StringUtil.swift */,
+				95CAFDB7239021BC0093E5B4 /* DateUtil.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		95CAFDB9239022420093E5B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95CAFDBA239022420093E5B4 /* Security.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +260,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95CAFDB62390216A0093E5B4 /* StringUtil.swift in Sources */,
+				95CAFDB8239021BC0093E5B4 /* DateUtil.swift in Sources */,
 				9561EF70238FE70500B5194F /* TLog.swift in Sources */,
 				9561EF73238FE89A00B5194F /* TencentAiSignature.swift in Sources */,
 				9561EF6C238FE60D00B5194F /* TencentAiConfig.swift in Sources */,
