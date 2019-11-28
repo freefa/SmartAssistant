@@ -8,22 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		9561EEE2238FD3DA00B5194F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561EEE1238FD3DA00B5194F /* AppDelegate.swift */; };
-		9561EEE4238FD3DA00B5194F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561EEE3238FD3DA00B5194F /* SceneDelegate.swift */; };
-		9561EEE6238FD3DA00B5194F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561EEE5238FD3DA00B5194F /* ViewController.swift */; };
-		9561EEE9238FD3DA00B5194F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9561EEE7238FD3DA00B5194F /* Main.storyboard */; };
 		9561EEEB238FD3DB00B5194F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9561EEEA238FD3DB00B5194F /* Assets.xcassets */; };
 		9561EEEE238FD3DB00B5194F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9561EEEC238FD3DB00B5194F /* LaunchScreen.storyboard */; };
+		9561EEFE238FD41600B5194F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9561EEF7238FD41500B5194F /* HomeViewController.xib */; };
+		9561EEFF238FD41600B5194F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561EEF8238FD41500B5194F /* HomeViewController.swift */; };
+		9561EF00238FD41600B5194F /* SABaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561EEFA238FD41500B5194F /* SABaseViewController.swift */; };
+		9561EF01238FD41600B5194F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561EEFB238FD41500B5194F /* BaseViewController.swift */; };
+		9561EF02238FD41600B5194F /* SABaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561EEFC238FD41500B5194F /* SABaseNavigationController.swift */; };
+		9561EF03238FD41600B5194F /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561EEFD238FD41500B5194F /* BaseNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9561EEDE238FD3DA00B5194F /* SmartAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9561EEE1238FD3DA00B5194F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9561EEE3238FD3DA00B5194F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9561EEE5238FD3DA00B5194F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9561EEE8238FD3DA00B5194F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9561EEEA238FD3DB00B5194F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9561EEED238FD3DB00B5194F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9561EEEF238FD3DB00B5194F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9561EEF7238FD41500B5194F /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		9561EEF8238FD41500B5194F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9561EEFA238FD41500B5194F /* SABaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABaseViewController.swift; sourceTree = "<group>"; };
+		9561EEFB238FD41500B5194F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		9561EEFC238FD41500B5194F /* SABaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABaseNavigationController.swift; sourceTree = "<group>"; };
+		9561EEFD238FD41500B5194F /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,14 +63,49 @@
 			isa = PBXGroup;
 			children = (
 				9561EEE1238FD3DA00B5194F /* AppDelegate.swift */,
-				9561EEE3238FD3DA00B5194F /* SceneDelegate.swift */,
-				9561EEE5238FD3DA00B5194F /* ViewController.swift */,
-				9561EEE7238FD3DA00B5194F /* Main.storyboard */,
+				9561EEF5238FD41500B5194F /* Scenes */,
+				9561EF04238FD42700B5194F /* Supporting Files */,
+			);
+			path = SmartAssistant;
+			sourceTree = "<group>";
+		};
+		9561EEF5238FD41500B5194F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				9561EEF9238FD41500B5194F /* Base */,
+				9561EEF6238FD41500B5194F /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		9561EEF6238FD41500B5194F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9561EEF8238FD41500B5194F /* HomeViewController.swift */,
+				9561EEF7238FD41500B5194F /* HomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9561EEF9238FD41500B5194F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				9561EEFB238FD41500B5194F /* BaseViewController.swift */,
+				9561EEFD238FD41500B5194F /* BaseNavigationController.swift */,
+				9561EEFA238FD41500B5194F /* SABaseViewController.swift */,
+				9561EEFC238FD41500B5194F /* SABaseNavigationController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		9561EF04238FD42700B5194F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				9561EEEA238FD3DB00B5194F /* Assets.xcassets */,
 				9561EEEC238FD3DB00B5194F /* LaunchScreen.storyboard */,
 				9561EEEF238FD3DB00B5194F /* Info.plist */,
 			);
-			path = SmartAssistant;
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +168,7 @@
 			files = (
 				9561EEEE238FD3DB00B5194F /* LaunchScreen.storyboard in Resources */,
 				9561EEEB238FD3DB00B5194F /* Assets.xcassets in Resources */,
-				9561EEE9238FD3DA00B5194F /* Main.storyboard in Resources */,
+				9561EEFE238FD41600B5194F /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +179,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9561EEE6238FD3DA00B5194F /* ViewController.swift in Sources */,
+				9561EF03238FD41600B5194F /* BaseNavigationController.swift in Sources */,
 				9561EEE2238FD3DA00B5194F /* AppDelegate.swift in Sources */,
-				9561EEE4238FD3DA00B5194F /* SceneDelegate.swift in Sources */,
+				9561EF00238FD41600B5194F /* SABaseViewController.swift in Sources */,
+				9561EEFF238FD41600B5194F /* HomeViewController.swift in Sources */,
+				9561EF01238FD41600B5194F /* BaseViewController.swift in Sources */,
+				9561EF02238FD41600B5194F /* SABaseNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9561EEE7238FD3DA00B5194F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9561EEE8238FD3DA00B5194F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9561EEEC238FD3DB00B5194F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -290,7 +326,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.louis.SmartAssistant;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huawei.wear.iosguard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -307,7 +343,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.louis.SmartAssistant;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huawei.wear.iosguard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
