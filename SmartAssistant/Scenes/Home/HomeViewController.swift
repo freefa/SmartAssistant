@@ -9,6 +9,8 @@
 import UIKit
 
 class HomeViewController: SABaseViewController {
+    
+    var translator = TextTranslator()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,8 @@ class HomeViewController: SABaseViewController {
 //            Log("receive id card ocr callback")
 //        }
 //        TencentAiSignature.testSignature()
-        TextTranslator().translate(text: "今天天气怎么样")
+        translator.translate(text: "今天天气怎么样", source: "zh", target: "en") { (success, model) in
+            Log("translate success: \(success)")
+        }
     }
 }

@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9579F1EA23919968002763DC /* TencentAiBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9579F1E923919968002763DC /* TencentAiBase.framework */; };
 		95CD0C3D2391634E00E1CB78 /* TencentAiTranslate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CD0C332391634E00E1CB78 /* TencentAiTranslate.framework */; };
 		95CD0C422391634E00E1CB78 /* TencentAiTranslateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD0C412391634E00E1CB78 /* TencentAiTranslateTests.swift */; };
 		95CD0C442391634E00E1CB78 /* TencentAiTranslate.h in Headers */ = {isa = PBXBuildFile; fileRef = 95CD0C362391634E00E1CB78 /* TencentAiTranslate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95CD0C512391705300E1CB78 /* TextTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD0C502391705300E1CB78 /* TextTranslator.swift */; };
 		95CD0C532391707600E1CB78 /* TextTranslateApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD0C522391707600E1CB78 /* TextTranslateApi.swift */; };
+		95CD0C592391816300E1CB78 /* TextTranslateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD0C582391816300E1CB78 /* TextTranslateResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9579F1E923919968002763DC /* TencentAiBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TencentAiBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CD0C332391634E00E1CB78 /* TencentAiTranslate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TencentAiTranslate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CD0C362391634E00E1CB78 /* TencentAiTranslate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TencentAiTranslate.h; sourceTree = "<group>"; };
 		95CD0C372391634E00E1CB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -33,6 +36,7 @@
 		95CD0C432391634E00E1CB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95CD0C502391705300E1CB78 /* TextTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTranslator.swift; sourceTree = "<group>"; };
 		95CD0C522391707600E1CB78 /* TextTranslateApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTranslateApi.swift; sourceTree = "<group>"; };
+		95CD0C582391816300E1CB78 /* TextTranslateResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTranslateResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9579F1EA23919968002763DC /* TencentAiBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,12 +59,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9579F1E823919968002763DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9579F1E923919968002763DC /* TencentAiBase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		95CD0C292391634D00E1CB78 = {
 			isa = PBXGroup;
 			children = (
 				95CD0C352391634E00E1CB78 /* TencentAiTranslate */,
 				95CD0C402391634E00E1CB78 /* TencentAiTranslateTests */,
 				95CD0C342391634E00E1CB78 /* Products */,
+				9579F1E823919968002763DC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +110,7 @@
 			children = (
 				95CD0C502391705300E1CB78 /* TextTranslator.swift */,
 				95CD0C522391707600E1CB78 /* TextTranslateApi.swift */,
+				95CD0C582391816300E1CB78 /* TextTranslateResult.swift */,
 			);
 			path = Text;
 			sourceTree = "<group>";
@@ -210,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95CD0C592391816300E1CB78 /* TextTranslateResult.swift in Sources */,
 				95CD0C532391707600E1CB78 /* TextTranslateApi.swift in Sources */,
 				95CD0C512391705300E1CB78 /* TextTranslator.swift in Sources */,
 			);

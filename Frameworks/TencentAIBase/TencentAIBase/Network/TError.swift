@@ -10,9 +10,14 @@ import Foundation
 
 public let HTTP_RESP_CODE_SUCCESS = 200
 
-public enum ErrorCode: Int {
-    case requestFailed = -2
-    case systemError = -1
+public struct TError {
+    public var code: Int
+    public var description: String
+}
+
+public enum TErrorCode: Int {
+    /// system error code < 0
+    
     /// business success
     case success
     /// qps超过限制
@@ -173,10 +178,4 @@ public enum ErrorCode: Int {
     case acrossAgeNothing = 16468
     /// 音频鉴黄识别出错,请确保音频地址能正常下载音频,尝试更换音频
     case audioPornFailed = 16472
-}
-
-public struct TResult {
-    var code: ErrorCode
-    
-    var error: Error?
 }

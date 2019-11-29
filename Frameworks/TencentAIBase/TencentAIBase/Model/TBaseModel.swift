@@ -9,5 +9,5 @@
 import Foundation
 
 open class TBaseModel {
-    
+    public init() {}
 }

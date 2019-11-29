@@ -13,7 +13,7 @@
 		953576CC2391252A0014B2EB /* IDCardOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953576CB2391252A0014B2EB /* IDCardOCR.swift */; };
 		953576CE239125770014B2EB /* IDCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953576CD239125770014B2EB /* IDCard.swift */; };
 		953576D0239126120014B2EB /* IDCardOCRApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953576CF239126120014B2EB /* IDCardOCRApi.swift */; };
-		953576D3239128180014B2EB /* TencentAiBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953576D2239128180014B2EB /* TencentAiBase.framework */; };
+		9579F1E7239198E8002763DC /* TencentAiBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9579F1E6239198E8002763DC /* TencentAiBase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,7 @@
 		953576CB2391252A0014B2EB /* IDCardOCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDCardOCR.swift; sourceTree = "<group>"; };
 		953576CD239125770014B2EB /* IDCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDCard.swift; sourceTree = "<group>"; };
 		953576CF239126120014B2EB /* IDCardOCRApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDCardOCRApi.swift; sourceTree = "<group>"; };
-		953576D2239128180014B2EB /* TencentAiBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TencentAiBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9579F1E6239198E8002763DC /* TencentAiBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TencentAiBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				953576D3239128180014B2EB /* TencentAiBase.framework in Frameworks */,
+				9579F1E7239198E8002763DC /* TencentAiBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +110,7 @@
 		953576D1239128180014B2EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				953576D2239128180014B2EB /* TencentAiBase.framework */,
+				9579F1E6239198E8002763DC /* TencentAiBase.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

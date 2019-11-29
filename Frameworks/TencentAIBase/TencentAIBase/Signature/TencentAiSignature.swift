@@ -30,7 +30,7 @@ public enum TencentAiSignature {
         }
         paramString += "app_key=\(TencentAiConfig.default.appKey)"
         TLog.d("param string: \(paramString)")
-        let signature = paramString.md5()//.uppercased()
+        let signature = paramString.MD5()
         TLog.d("signature: \(signature)")
         return signature
     }

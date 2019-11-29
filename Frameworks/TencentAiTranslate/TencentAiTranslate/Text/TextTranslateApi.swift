@@ -19,9 +19,9 @@ open class TextTranslateApi: TApi {
     public var target: String?
     
     open override func businessParams() -> Dictionary<String, Paramable> {
-        return ["text" : "What's the weather like today",
-                "source" : "en",
-                "target" : "zh"]
+        return ["text" : text!,
+                "source" : source!,
+                "target" : target!]
     }
     
     open override func urlPath() -> String {

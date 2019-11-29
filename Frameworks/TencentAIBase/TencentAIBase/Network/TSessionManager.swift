@@ -8,7 +8,7 @@
 
 import Foundation
 
-public typealias TDataCallback = (TResult, Data?) -> ()
+public typealias TDataCallback = (Data?, TError?) -> ()
 
 let TAPI_TIMEOUT = 15.0
 
@@ -16,7 +16,10 @@ open class TSessionManager: TBaseSessionManager, URLSessionDelegate {
     
     public static var `default` = TSessionManager()
     
+    private var myCallback: TDataCallback?
+    
     public func request(api: TBaseApi, callback: @escaping TDataCallback) {
+        self.myCallback = callback
         // URL
         DispatchQueue.global().async {
             let url = api.baseUrl() + api.urlPath()
@@ -30,15 +33,21 @@ open class TSessionManager: TBaseSessionManager, URLSessionDelegate {
     
     public func inQueue(request: TBaseRequest, callback: @escaping TDataCallback) {
         let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
-        
         let task = session.dataTask(with: request as URLRequest) { (data, response, error) in
             if let err = error {
                 TLog.d("TRequest failed: \(err.localizedDescription)")
-                callback(TResult(code: .requestFailed, error: err), nil)
+                let e = TError(code: -999, description: err.localizedDescription)
+                callback(data, e)
             } else {
-                self.handleResponse(url: request.url!.absoluteString,
-                                    data: data!,
-                                    callback: callback)
+                let urlRsp = response as! HTTPURLResponse
+                if urlRsp.statusCode != HTTP_RESP_CODE_SUCCESS {
+                    let e = TError(code: urlRsp.statusCode, description: "HTTP response error")
+                    callback(data, e)
+                } else {
+                    self.handleResponse(url: request.url!.absoluteString,
+                                        data: data!,
+                                        callback: callback)
+                }
             }
         }
         TLog.d("httpHeader: \(request.allHTTPHeaderFields!)")
@@ -46,13 +55,28 @@ open class TSessionManager: TBaseSessionManager, URLSessionDelegate {
     }
     
     public func handleResponse(url: String, data: Data, callback: @escaping TDataCallback) {
+        let rspInfo = try? JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+        guard let info = rspInfo else {
+            TLog.d("\(url) rsp: data is not valid or null")
+            let e = TError(code: -999, description: "response data is invalid json")
+            callback(data, e)
+            return
+        }
         let rspString = String(data: data, encoding: .utf8)
         guard let string = rspString else {
             TLog.d("\(url) rsp: data is not utf8 encoding")
+            let e = TError(code: -999, description: "response is not utf8 encoding")
+            callback(data, e)
             return
         }
         TLog.d("\(url) rsp: \(string)")
-        callback(TResult(code: .success, error: nil), data)
+        let dict = info as! Dictionary<String, Any>
+        let ret = dict["ret"] as! Int
+        if ret != TErrorCode.success.rawValue {
+            TLog.d("business error code: \(ret)")
+        }
+        self.myCallback?(data, nil)
+        self.myCallback = nil
     }
     
     public func bodyData(api: TBaseApi) -> Data {
