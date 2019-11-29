@@ -10,6 +10,18 @@ import Foundation
 import CommonCrypto
 
 public extension String {
+    static func random(bytes: Int = 16) -> Self {
+        var buffer = Array<UInt8>(repeating: 0, count: bytes)
+        var result = ""
+        if SecRandomCopyBytes(kSecRandomDefault, bytes, &buffer) == 0 {
+            for i in 0..<bytes {
+                result += String(format: "%02X", buffer[i])
+            }
+        }
+        TLog.d("random String:\(result)")
+        return result
+    }
+    
     func md5() -> String {
         let str = self.cString(using: String.Encoding.utf8)
         let strLen = CUnsignedInt(self.lengthOfBytes(using: String.Encoding.utf8))
@@ -18,7 +30,7 @@ public extension String {
         CC_MD5(str!, strLen, result)
         let hash = NSMutableString()
         for i in 0 ..< digestLen {
-            hash.appendFormat("%02x", result[i])
+            hash.appendFormat("%02X", result[i])
         }
         result.deinitialize(count: digestLen)
         return String(format: hash as String)

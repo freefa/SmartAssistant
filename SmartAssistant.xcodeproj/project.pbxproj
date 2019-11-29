@@ -19,6 +19,8 @@
 		9561EF09238FD93400B5194F /* Log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9561EF08238FD93400B5194F /* Log.framework */; };
 		9561EF38238FE0B500B5194F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561EF37238FE0B500B5194F /* AppDelegate.swift */; };
 		9561EF3A238FE0DD00B5194F /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561EF39238FE0DD00B5194F /* AppConstant.swift */; };
+		95CD0C4E239163E300E1CB78 /* TencentAiOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CD0C4D239163E300E1CB78 /* TencentAiOCR.framework */; };
+		95CD0C55239170B700E1CB78 /* TencentAiTranslate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CD0C54239170B700E1CB78 /* TencentAiTranslate.framework */; };
 		95D2274C238FEB3100A85E6B /* TencentAiBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D2274B238FEB3100A85E6B /* TencentAiBase.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +39,8 @@
 		9561EF08238FD93400B5194F /* Log.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Log.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9561EF37238FE0B500B5194F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9561EF39238FE0DD00B5194F /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
-		9561EF6D238FE6A800B5194F /* TencentAIBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TencentAIBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95CD0C4D239163E300E1CB78 /* TencentAiOCR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TencentAiOCR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95CD0C54239170B700E1CB78 /* TencentAiTranslate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TencentAiTranslate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D2274B238FEB3100A85E6B /* TencentAiBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TencentAiBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -46,6 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95CD0C55239170B700E1CB78 /* TencentAiTranslate.framework in Frameworks */,
+				95CD0C4E239163E300E1CB78 /* TencentAiOCR.framework in Frameworks */,
 				95D2274C238FEB3100A85E6B /* TencentAiBase.framework in Frameworks */,
 				9561EF09238FD93400B5194F /* Log.framework in Frameworks */,
 			);
@@ -124,8 +129,9 @@
 		9561EF07238FD93400B5194F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95CD0C54239170B700E1CB78 /* TencentAiTranslate.framework */,
+				95CD0C4D239163E300E1CB78 /* TencentAiOCR.framework */,
 				95D2274B238FEB3100A85E6B /* TencentAiBase.framework */,
-				9561EF6D238FE6A800B5194F /* TencentAIBase.framework */,
 				9561EF08238FD93400B5194F /* Log.framework */,
 			);
 			name = Frameworks;

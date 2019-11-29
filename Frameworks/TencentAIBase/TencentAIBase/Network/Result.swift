@@ -8,7 +8,10 @@
 
 import Foundation
 
+public let HTTP_RESP_CODE_SUCCESS = 200
+
 public enum ErrorCode: Int {
+    case requestFailed = -2
     case systemError = -1
     /// business success
     case success
@@ -135,7 +138,7 @@ public enum ErrorCode: Int {
     /// 请避开灯光直射在证件表面,请避开灯光直射在证件表面
     case certificateTooLight = 16445
     /// 行驾驶证OCR识别失败,请尝试更换有效的行驾驶证图片
-    case driverCardFailed = 16446
+    case driverLisenceFailed = 16446
     /// 通用OCR识别失败,请尝试更换带有文字的图片
     case ocrFailed = 16447
     /// 银行卡OCR预处理错误,请联系客服反馈问题

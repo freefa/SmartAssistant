@@ -15,11 +15,18 @@ class HomeViewController: SABaseViewController {
         self.title = "Hello Smart Assistant"
         Log("Hello Smart Assistant")
     }
+    
     @IBAction func goAiButtonTouched(_ sender: Any) {
-        let _ = TencentAiSignature.signatureWith(params: ["app" : 123,
-                                                          "hello" : " world-WI+DE",
-                                                          "boy" : "hi_Louis.B",
-                                                          "girl" : 500,
-                                                          "empty" : ""])
+//        let _ = TencentAiSignature.signatureWith(params: ["app" : 123,
+//                                                          "hello" : " world-WI+DE",
+//                                                          "boy" : "hi_Louis.B",
+//                                                          "girl" : 500,
+//                                                          "empty" : ""])
+//        let image = UIImage(named: "idcard_front.jpg")!
+//        IDCardOCR().idCardOcr(image: image, type: .front) { (success, idCard, result) in
+//            Log("receive id card ocr callback")
+//        }
+//        TencentAiSignature.testSignature()
+        TextTranslator().translate(text: "今天天气怎么样")
     }
 }

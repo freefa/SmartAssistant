@@ -13,7 +13,7 @@ private let URL_ENCODE_ALLOWED_CHARS = CharacterSet.init(charactersIn: "-._01234
 public enum TencentAiSignature {
     public static func signatureWith(params: Dictionary<String, Paramable>) -> String? {
         guard TencentAiConfig.default.appId > 0, !TencentAiConfig.default.appKey.isEmpty else {
-            TLog.d("app does not register")
+            TLog.d("app does not register to Tencent AI")
             return nil
         }
         TLog.d("signature:\(params), appId:\(TencentAiConfig.default.appId), appKey:\(TencentAiConfig.default.appKey)")
@@ -30,8 +30,8 @@ public enum TencentAiSignature {
         }
         paramString += "app_key=\(TencentAiConfig.default.appKey)"
         TLog.d("param string: \(paramString)")
-        let signature = paramString.md5()
-        TLog.d("signature: \(signature.uppercased())")
+        let signature = paramString.md5()//.uppercased()
+        TLog.d("signature: \(signature)")
         return signature
     }
 }

@@ -9,6 +9,8 @@
 import UIKit
 @_exported import Log
 @_exported import TencentAiBase
+@_exported import TencentAiOCR
+@_exported import TencentAiTranslate
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
