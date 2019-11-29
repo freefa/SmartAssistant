@@ -8,18 +8,30 @@
 
 import Foundation
 
+private let URL_ENCODE_ALLOWED_CHARS = CharacterSet.init(charactersIn: "-._0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ")
+
 public enum TencentAiSignature {
     public static func signatureWith(params: Dictionary<String, Paramable>) -> String? {
+        guard TencentAiConfig.default.appId > 0, !TencentAiConfig.default.appKey.isEmpty else {
+            TLog.d("app does not register")
+            return nil
+        }
         TLog.d("signature:\(params), appId:\(TencentAiConfig.default.appId), appKey:\(TencentAiConfig.default.appKey)")
         var paramString = ""
         let keys = params.keys.sorted() { $0 < $1 }
         for key in keys {
-            paramString += "\(key)=\(params[key]!.stringValue())&"
+            var value = params[key]!.stringValue()
+            if !value.isEmpty {
+                value = value.addingPercentEncoding(withAllowedCharacters: URL_ENCODE_ALLOWED_CHARS)!
+                value = value.replacingOccurrences(of: " ", with: "+")
+                TLog.d("added percent value: \(value)")
+                paramString += "\(key)=\(value)&"
+            }
         }
         paramString += "app_key=\(TencentAiConfig.default.appKey)"
         TLog.d("param string: \(paramString)")
         let signature = paramString.md5()
-        TLog.d("signature: \(signature)")
+        TLog.d("signature: \(signature.uppercased())")
         return signature
     }
 }

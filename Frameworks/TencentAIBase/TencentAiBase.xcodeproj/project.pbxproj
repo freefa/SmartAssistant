@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		953576932390BF020014B2EB /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953576922390BF020014B2EB /* Result.swift */; };
 		9561EF54238FE52600B5194F /* TencentAiBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9561EF4A238FE52600B5194F /* TencentAiBase.framework */; };
 		9561EF59238FE52600B5194F /* TencentAIBaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561EF58238FE52600B5194F /* TencentAIBaseTests.swift */; };
 		9561EF5B238FE52600B5194F /* TencentAIBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 9561EF4D238FE52600B5194F /* TencentAIBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		953576922390BF020014B2EB /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		9561EF4A238FE52600B5194F /* TencentAiBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TencentAiBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9561EF4D238FE52600B5194F /* TencentAIBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TencentAIBase.h; sourceTree = "<group>"; };
 		9561EF4E238FE52600B5194F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		9561EF68238FE5B100B5194F /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				953576922390BF020014B2EB /* Result.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			files = (
 				95CAFDB62390216A0093E5B4 /* StringUtil.swift in Sources */,
 				95CAFDB8239021BC0093E5B4 /* DateUtil.swift in Sources */,
+				953576932390BF020014B2EB /* Result.swift in Sources */,
 				9561EF70238FE70500B5194F /* TLog.swift in Sources */,
 				9561EF73238FE89A00B5194F /* TencentAiSignature.swift in Sources */,
 				9561EF6C238FE60D00B5194F /* TencentAiConfig.swift in Sources */,

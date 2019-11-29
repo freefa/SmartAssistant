@@ -17,8 +17,9 @@ class HomeViewController: SABaseViewController {
     }
     @IBAction func goAiButtonTouched(_ sender: Any) {
         let _ = TencentAiSignature.signatureWith(params: ["app" : 123,
-                                                          "hello" : "world",
-                                                          "boy" : "hi",
-                                                          "girl" : 500])
+                                                          "hello" : " world-WI+DE",
+                                                          "boy" : "hi_Louis.B",
+                                                          "girl" : 500,
+                                                          "empty" : ""])
     }
 }
