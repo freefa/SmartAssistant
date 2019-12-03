@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		954214212394F75000C2C60F /* TTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954214202394F75000C2C60F /* TTranslator.swift */; };
+		954214212394F75000C2C60F /* TencentAiTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954214202394F75000C2C60F /* TencentAiTranslator.swift */; };
 		954214232394F80200C2C60F /* ImageTranslateApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954214222394F80200C2C60F /* ImageTranslateApi.swift */; };
 		954214252394F9FF00C2C60F /* ImageTranslateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954214242394F9FF00C2C60F /* ImageTranslateResult.swift */; };
 		9579F1EA23919968002763DC /* TencentAiBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9579F1E923919968002763DC /* TencentAiBase.framework */; };
@@ -31,7 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		954214202394F75000C2C60F /* TTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTranslator.swift; sourceTree = "<group>"; };
+		954214202394F75000C2C60F /* TencentAiTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TencentAiTranslator.swift; sourceTree = "<group>"; };
 		954214222394F80200C2C60F /* ImageTranslateApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTranslateApi.swift; sourceTree = "<group>"; };
 		954214242394F9FF00C2C60F /* ImageTranslateResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTranslateResult.swift; sourceTree = "<group>"; };
 		9579F1E923919968002763DC /* TencentAiBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TencentAiBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,7 +106,7 @@
 		95CD0C352391634E00E1CB78 /* TencentAiTranslate */ = {
 			isa = PBXGroup;
 			children = (
-				954214202394F75000C2C60F /* TTranslator.swift */,
+				954214202394F75000C2C60F /* TencentAiTranslator.swift */,
 				95CDA2CF239634E1003142AD /* TranslateConstants.swift */,
 				95CDA2D12396380F003142AD /* Languages.swift */,
 				9542141F2394F70000C2C60F /* Image */,
@@ -249,7 +249,7 @@
 				95CDA2D22396380F003142AD /* Languages.swift in Sources */,
 				954214252394F9FF00C2C60F /* ImageTranslateResult.swift in Sources */,
 				95CD0C532391707600E1CB78 /* TextTranslateApi.swift in Sources */,
-				954214212394F75000C2C60F /* TTranslator.swift in Sources */,
+				954214212394F75000C2C60F /* TencentAiTranslator.swift in Sources */,
 				95CDA2D0239634E1003142AD /* TranslateConstants.swift in Sources */,
 				954214232394F80200C2C60F /* ImageTranslateApi.swift in Sources */,
 			);

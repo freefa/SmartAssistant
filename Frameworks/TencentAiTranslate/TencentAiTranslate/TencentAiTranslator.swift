@@ -1,5 +1,5 @@
 //
-//  TTranslator.swift
+//  TencentAiTranslator.swift
 //  TencentAiTranslate
 //
 //  Created by Louis.B on 2019/12/2.
@@ -10,7 +10,7 @@ import Foundation
 @_exported import UIKit
 @_exported import TencentAiBase
 
-open class TTranslator: TBaseManager {
+open class TencentAiTranslator: TBaseManager {
     public func translate(text: String,
                           source: TLanguage,
                           target: TLanguage,

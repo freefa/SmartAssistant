@@ -10,7 +10,7 @@ import UIKit
 
 class HomeViewController: SABaseViewController {
     
-    var translator = TTranslator()
+    var translator = TencentAiTranslator()
     var ocr = IDCardOCR()
 
     override func viewDidLoad() {
