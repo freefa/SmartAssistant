@@ -15,6 +15,7 @@ fileprivate enum ActionType {
     case textTranslate
     case imgTranslate
     case idCardOcr
+    case businessCardOcr
 }
 
 class HomeViewController: SABaseViewController, UITableViewDelegate, UITableViewDataSource {
@@ -38,6 +39,7 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
         dataSouce.append([ROW_NAME_KEY : "文本翻译", ROW_TYPE_KEY : ActionType.textTranslate])
         dataSouce.append([ROW_NAME_KEY : "图片翻译", ROW_TYPE_KEY : ActionType.imgTranslate])
         dataSouce.append([ROW_NAME_KEY : "身份证识别", ROW_TYPE_KEY : ActionType.idCardOcr])
+        dataSouce.append([ROW_NAME_KEY : "名片识别", ROW_TYPE_KEY : ActionType.businessCardOcr])
     }
     
     // MARK: action method
@@ -60,6 +62,12 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
     func testIdCardOCR() {
         ocr.IDCardOCR(image: UIImage.init(named: "idcard_front")!, type: .front) { (result, idCard) in
             Log("IDCardOCR success: \(result.success)")
+        }
+    }
+    
+    func businessCardOcr() {
+        ocr.businessCardOCR(image: UIImage.init(named: "bc_card")!) { (result, businessCard) in
+            Log("businessCardOCR success: \(result.success)")
         }
     }
     
@@ -93,6 +101,8 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
             translateImage()
         case .idCardOcr:
             testIdCardOCR()
+        case .businessCardOcr:
+            businessCardOcr()
         }
     }
 }

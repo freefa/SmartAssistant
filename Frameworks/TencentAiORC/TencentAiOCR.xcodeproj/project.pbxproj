@@ -16,6 +16,7 @@
 		95CDA2D423964DAD003142AD /* TencentAiOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDA2D323964DAD003142AD /* TencentAiOCR.swift */; };
 		95CDA2D723966A6D003142AD /* BusinessCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDA2D623966A6D003142AD /* BusinessCard.swift */; };
 		95CDA2D923966AA6003142AD /* BusinessCardOCRApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDA2D823966AA6003142AD /* BusinessCardOCRApi.swift */; };
+		95CDA2DB23966CE6003142AD /* OCRConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDA2DA23966CE6003142AD /* OCRConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		95CDA2D323964DAD003142AD /* TencentAiOCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TencentAiOCR.swift; sourceTree = "<group>"; };
 		95CDA2D623966A6D003142AD /* BusinessCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCard.swift; sourceTree = "<group>"; };
 		95CDA2D823966AA6003142AD /* BusinessCardOCRApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCardOCRApi.swift; sourceTree = "<group>"; };
+		95CDA2DA23966CE6003142AD /* OCRConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				95CDA2D323964DAD003142AD /* TencentAiOCR.swift */,
+				95CDA2DA23966CE6003142AD /* OCRConstants.swift */,
 				953576CA239124760014B2EB /* IDCard */,
 				95CDA2D523966A47003142AD /* BusinessCard */,
 				953576B3239124540014B2EB /* TencentAiOCR.h */,
@@ -241,6 +244,7 @@
 			files = (
 				95CDA2D923966AA6003142AD /* BusinessCardOCRApi.swift in Sources */,
 				95CDA2D423964DAD003142AD /* TencentAiOCR.swift in Sources */,
+				95CDA2DB23966CE6003142AD /* OCRConstants.swift in Sources */,
 				953576D0239126120014B2EB /* IDCardOCRApi.swift in Sources */,
 				953576CE239125770014B2EB /* IDCard.swift in Sources */,
 				95CDA2D723966A6D003142AD /* BusinessCard.swift in Sources */,

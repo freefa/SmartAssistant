@@ -10,14 +10,11 @@ import Foundation
 
 let TPATH_IDCARD_ORC = "ocr/ocr_idcardocr"
 
-public let kOCR_BODY_IMAGE = "image"
-public let kOCR_BODY_TYPE = "type"
-
-public enum IDCardType: String {
+public enum IDCardType: Int {
     /// 正面
-    case front = "0"
+    case front
     /// 反面
-    case back = "1"
+    case back
 }
 
 open class IDCardOCRApi: TencentAiApi {
@@ -32,7 +29,7 @@ open class IDCardOCRApi: TencentAiApi {
     }
     
     public override func businessParams() -> Dictionary<String, Paramable> {
-        return ["image" : image!.toBase64(),
-                "card_type" : type!.rawValue]
+        return [kIMG_PARAM : image!.toBase64(),
+                kIMG_ID_CARD_TYPE : type!.rawValue]
     }
 }
