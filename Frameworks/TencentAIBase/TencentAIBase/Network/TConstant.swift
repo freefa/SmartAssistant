@@ -16,5 +16,12 @@ let kTIMESTAMP = "time_stamp"
 let kNONCE_STRING = "nonce_str"
 let kSIGNATURE = "sign"
 
+public let kRESP_CODE = "ret"
+public let kRESP_MSG = "msg"
+public let kRESP_DATA = "data"
+
+
+
+
 
 

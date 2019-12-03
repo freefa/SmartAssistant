@@ -8,12 +8,19 @@
 
 import Foundation
 @_exported import UIKit
+@_exported import TencentAiBase
 
 open class TTranslator: TBaseManager {
     public func translate(text: String,
-                          source: String,
-                          target: String,
+                          source: TLanguage,
+                          target: TLanguage,
                           callback: @escaping (Bool, TextTranslateResult?) -> ()) {
+        guard let array = TEXT_TRANSLATE_SUPPORTED[source], array.contains(target) else {
+            TLog.d("unsupported translation: \(source.rawValue) to \(target.rawValue)")
+            callback(false, nil)
+            return
+        }
+        
         let api = TextTranslateApi()
         api.text = text
         api.source = source
@@ -26,9 +33,9 @@ open class TTranslator: TBaseManager {
             }
             let dict = try? JSONSerialization .jsonObject(with: data!, options: .allowFragments)
             if let info = dict as? Dictionary<String, Any> {
-                let code = info["ret"] as! Int
+                let code = info[kRESP_CODE] as! Int
                 if code == TErrorCode.success.rawValue {
-                    let resultInfo = info["data"] as! Dictionary<String, Any>
+                    let resultInfo = info[kRESP_DATA] as! Dictionary<String, Any>
                     let resultData = try! JSONSerialization.data(withJSONObject: resultInfo, options: .fragmentsAllowed)
                     do {
                         let model = try JSONDecoder().decode(TextTranslateResult.self, from: resultData)
@@ -45,14 +52,11 @@ open class TTranslator: TBaseManager {
     }
     
     public func translate(image: UIImage,
-                          source: String,
-                          target: String,
+                          source: TLanguage,
+                          target: TLanguage,
                           callback: @escaping (Bool, ImageTranslateResult?) -> ()) {
         let api = ImageTranslateApi()
-        let data = image.pngData()!
-        let encodedImg = data.base64EncodedString()
-        api.image = encodedImg
-        print("\(api.image!)")
+        api.image = image
         api.source = source
         api.target = target
         TSessionManager.default.request(api: api) { (data, error) in
@@ -64,9 +68,9 @@ open class TTranslator: TBaseManager {
             
             let dict = try? JSONSerialization .jsonObject(with: data!, options: .allowFragments)
             if let info = dict as? Dictionary<String, Any> {
-                let code = info["ret"] as! Int
+                let code = info[kRESP_CODE] as! Int
                 if code == TErrorCode.success.rawValue {
-                    let resultInfo = info["data"] as! Dictionary<String, Any>
+                    let resultInfo = info[kRESP_DATA] as! Dictionary<String, Any>
                     let resultData = try! JSONSerialization.data(withJSONObject: resultInfo, options: .fragmentsAllowed)
                     do {
                         let model = try JSONDecoder().decode(ImageTranslateResult.self, from: resultData)

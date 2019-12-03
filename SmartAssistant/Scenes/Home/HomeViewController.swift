@@ -20,21 +20,21 @@ class HomeViewController: SABaseViewController {
     }
     
     @IBAction func goAiButtonTouched(_ sender: Any) {
-//        translateText();
+//        translateText()
         translateImage()
 //        testIdCardOCR()
     }
     
     func translateText() {
-        translator.translate(text: "今天天气怎么样", source: "zh", target: "en") { (success, model) in
+        translator.translate(text: "今天天气怎么样", source: TLanguage.Chinese, target: TLanguage.English) { (success, model) in
             Log("translate success: \(success)")
         }
     }
     
     func translateImage() {
         translator.translate(image: UIImage.init(named: "translate_image1")!,
-                             source: "en",
-                             target: "zh") { (success, model) in
+                             source: TLanguage.English,
+                             target: TLanguage.Chinese) { (success, model) in
             Log("translate success: \(success)")
         }
     }

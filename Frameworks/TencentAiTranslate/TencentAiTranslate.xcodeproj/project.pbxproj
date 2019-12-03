@@ -14,9 +14,10 @@
 		95CD0C3D2391634E00E1CB78 /* TencentAiTranslate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CD0C332391634E00E1CB78 /* TencentAiTranslate.framework */; };
 		95CD0C422391634E00E1CB78 /* TencentAiTranslateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD0C412391634E00E1CB78 /* TencentAiTranslateTests.swift */; };
 		95CD0C442391634E00E1CB78 /* TencentAiTranslate.h in Headers */ = {isa = PBXBuildFile; fileRef = 95CD0C362391634E00E1CB78 /* TencentAiTranslate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		95CD0C512391705300E1CB78 /* TextTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD0C502391705300E1CB78 /* TextTranslator.swift */; };
 		95CD0C532391707600E1CB78 /* TextTranslateApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD0C522391707600E1CB78 /* TextTranslateApi.swift */; };
 		95CD0C592391816300E1CB78 /* TextTranslateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD0C582391816300E1CB78 /* TextTranslateResult.swift */; };
+		95CDA2D0239634E1003142AD /* TranslateConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDA2CF239634E1003142AD /* TranslateConstants.swift */; };
+		95CDA2D22396380F003142AD /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDA2D12396380F003142AD /* Languages.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,9 +41,10 @@
 		95CD0C3C2391634E00E1CB78 /* TencentAiTranslateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TencentAiTranslateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CD0C412391634E00E1CB78 /* TencentAiTranslateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TencentAiTranslateTests.swift; sourceTree = "<group>"; };
 		95CD0C432391634E00E1CB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		95CD0C502391705300E1CB78 /* TextTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTranslator.swift; sourceTree = "<group>"; };
 		95CD0C522391707600E1CB78 /* TextTranslateApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTranslateApi.swift; sourceTree = "<group>"; };
 		95CD0C582391816300E1CB78 /* TextTranslateResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTranslateResult.swift; sourceTree = "<group>"; };
+		95CDA2CF239634E1003142AD /* TranslateConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateConstants.swift; sourceTree = "<group>"; };
+		95CDA2D12396380F003142AD /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				954214202394F75000C2C60F /* TTranslator.swift */,
+				95CDA2CF239634E1003142AD /* TranslateConstants.swift */,
+				95CDA2D12396380F003142AD /* Languages.swift */,
 				9542141F2394F70000C2C60F /* Image */,
 				95CD0C4F2391702C00E1CB78 /* Text */,
 				95CD0C362391634E00E1CB78 /* TencentAiTranslate.h */,
@@ -125,7 +129,6 @@
 		95CD0C4F2391702C00E1CB78 /* Text */ = {
 			isa = PBXGroup;
 			children = (
-				95CD0C502391705300E1CB78 /* TextTranslator.swift */,
 				95CD0C522391707600E1CB78 /* TextTranslateApi.swift */,
 				95CD0C582391816300E1CB78 /* TextTranslateResult.swift */,
 			);
@@ -243,10 +246,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				95CD0C592391816300E1CB78 /* TextTranslateResult.swift in Sources */,
+				95CDA2D22396380F003142AD /* Languages.swift in Sources */,
 				954214252394F9FF00C2C60F /* ImageTranslateResult.swift in Sources */,
 				95CD0C532391707600E1CB78 /* TextTranslateApi.swift in Sources */,
 				954214212394F75000C2C60F /* TTranslator.swift in Sources */,
-				95CD0C512391705300E1CB78 /* TextTranslator.swift in Sources */,
+				95CDA2D0239634E1003142AD /* TranslateConstants.swift in Sources */,
 				954214232394F80200C2C60F /* ImageTranslateApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

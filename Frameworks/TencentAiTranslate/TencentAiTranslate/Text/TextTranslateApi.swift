@@ -14,14 +14,14 @@ open class TextTranslateApi: TApi {
     /// 待翻译文本
     public var text: String?
     /// 源语言
-    public var source: String?
+    public var source: TLanguage?
     /// 目标语言
-    public var target: String?
+    public var target: TLanguage?
     
     open override func businessParams() -> Dictionary<String, Paramable> {
         return ["text" : text!,
-                "source" : source!,
-                "target" : target!]
+                "source" : source!.rawValue,
+                "target" : target!.rawValue]
     }
     
     open override func urlPath() -> String {

@@ -37,4 +37,9 @@ public extension UIImage {
         let rawPointer = (context?.data)!
         return Data(bytes: rawPointer, count: width * height * 4)
     }
+    
+    func toBase64() -> String {
+        let data = self.pngData()
+        return data!.base64EncodedString()
+    }
 }
