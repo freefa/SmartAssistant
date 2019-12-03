@@ -73,11 +73,13 @@ open class TSessionManager: TBaseSessionManager, URLSessionDelegate {
         }
         TLog.d("\(url) rsp: \(string)")
         let dict = info as! Dictionary<String, Any>
-        let ret = dict["ret"] as! Int
+        var businessError: TError? = nil
+        let ret = dict[kRESP_CODE] as! Int
         if ret != TErrorCode.success.rawValue {
             TLog.d("business error code: \(ret)")
+            businessError = TError(code: ret, description: dict[kRESP_MSG] as! String)
         }
-        self.myCallback?(data, nil)
+        self.myCallback?(data, businessError)
         self.myCallback = nil
     }
     

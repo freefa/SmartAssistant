@@ -16,6 +16,7 @@ fileprivate enum ActionType {
     case imgTranslate
     case idCardOcr
     case businessCardOcr
+    case driverLisenceOcr
 }
 
 class HomeViewController: SABaseViewController, UITableViewDelegate, UITableViewDataSource {
@@ -40,6 +41,7 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
         dataSouce.append([ROW_NAME_KEY : "图片翻译", ROW_TYPE_KEY : ActionType.imgTranslate])
         dataSouce.append([ROW_NAME_KEY : "身份证识别", ROW_TYPE_KEY : ActionType.idCardOcr])
         dataSouce.append([ROW_NAME_KEY : "名片识别", ROW_TYPE_KEY : ActionType.businessCardOcr])
+        dataSouce.append([ROW_NAME_KEY : "行驾驶证识别", ROW_TYPE_KEY : ActionType.driverLisenceOcr])
     }
     
     // MARK: action method
@@ -68,6 +70,15 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
     func businessCardOcr() {
         ocr.businessCardOCR(image: UIImage.init(named: "bc_card")!) { (result, businessCard) in
             Log("businessCardOCR success: \(result.success)")
+        }
+    }
+    
+    func driverLisenceOcr() {
+        ocr.driverLisenceOCR(image: UIImage.init(named: "car_lisence")!, type: .driverLisence) { (result, driverLisence) in
+            Log("driverLisenceOCR success: \(result.success)")
+            if !result.success {
+                Log(result.error!.description)
+            }
         }
     }
     
@@ -103,6 +114,8 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
             testIdCardOCR()
         case .businessCardOcr:
             businessCardOcr()
+        case .driverLisenceOcr:
+            driverLisenceOcr()
         }
     }
 }

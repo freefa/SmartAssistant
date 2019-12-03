@@ -17,6 +17,8 @@
 		95CDA2D723966A6D003142AD /* BusinessCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDA2D623966A6D003142AD /* BusinessCard.swift */; };
 		95CDA2D923966AA6003142AD /* BusinessCardOCRApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDA2D823966AA6003142AD /* BusinessCardOCRApi.swift */; };
 		95CDA2DB23966CE6003142AD /* OCRConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDA2DA23966CE6003142AD /* OCRConstants.swift */; };
+		95CDA2DE239678E2003142AD /* DriverLisence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDA2DD239678E2003142AD /* DriverLisence.swift */; };
+		95CDA2E0239678FB003142AD /* DriverLisenceOCRApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDA2DF239678FB003142AD /* DriverLisenceOCRApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		95CDA2D623966A6D003142AD /* BusinessCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCard.swift; sourceTree = "<group>"; };
 		95CDA2D823966AA6003142AD /* BusinessCardOCRApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCardOCRApi.swift; sourceTree = "<group>"; };
 		95CDA2DA23966CE6003142AD /* OCRConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRConstants.swift; sourceTree = "<group>"; };
+		95CDA2DD239678E2003142AD /* DriverLisence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverLisence.swift; sourceTree = "<group>"; };
+		95CDA2DF239678FB003142AD /* DriverLisenceOCRApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverLisenceOCRApi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,7 @@
 				95CDA2DA23966CE6003142AD /* OCRConstants.swift */,
 				953576CA239124760014B2EB /* IDCard */,
 				95CDA2D523966A47003142AD /* BusinessCard */,
+				95CDA2DC239678B7003142AD /* DriverLisence */,
 				953576B3239124540014B2EB /* TencentAiOCR.h */,
 				953576B4239124540014B2EB /* Info.plist */,
 			);
@@ -130,6 +135,15 @@
 				95CDA2D823966AA6003142AD /* BusinessCardOCRApi.swift */,
 			);
 			path = BusinessCard;
+			sourceTree = "<group>";
+		};
+		95CDA2DC239678B7003142AD /* DriverLisence */ = {
+			isa = PBXGroup;
+			children = (
+				95CDA2DD239678E2003142AD /* DriverLisence.swift */,
+				95CDA2DF239678FB003142AD /* DriverLisenceOCRApi.swift */,
+			);
+			path = DriverLisence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,11 +257,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				95CDA2D923966AA6003142AD /* BusinessCardOCRApi.swift in Sources */,
+				95CDA2E0239678FB003142AD /* DriverLisenceOCRApi.swift in Sources */,
 				95CDA2D423964DAD003142AD /* TencentAiOCR.swift in Sources */,
 				95CDA2DB23966CE6003142AD /* OCRConstants.swift in Sources */,
 				953576D0239126120014B2EB /* IDCardOCRApi.swift in Sources */,
 				953576CE239125770014B2EB /* IDCard.swift in Sources */,
 				95CDA2D723966A6D003142AD /* BusinessCard.swift in Sources */,
+				95CDA2DE239678E2003142AD /* DriverLisence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
