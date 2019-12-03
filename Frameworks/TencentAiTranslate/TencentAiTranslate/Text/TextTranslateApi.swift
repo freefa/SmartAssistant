@@ -10,7 +10,7 @@ import Foundation
 
 let TPATH_TEXT_TRANSLATE = "nlp/nlp_texttranslate"
 
-open class TextTranslateApi: TApi {
+open class TextTranslateApi: TencentAiApi {
     /// 待翻译文本
     public var text: String?
     /// 源语言

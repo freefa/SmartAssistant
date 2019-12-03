@@ -20,7 +20,7 @@ open class TSessionManager: TBaseSessionManager, URLSessionDelegate {
     
     private var myCallback: TDataCallback?
     
-    public func request(api: TBaseApi, callback: @escaping TDataCallback) {
+    public func request(api: TencentAiBaseApi, callback: @escaping TDataCallback) {
         self.myCallback = callback
         // URL
         DispatchQueue.global().async {
@@ -81,7 +81,7 @@ open class TSessionManager: TBaseSessionManager, URLSessionDelegate {
         self.myCallback = nil
     }
     
-    public func bodyData(api: TBaseApi) -> Data {
+    public func bodyData(api: TencentAiBaseApi) -> Data {
         var body = [String : Paramable]()
         for (key, value) in api.commonParams() {
             body[key] = value

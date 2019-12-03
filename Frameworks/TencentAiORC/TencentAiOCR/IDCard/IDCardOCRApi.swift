@@ -20,7 +20,7 @@ public enum IDCardType: String {
     case back = "1"
 }
 
-open class IDCardOCRApi: TApi {
+open class IDCardOCRApi: TencentAiApi {
     /// 身份证图片data
     public var image: UIImage?
     /// 正反面

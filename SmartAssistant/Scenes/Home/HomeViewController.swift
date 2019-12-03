@@ -8,23 +8,39 @@
 
 import UIKit
 
-class HomeViewController: SABaseViewController {
+fileprivate let ROW_NAME_KEY = "name"
+fileprivate let ROW_TYPE_KEY = "type"
+
+fileprivate enum ActionType {
+    case textTranslate
+    case imgTranslate
+    case idCardOcr
+}
+
+class HomeViewController: SABaseViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
+    @IBOutlet weak var tableView: UITableView!
     
     var translator = TencentAiTranslator()
     var ocr = TencentAiOCR()
+    var dataSouce = [[String : Any]]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Hello Smart Assistant"
         Log("Hello Smart Assistant")
+        tableView.tableFooterView = UIView(frame: .zero)
+        configDataSouce()
     }
     
-    @IBAction func goAiButtonTouched(_ sender: Any) {
-        translateText()
-//        translateImage()
-//        testIdCardOCR()
+    func configDataSouce() {
+        dataSouce.append([ROW_NAME_KEY : "文本翻译", ROW_TYPE_KEY : ActionType.textTranslate])
+        dataSouce.append([ROW_NAME_KEY : "图片翻译", ROW_TYPE_KEY : ActionType.imgTranslate])
+        dataSouce.append([ROW_NAME_KEY : "身份证识别", ROW_TYPE_KEY : ActionType.idCardOcr])
     }
     
+    // MARK: action method
     func translateText() {
         translator.translate(text: "今天天气怎么样",
                              source: TLanguage.Chinese,
@@ -44,6 +60,39 @@ class HomeViewController: SABaseViewController {
     func testIdCardOCR() {
         ocr.IDCardOCR(image: UIImage.init(named: "idcard_front")!, type: .front) { (result, idCard) in
             Log("IDCardOCR success: \(result.success)")
+        }
+    }
+    
+    // MARK: UITableViewDelegate & dataSource
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSouce.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 52
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let identifier = "homeCell"
+        var cell = tableView.dequeueReusableCell(withIdentifier: identifier)
+        if cell == nil {
+            cell = UITableViewCell(style: .default, reuseIdentifier: identifier)
+            cell?.textLabel?.font = UIFont.systemFont(ofSize: 16)
+        }
+        cell?.textLabel?.text = (dataSouce[indexPath.row][ROW_NAME_KEY] as! String)
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let action = dataSouce[indexPath.row][ROW_TYPE_KEY] as! ActionType
+        switch action {
+        case .textTranslate:
+            translateText()
+        case .imgTranslate:
+            translateImage()
+        case .idCardOcr:
+            testIdCardOCR()
         }
     }
 }

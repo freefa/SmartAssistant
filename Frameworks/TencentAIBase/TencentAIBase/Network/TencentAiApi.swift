@@ -1,5 +1,5 @@
 //
-//  TApi.swift
+//  TencentAiApi.swift
 //  TencentAiBase
 //
 //  Created by Louis.B on 2019/11/29.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class TApi: TBaseApi {
+open class TencentAiApi: TencentAiBaseApi {
     open override func urlPath() -> String {
         return ""
     }

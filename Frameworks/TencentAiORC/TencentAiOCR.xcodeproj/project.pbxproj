@@ -14,6 +14,8 @@
 		953576D0239126120014B2EB /* IDCardOCRApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953576CF239126120014B2EB /* IDCardOCRApi.swift */; };
 		9579F1E7239198E8002763DC /* TencentAiBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9579F1E6239198E8002763DC /* TencentAiBase.framework */; };
 		95CDA2D423964DAD003142AD /* TencentAiOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDA2D323964DAD003142AD /* TencentAiOCR.swift */; };
+		95CDA2D723966A6D003142AD /* BusinessCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDA2D623966A6D003142AD /* BusinessCard.swift */; };
+		95CDA2D923966AA6003142AD /* BusinessCardOCRApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDA2D823966AA6003142AD /* BusinessCardOCRApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,8 @@
 		953576CF239126120014B2EB /* IDCardOCRApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDCardOCRApi.swift; sourceTree = "<group>"; };
 		9579F1E6239198E8002763DC /* TencentAiBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TencentAiBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CDA2D323964DAD003142AD /* TencentAiOCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TencentAiOCR.swift; sourceTree = "<group>"; };
+		95CDA2D623966A6D003142AD /* BusinessCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCard.swift; sourceTree = "<group>"; };
+		95CDA2D823966AA6003142AD /* BusinessCardOCRApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCardOCRApi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 			children = (
 				95CDA2D323964DAD003142AD /* TencentAiOCR.swift */,
 				953576CA239124760014B2EB /* IDCard */,
+				95CDA2D523966A47003142AD /* BusinessCard */,
 				953576B3239124540014B2EB /* TencentAiOCR.h */,
 				953576B4239124540014B2EB /* Info.plist */,
 			);
@@ -113,6 +118,15 @@
 				9579F1E6239198E8002763DC /* TencentAiBase.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		95CDA2D523966A47003142AD /* BusinessCard */ = {
+			isa = PBXGroup;
+			children = (
+				95CDA2D623966A6D003142AD /* BusinessCard.swift */,
+				95CDA2D823966AA6003142AD /* BusinessCardOCRApi.swift */,
+			);
+			path = BusinessCard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,9 +239,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95CDA2D923966AA6003142AD /* BusinessCardOCRApi.swift in Sources */,
 				95CDA2D423964DAD003142AD /* TencentAiOCR.swift in Sources */,
 				953576D0239126120014B2EB /* IDCardOCRApi.swift in Sources */,
 				953576CE239125770014B2EB /* IDCard.swift in Sources */,
+				95CDA2D723966A6D003142AD /* BusinessCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

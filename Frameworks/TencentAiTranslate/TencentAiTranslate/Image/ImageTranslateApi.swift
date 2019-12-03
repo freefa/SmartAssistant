@@ -10,7 +10,7 @@ import Foundation
 
 let TPATH_IMAGE_TRANSLATE = "nlp/nlp_imagetranslate"
 
-class ImageTranslateApi: TApi {
+class ImageTranslateApi: TencentAiApi {
     public var image: UIImage?
     public var source: TLanguage?
     public var target: TLanguage?

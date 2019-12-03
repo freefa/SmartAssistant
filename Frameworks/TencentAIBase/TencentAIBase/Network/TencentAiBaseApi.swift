@@ -1,5 +1,5 @@
 //
-//  TBaseApi.swift
+//  TencentAiBaseApi.swift
 //  TencentAiBase
 //
 //  Created by Louis.B on 2019/11/29.
@@ -28,7 +28,7 @@ extension TApiProtocol {
     }
 }
 
-open class TBaseApi: TApiProtocol {
+open class TencentAiBaseApi: TApiProtocol {
     
     var callback: TDataCallback?
     
