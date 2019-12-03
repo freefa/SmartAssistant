@@ -32,29 +32,7 @@ open class IDCardOCRApi: TApi {
     }
     
     public override func businessParams() -> Dictionary<String, Paramable> {
-        var param = [String : Paramable]()
-        
-        guard let string = imageString() else {
-            TLog.d("invalid image string")
-            return param
-        }
-        param[kOCR_BODY_IMAGE] = string
-        param[kOCR_BODY_TYPE] = self.type?.rawValue
-        return param
-    }
-    
-    private func imageString() -> String? {
-        guard let img = image else {
-            TLog.d("image is null")
-            return nil
-        }
-//        let compressedImg = img.compressMemoryTo(size: 1)
-        let data = img.jpegData(compressionQuality: 1)!
-        TLog.d("idcard bytes: \(data.count), \(data.count / 1024)KB, \(data.count / 1024 / 1024)MB")
-//        let string = data.base64EncodedString(options: .lineLength64Characters)
-        let string = data.base64EncodedString()
-        TLog.d("imgBase64length: \(string.count) charachters")
-        TLog.d(string)
-        return string
+        return ["image" : image!.toBase64(),
+                "card_type" : type!.rawValue]
     }
 }

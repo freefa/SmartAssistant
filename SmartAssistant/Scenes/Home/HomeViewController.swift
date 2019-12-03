@@ -21,8 +21,8 @@ class HomeViewController: SABaseViewController {
     
     @IBAction func goAiButtonTouched(_ sender: Any) {
 //        translateText()
-        translateImage()
-//        testIdCardOCR()
+//        translateImage()
+        testIdCardOCR()
     }
     
     func translateText() {
@@ -40,7 +40,7 @@ class HomeViewController: SABaseViewController {
     }
     
     func testIdCardOCR() {
-        ocr.idCardOcr(image: UIImage.init(named: "idcard_back")!, type: .back) { (success, idCardOcr) in
+        ocr.idCardOcr(image: UIImage.init(named: "idcard_front")!, type: .front) { (success, idCardOcr) in
             Log("idCardOcr success: \(success)")
         }
     }
