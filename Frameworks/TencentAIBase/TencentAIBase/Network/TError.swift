@@ -13,6 +13,11 @@ public let HTTP_RESP_CODE_SUCCESS = 200
 public struct TError {
     public var code: Int
     public var description: String
+    
+    public init(code: Int, description: String) {
+        self.code = code
+        self.description = description
+    }
 }
 
 public enum TErrorCode: Int {
@@ -178,4 +183,7 @@ public enum TErrorCode: Int {
     case acrossAgeNothing = 16468
     /// 音频鉴黄识别出错,请确保音频地址能正常下载音频,尝试更换音频
     case audioPornFailed = 16472
+    
+    // MARK: 自定义错误码
+    case unsupportedTranslate = 100001
 }

@@ -10,6 +10,8 @@ import Foundation
 
 public typealias TDataCallback = (Data?, TError?) -> ()
 
+public typealias TResult = (success: Bool, error: TError?)
+
 let TAPI_TIMEOUT = 15.0
 
 open class TSessionManager: TBaseSessionManager, URLSessionDelegate {
@@ -89,11 +91,7 @@ open class TSessionManager: TBaseSessionManager, URLSessionDelegate {
             body[key] = value
         }
         
-//        let sign = TencentAiSignature.signatureWith(params: body)
         let bodyString = TencentAiSignature.getSignedEncodedParams(params: body)
-//        if let signature = sign {
-//            bodyString += "\(kSIGNATURE)=\(signature)"
-//        }
         TLog.d("TRequest body :\n\(bodyString!)")
         return bodyString!.data(using: .utf8)!
     }

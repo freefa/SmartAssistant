@@ -11,7 +11,7 @@ import UIKit
 class HomeViewController: SABaseViewController {
     
     var translator = TencentAiTranslator()
-    var ocr = IDCardOCR()
+    var ocr = TencentAiOCR()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,28 +20,30 @@ class HomeViewController: SABaseViewController {
     }
     
     @IBAction func goAiButtonTouched(_ sender: Any) {
-//        translateText()
+        translateText()
 //        translateImage()
-        testIdCardOCR()
+//        testIdCardOCR()
     }
     
     func translateText() {
-        translator.translate(text: "今天天气怎么样", source: TLanguage.Chinese, target: TLanguage.English) { (success, model) in
-            Log("translate success: \(success)")
+        translator.translate(text: "今天天气怎么样",
+                             source: TLanguage.Chinese,
+                             target: TLanguage.English) { (result, model) in
+            Log("text translate success: \(result.success)")
         }
     }
     
     func translateImage() {
         translator.translate(image: UIImage.init(named: "translate_image1")!,
                              source: TLanguage.English,
-                             target: TLanguage.Chinese) { (success, model) in
-            Log("translate success: \(success)")
+                             target: TLanguage.Chinese) { (result, model) in
+                                Log("translate success: \(result.success)")
         }
     }
     
     func testIdCardOCR() {
-        ocr.idCardOcr(image: UIImage.init(named: "idcard_front")!, type: .front) { (success, idCardOcr) in
-            Log("idCardOcr success: \(success)")
+        ocr.IDCardOCR(image: UIImage.init(named: "idcard_front")!, type: .front) { (result, idCard) in
+            Log("IDCardOCR success: \(result.success)")
         }
     }
 }

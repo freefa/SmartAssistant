@@ -10,10 +10,10 @@
 		953576BA239124540014B2EB /* TencentAiOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953576B0239124540014B2EB /* TencentAiOCR.framework */; };
 		953576BF239124540014B2EB /* TencentAiORCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953576BE239124540014B2EB /* TencentAiORCTests.swift */; };
 		953576C1239124540014B2EB /* TencentAiOCR.h in Headers */ = {isa = PBXBuildFile; fileRef = 953576B3239124540014B2EB /* TencentAiOCR.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		953576CC2391252A0014B2EB /* IDCardOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953576CB2391252A0014B2EB /* IDCardOCR.swift */; };
 		953576CE239125770014B2EB /* IDCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953576CD239125770014B2EB /* IDCard.swift */; };
 		953576D0239126120014B2EB /* IDCardOCRApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953576CF239126120014B2EB /* IDCardOCRApi.swift */; };
 		9579F1E7239198E8002763DC /* TencentAiBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9579F1E6239198E8002763DC /* TencentAiBase.framework */; };
+		95CDA2D423964DAD003142AD /* TencentAiOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDA2D323964DAD003142AD /* TencentAiOCR.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,10 +33,10 @@
 		953576B9239124540014B2EB /* TencentAiOCRTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TencentAiOCRTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		953576BE239124540014B2EB /* TencentAiORCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TencentAiORCTests.swift; sourceTree = "<group>"; };
 		953576C0239124540014B2EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		953576CB2391252A0014B2EB /* IDCardOCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDCardOCR.swift; sourceTree = "<group>"; };
 		953576CD239125770014B2EB /* IDCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDCard.swift; sourceTree = "<group>"; };
 		953576CF239126120014B2EB /* IDCardOCRApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDCardOCRApi.swift; sourceTree = "<group>"; };
 		9579F1E6239198E8002763DC /* TencentAiBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TencentAiBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95CDA2D323964DAD003142AD /* TencentAiOCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TencentAiOCR.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +81,7 @@
 		953576B2239124540014B2EB /* TencentAiOCR */ = {
 			isa = PBXGroup;
 			children = (
+				95CDA2D323964DAD003142AD /* TencentAiOCR.swift */,
 				953576CA239124760014B2EB /* IDCard */,
 				953576B3239124540014B2EB /* TencentAiOCR.h */,
 				953576B4239124540014B2EB /* Info.plist */,
@@ -100,7 +101,6 @@
 		953576CA239124760014B2EB /* IDCard */ = {
 			isa = PBXGroup;
 			children = (
-				953576CB2391252A0014B2EB /* IDCardOCR.swift */,
 				953576CD239125770014B2EB /* IDCard.swift */,
 				953576CF239126120014B2EB /* IDCardOCRApi.swift */,
 			);
@@ -225,9 +225,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95CDA2D423964DAD003142AD /* TencentAiOCR.swift in Sources */,
 				953576D0239126120014B2EB /* IDCardOCRApi.swift in Sources */,
 				953576CE239125770014B2EB /* IDCard.swift in Sources */,
-				953576CC2391252A0014B2EB /* IDCardOCR.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,4 @@
 
 import Foundation
 
-open class TBaseSessionManager: NSObject {
-    
-}
+open class TBaseSessionManager: NSObject {}

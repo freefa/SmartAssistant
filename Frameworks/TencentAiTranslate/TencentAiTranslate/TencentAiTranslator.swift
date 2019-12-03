@@ -14,10 +14,12 @@ open class TencentAiTranslator: TBaseManager {
     public func translate(text: String,
                           source: TLanguage,
                           target: TLanguage,
-                          callback: @escaping (Bool, TextTranslateResult?) -> ()) {
+                          callback: @escaping (TResult, TextTranslateResult?) -> ()) {
         guard let array = TEXT_TRANSLATE_SUPPORTED[source], array.contains(target) else {
             TLog.d("unsupported translation: \(source.rawValue) to \(target.rawValue)")
-            callback(false, nil)
+            let err = TError(code: -100001, description: "unsupported translation")
+            let result = (success: false, error: err)
+            callback(result, nil)
             return
         }
         
@@ -25,10 +27,10 @@ open class TencentAiTranslator: TBaseManager {
         api.text = text
         api.source = source
         api.target = target
-        TSessionManager.default.request(api: api) { (data, error) in
-            guard error == nil else {
-                TLog.d("TextTranslator failed: \(error!.description)")
-                callback(false, nil)
+        TSessionManager.default.request(api: api) { (data, rspError) in
+            guard rspError == nil else {
+                TLog.d("TextTranslator failed: \(rspError!.description)")
+                callback((false, rspError), nil)
                 return
             }
             let dict = try? JSONSerialization .jsonObject(with: data!, options: .allowFragments)
@@ -39,13 +41,13 @@ open class TencentAiTranslator: TBaseManager {
                     let resultData = try! JSONSerialization.data(withJSONObject: resultInfo, options: .fragmentsAllowed)
                     do {
                         let model = try JSONDecoder().decode(TextTranslateResult.self, from: resultData)
-                        callback(true, model)
+                        callback((true, nil), model)
                     } catch {
-                        TLog.d("decode json to model error")
-                        callback(false, nil)
+                        TLog.d("decode json to model error: \(error.localizedDescription)")
+                        callback((false, rspError), nil)
                     }
                 } else {
-                    callback(false, nil)
+                    callback((false, rspError), nil)
                 }
             }
         }
@@ -54,15 +56,15 @@ open class TencentAiTranslator: TBaseManager {
     public func translate(image: UIImage,
                           source: TLanguage,
                           target: TLanguage,
-                          callback: @escaping (Bool, ImageTranslateResult?) -> ()) {
+                          callback: @escaping (TResult, ImageTranslateResult?) -> ()) {
         let api = ImageTranslateApi()
         api.image = image
         api.source = source
         api.target = target
-        TSessionManager.default.request(api: api) { (data, error) in
-            guard error == nil else {
-                TLog.d("imageTranslateError: \(error!.description)")
-                callback(false, nil)
+        TSessionManager.default.request(api: api) { (data, rspError) in
+            guard rspError == nil else {
+                TLog.d("imageTranslateError: \(rspError!.description)")
+                callback((false, rspError), nil)
                 return
             }
             
@@ -74,13 +76,13 @@ open class TencentAiTranslator: TBaseManager {
                     let resultData = try! JSONSerialization.data(withJSONObject: resultInfo, options: .fragmentsAllowed)
                     do {
                         let model = try JSONDecoder().decode(ImageTranslateResult.self, from: resultData)
-                        callback(true, model)
+                        callback((true, nil), model)
                     } catch {
-                        TLog.d("decode json to model error")
-                        callback(false, nil)
+                        TLog.d("decode json to model error: \(error.localizedDescription)")
+                        callback((false, rspError), nil)
                     }
                 } else {
-                    callback(false, nil)
+                    callback((false, rspError), nil)
                 }
             }
         }
