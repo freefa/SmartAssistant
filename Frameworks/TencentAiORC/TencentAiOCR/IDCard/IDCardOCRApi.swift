@@ -13,11 +13,11 @@ let TPATH_IDCARD_ORC = "ocr/ocr_idcardocr"
 public let kOCR_BODY_IMAGE = "image"
 public let kOCR_BODY_TYPE = "type"
 
-public enum IDCardType: Int {
+public enum IDCardType: String {
     /// 正面
-    case front
+    case front = "0"
     /// 反面
-    case back
+    case back = "1"
 }
 
 open class IDCardOCRApi: TApi {
@@ -48,8 +48,13 @@ open class IDCardOCRApi: TApi {
             TLog.d("image is null")
             return nil
         }
-        let compressedImg = img.compressMemoryTo(size: 1)
-        let data = compressedImg.jpegData(compressionQuality: 1)!
-        return data.base64EncodedString()
+//        let compressedImg = img.compressMemoryTo(size: 1)
+        let data = img.jpegData(compressionQuality: 1)!
+        TLog.d("idcard bytes: \(data.count), \(data.count / 1024)KB, \(data.count / 1024 / 1024)MB")
+//        let string = data.base64EncodedString(options: .lineLength64Characters)
+        let string = data.base64EncodedString()
+        TLog.d("imgBase64length: \(string.count) charachters")
+        TLog.d(string)
+        return string
     }
 }

@@ -13,4 +13,20 @@ open class TextTranslateResult: TBaseModel {
     public var source: String?
     /// 翻译结果
     public var target: String?
+    
+    public enum KeyMap: String, CodingKey {
+        case source = "source_text"
+        case target = "target_text"
+    }
+    
+    public required init(from decoder: Decoder) throws {
+        do {
+            let container = try decoder.container(keyedBy: KeyMap.self)
+            source = try container.decode(String.self, forKey: .source)
+            target = try container.decode(String.self, forKey: .target)
+        } catch {
+            
+        }
+        try super.init(from: decoder)
+    }
 }

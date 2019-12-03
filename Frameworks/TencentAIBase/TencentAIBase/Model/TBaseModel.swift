@@ -8,6 +8,6 @@
 
 import Foundation
 
-open class TBaseModel {
+open class TBaseModel: Codable {
     public init() {}
 }

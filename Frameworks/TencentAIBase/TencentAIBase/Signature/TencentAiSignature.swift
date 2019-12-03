@@ -16,7 +16,6 @@ public enum TencentAiSignature {
             TLog.d("app does not register to Tencent AI")
             return nil
         }
-        TLog.d("signature:\(params), appId:\(TencentAiConfig.default.appId), appKey:\(TencentAiConfig.default.appKey)")
         var paramString = ""
         let keys = params.keys.sorted() { $0 < $1 }
         for key in keys {
@@ -24,15 +23,36 @@ public enum TencentAiSignature {
             if !value.isEmpty {
                 value = value.addingPercentEncoding(withAllowedCharacters: URL_ENCODE_ALLOWED_CHARS)!
                 value = value.replacingOccurrences(of: " ", with: "+")
-                TLog.d("added percent value: \(value)")
+//                TLog.d("added percent value: \(value)")
                 paramString += "\(key)=\(value)&"
             }
         }
         paramString += "app_key=\(TencentAiConfig.default.appKey)"
-        TLog.d("param string: \(paramString)")
         let signature = paramString.MD5()
-        TLog.d("signature: \(signature)")
         return signature
+    }
+    
+    public static func getSignedEncodedParams(params: [String : Paramable]) -> String? {
+        guard TencentAiConfig.default.appId > 0, !TencentAiConfig.default.appKey.isEmpty else {
+            TLog.d("app does not register to Tencent AI")
+            return nil
+        }
+        var paramString = ""
+        let keys = params.keys.sorted { $0 < $1}
+        for key in keys {
+            var value = params[key]!.stringValue()
+            if !value.isEmpty {
+                value = value.addingPercentEncoding(withAllowedCharacters: URL_ENCODE_ALLOWED_CHARS)!
+                value = value.replacingOccurrences(of: " ", with: "+")
+//                TLog.d("added percent value: \(value)")
+                paramString += "\(key)=\(value)&"
+            }
+        }
+        
+        paramString += "app_key=\(TencentAiConfig.default.appKey)"
+        let signature = paramString.MD5()
+        paramString += "&sign=\(signature)"
+        return paramString
     }
 }
 

@@ -10,7 +10,8 @@ import UIKit
 
 class HomeViewController: SABaseViewController {
     
-    var translator = TextTranslator()
+    var translator = TTranslator()
+    var ocr = IDCardOCR()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,18 +20,28 @@ class HomeViewController: SABaseViewController {
     }
     
     @IBAction func goAiButtonTouched(_ sender: Any) {
-//        let _ = TencentAiSignature.signatureWith(params: ["app" : 123,
-//                                                          "hello" : " world-WI+DE",
-//                                                          "boy" : "hi_Louis.B",
-//                                                          "girl" : 500,
-//                                                          "empty" : ""])
-//        let image = UIImage(named: "idcard_front.jpg")!
-//        IDCardOCR().idCardOcr(image: image, type: .front) { (success, idCard, result) in
-//            Log("receive id card ocr callback")
-//        }
-//        TencentAiSignature.testSignature()
+//        translateText();
+        translateImage()
+//        testIdCardOCR()
+    }
+    
+    func translateText() {
         translator.translate(text: "今天天气怎么样", source: "zh", target: "en") { (success, model) in
             Log("translate success: \(success)")
+        }
+    }
+    
+    func translateImage() {
+        translator.translate(image: UIImage.init(named: "translate_image1")!,
+                             source: "en",
+                             target: "zh") { (success, model) in
+            Log("translate success: \(success)")
+        }
+    }
+    
+    func testIdCardOCR() {
+        ocr.idCardOcr(image: UIImage.init(named: "idcard_back")!, type: .back) { (success, idCardOcr) in
+            Log("idCardOcr success: \(success)")
         }
     }
 }

@@ -81,22 +81,20 @@ open class TSessionManager: TBaseSessionManager, URLSessionDelegate {
     
     public func bodyData(api: TBaseApi) -> Data {
         var body = [String : Paramable]()
-        var bodyString = ""
         for (key, value) in api.commonParams() {
             body[key] = value
-            bodyString += "\(key)=\(value)&"
         }
         
         for (key, value) in api.businessParams() {
             body[key] = value
-            bodyString += "\(key)=\(value)&"
         }
         
-        let sign = TencentAiSignature.signatureWith(params: body)
-        if let signature = sign {
-            bodyString += "\(kSIGNATURE)=\(signature)"
-        }
-//        TLog.d("TRequest body : \(bodyString)")
-        return bodyString.data(using: .utf8)!
+//        let sign = TencentAiSignature.signatureWith(params: body)
+        let bodyString = TencentAiSignature.getSignedEncodedParams(params: body)
+//        if let signature = sign {
+//            bodyString += "\(kSIGNATURE)=\(signature)"
+//        }
+        TLog.d("TRequest body :\n\(bodyString!)")
+        return bodyString!.data(using: .utf8)!
     }
 }
