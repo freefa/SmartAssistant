@@ -21,6 +21,8 @@
 		9579F1EC23919988002763DC /* Log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9579F1EB23919988002763DC /* Log.framework */; };
 		9579F1EE23919992002763DC /* TencentAiOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9579F1ED23919992002763DC /* TencentAiOCR.framework */; };
 		9579F1F023919998002763DC /* TencentAiTranslate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9579F1EF23919998002763DC /* TencentAiTranslate.framework */; };
+		95AC2486239760CF001145AF /* ImageTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC2484239760CF001145AF /* ImageTestViewController.swift */; };
+		95AC2487239760CF001145AF /* ImageTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AC2485239760CF001145AF /* ImageTestViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		9579F1EB23919988002763DC /* Log.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Log.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9579F1ED23919992002763DC /* TencentAiOCR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TencentAiOCR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9579F1EF23919998002763DC /* TencentAiTranslate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TencentAiTranslate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95AC2484239760CF001145AF /* ImageTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTestViewController.swift; sourceTree = "<group>"; };
+		95AC2485239760CF001145AF /* ImageTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageTestViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 			children = (
 				9561EEF9238FD41500B5194F /* Base */,
 				9561EEF6238FD41500B5194F /* Home */,
+				95AC24832397606F001145AF /* Test */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -140,6 +145,15 @@
 				9561EF39238FE0DD00B5194F /* AppConstant.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		95AC24832397606F001145AF /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				95AC2484239760CF001145AF /* ImageTestViewController.swift */,
+				95AC2485239760CF001145AF /* ImageTestViewController.xib */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +216,7 @@
 			files = (
 				9561EEEE238FD3DB00B5194F /* LaunchScreen.storyboard in Resources */,
 				9561EEEB238FD3DB00B5194F /* Assets.xcassets in Resources */,
+				95AC2487239760CF001145AF /* ImageTestViewController.xib in Resources */,
 				9561EEFE238FD41600B5194F /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,6 +230,7 @@
 			files = (
 				9561EF03238FD41600B5194F /* BaseNavigationController.swift in Sources */,
 				9561EF00238FD41600B5194F /* SABaseViewController.swift in Sources */,
+				95AC2486239760CF001145AF /* ImageTestViewController.swift in Sources */,
 				9561EEFF238FD41600B5194F /* HomeViewController.swift in Sources */,
 				9561EF01238FD41600B5194F /* BaseViewController.swift in Sources */,
 				9561EF38238FE0B500B5194F /* AppDelegate.swift in Sources */,

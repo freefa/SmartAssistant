@@ -19,6 +19,7 @@ open class BusinessCardOCRApi: TencentAiApi {
     }
     
     open override func businessParams() -> Dictionary<String, Paramable> {
-        return [kIMG_PARAM : image!.toBase64()]
+        let compressed = image!.compressForBase64Encoding()
+        return [kIMG_PARAM : compressed.toBase64()]
     }
 }

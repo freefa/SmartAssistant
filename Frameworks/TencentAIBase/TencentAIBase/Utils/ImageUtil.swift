@@ -48,8 +48,7 @@ public extension UIImage {
         }
         let targetSize = CGSize(width: width, height: height)
         UIGraphicsBeginImageContext(targetSize)
-        let context = UIGraphicsGetCurrentContext()
-        context?.draw(self.cgImage!, in: CGRect(x: 0, y: 0, width: width, height: height))
+        self.draw(in: CGRect(x: 0, y: 0, width: width, height: height))
         let resized = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         TLog.d("resized image: {\(resized.size.width), \(resized.size.height)}")

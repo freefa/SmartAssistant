@@ -26,7 +26,7 @@ public enum TErrorCode: Int {
     /// system busy, please try again later
     case systemBusy = -30
     /// business success
-    case success
+    case success = 0
     /// qps超过限制
     case outOfQps = 9
     /// 参数非法,请检查请求参数是否符合要求

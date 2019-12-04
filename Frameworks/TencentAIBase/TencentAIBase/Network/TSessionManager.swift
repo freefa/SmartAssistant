@@ -94,7 +94,7 @@ open class TSessionManager: TBaseSessionManager, URLSessionDelegate {
         }
         
         let bodyString = TencentAiSignature.getSignedEncodedParams(params: body)
-        TLog.d("TRequest body :\n\(bodyString!)")
+//        TLog.d("TRequest body :\n\(bodyString!)")
         return bodyString!.data(using: .utf8)!
     }
 }

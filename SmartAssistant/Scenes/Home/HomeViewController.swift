@@ -18,6 +18,7 @@ enum ActionType {
     case businessCardOcr
     case carLisenceOcr
     case driverLisenceOcr
+    case imageTest
 }
 
 class HomeViewController: SABaseViewController, UITableViewDelegate, UITableViewDataSource {
@@ -44,6 +45,7 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
         dataSouce.append([ROW_NAME_KEY : "名片识别", ROW_TYPE_KEY : ActionType.businessCardOcr])
         dataSouce.append([ROW_NAME_KEY : "行驶证识别", ROW_TYPE_KEY : ActionType.carLisenceOcr])
         dataSouce.append([ROW_NAME_KEY : "驾驶证识别", ROW_TYPE_KEY : ActionType.driverLisenceOcr])
+        dataSouce.append([ROW_NAME_KEY : "图片压缩测试", ROW_TYPE_KEY : ActionType.imageTest])
     }
     
     // MARK: action method
@@ -56,9 +58,9 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
     }
     
     func translateImage() {
-        translator.translate(image: UIImage.init(named: "translate_image1")!,
-                             source: TLanguage.English,
-                             target: TLanguage.Chinese) { (result, model) in
+        translator.translate(image: UIImage.init(named: "translate_image")!,
+                             source: TLanguage.Chinese,
+                             target: TLanguage.English) { (result, model) in
                                 Log("translate success: \(result.success)")
         }
     }
@@ -121,6 +123,9 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
             driverLisenceOcr(type: .carLisence)
         case .driverLisenceOcr:
             driverLisenceOcr(type: .driverLisence)
+        case .imageTest:
+            let controller = ImageTestViewController()
+            self.navigationController?.pushViewController(controller, animated: true)
         }
     }
 }
