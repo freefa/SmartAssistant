@@ -19,6 +19,7 @@ enum ActionType {
     case carLisenceOcr
     case driverLisenceOcr
     case numberPlate
+    case bankCard
     case imageTest
 }
 
@@ -47,6 +48,7 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
         dataSouce.append([ROW_NAME_KEY : "行驶证识别", ROW_TYPE_KEY : ActionType.carLisenceOcr])
         dataSouce.append([ROW_NAME_KEY : "驾驶证识别", ROW_TYPE_KEY : ActionType.driverLisenceOcr])
         dataSouce.append([ROW_NAME_KEY : "车牌号识别", ROW_TYPE_KEY : ActionType.numberPlate])
+        dataSouce.append([ROW_NAME_KEY : "银行卡识别", ROW_TYPE_KEY : ActionType.bankCard])
         dataSouce.append([ROW_NAME_KEY : "图片压缩测试", ROW_TYPE_KEY : ActionType.imageTest])
     }
     
@@ -98,6 +100,15 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
         }
     }
     
+    func bankCardOcr() {
+        ocr.bankCardOCR(image: UIImage.init(named: "bank_card")!) { (result, numberPlate) in
+            Log("bankCardOCR success: \(result.success)")
+            if !result.success {
+                Log(result.error!.description)
+            }
+        }
+    }
+    
     // MARK: UITableViewDelegate & dataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSouce.count
@@ -136,6 +147,8 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
             driverLisenceOcr(type: .driverLisence)
         case .numberPlate:
             numberPlateOcr()
+        case .bankCard:
+            bankCardOcr()
         case .imageTest:
             let controller = ImageTestViewController()
             self.navigationController?.pushViewController(controller, animated: true)

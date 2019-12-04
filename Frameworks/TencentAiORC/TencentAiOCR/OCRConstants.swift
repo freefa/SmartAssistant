@@ -31,3 +31,7 @@ let kPATH_DRIVER_LISENCE_OCR = "ocr/ocr_driverlicenseocr"
 
 // MARK: 车牌号
 let kPATH_NUMBER_PLATE_OCR = "ocr/ocr_plateocr"
+
+// MARK: 银行卡
+let kPATH_BANK_CARD_OCR = "ocr/ocr_creditcardocr"
+
