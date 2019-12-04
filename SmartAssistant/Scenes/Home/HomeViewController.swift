@@ -18,8 +18,9 @@ enum ActionType {
     case businessCardOcr
     case carLisenceOcr
     case driverLisenceOcr
-    case numberPlate
-    case bankCard
+    case numberPlateOcr
+    case bankCardOcr
+    case businessLicenseOcr
     case imageTest
 }
 
@@ -47,8 +48,9 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
         dataSouce.append([ROW_NAME_KEY : "名片识别", ROW_TYPE_KEY : ActionType.businessCardOcr])
         dataSouce.append([ROW_NAME_KEY : "行驶证识别", ROW_TYPE_KEY : ActionType.carLisenceOcr])
         dataSouce.append([ROW_NAME_KEY : "驾驶证识别", ROW_TYPE_KEY : ActionType.driverLisenceOcr])
-        dataSouce.append([ROW_NAME_KEY : "车牌号识别", ROW_TYPE_KEY : ActionType.numberPlate])
-        dataSouce.append([ROW_NAME_KEY : "银行卡识别", ROW_TYPE_KEY : ActionType.bankCard])
+        dataSouce.append([ROW_NAME_KEY : "车牌号识别", ROW_TYPE_KEY : ActionType.numberPlateOcr])
+        dataSouce.append([ROW_NAME_KEY : "银行卡识别", ROW_TYPE_KEY : ActionType.bankCardOcr])
+        dataSouce.append([ROW_NAME_KEY : "营业执照识别", ROW_TYPE_KEY : ActionType.businessLicenseOcr])
         dataSouce.append([ROW_NAME_KEY : "图片压缩测试", ROW_TYPE_KEY : ActionType.imageTest])
     }
     
@@ -101,8 +103,17 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
     }
     
     func bankCardOcr() {
-        ocr.bankCardOCR(image: UIImage.init(named: "bank_card")!) { (result, numberPlate) in
+        ocr.bankCardOCR(image: UIImage.init(named: "bank_card")!) { (result, bankCard) in
             Log("bankCardOCR success: \(result.success)")
+            if !result.success {
+                Log(result.error!.description)
+            }
+        }
+    }
+    
+    func businessLicenseOcr() {
+        ocr.businessLicenseOCR(image: UIImage.init(named: "business_license")!) { (result, businessLicense) in
+            Log("businessLicenseOCR success: \(result.success)")
             if !result.success {
                 Log(result.error!.description)
             }
@@ -145,10 +156,12 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
             driverLisenceOcr(type: .carLisence)
         case .driverLisenceOcr:
             driverLisenceOcr(type: .driverLisence)
-        case .numberPlate:
+        case .numberPlateOcr:
             numberPlateOcr()
-        case .bankCard:
+        case .bankCardOcr:
             bankCardOcr()
+        case .businessLicenseOcr:
+            businessLicenseOcr()
         case .imageTest:
             let controller = ImageTestViewController()
             self.navigationController?.pushViewController(controller, animated: true)

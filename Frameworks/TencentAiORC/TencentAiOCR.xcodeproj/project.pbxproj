@@ -18,6 +18,8 @@
 		95AC248E23979701001145AF /* NumberPlateOCRApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC248D23979701001145AF /* NumberPlateOCRApi.swift */; };
 		95AC249123979B59001145AF /* BankCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC249023979B59001145AF /* BankCard.swift */; };
 		95AC249323979B69001145AF /* BankCardOCRApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC249223979B69001145AF /* BankCardOCRApi.swift */; };
+		95AC24962397A201001145AF /* BusinessLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC24952397A201001145AF /* BusinessLicense.swift */; };
+		95AC24982397A212001145AF /* BusinessLicenseOCRApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC24972397A212001145AF /* BusinessLicenseOCRApi.swift */; };
 		95CDA2D423964DAD003142AD /* TencentAiOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDA2D323964DAD003142AD /* TencentAiOCR.swift */; };
 		95CDA2D723966A6D003142AD /* BusinessCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDA2D623966A6D003142AD /* BusinessCard.swift */; };
 		95CDA2D923966AA6003142AD /* BusinessCardOCRApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDA2D823966AA6003142AD /* BusinessCardOCRApi.swift */; };
@@ -51,6 +53,8 @@
 		95AC248D23979701001145AF /* NumberPlateOCRApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPlateOCRApi.swift; sourceTree = "<group>"; };
 		95AC249023979B59001145AF /* BankCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCard.swift; sourceTree = "<group>"; };
 		95AC249223979B69001145AF /* BankCardOCRApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCardOCRApi.swift; sourceTree = "<group>"; };
+		95AC24952397A201001145AF /* BusinessLicense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessLicense.swift; sourceTree = "<group>"; };
+		95AC24972397A212001145AF /* BusinessLicenseOCRApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessLicenseOCRApi.swift; sourceTree = "<group>"; };
 		95CDA2D323964DAD003142AD /* TencentAiOCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TencentAiOCR.swift; sourceTree = "<group>"; };
 		95CDA2D623966A6D003142AD /* BusinessCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCard.swift; sourceTree = "<group>"; };
 		95CDA2D823966AA6003142AD /* BusinessCardOCRApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCardOCRApi.swift; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 				95CDA2DC239678B7003142AD /* DriverLisence */,
 				95AC248A239795FA001145AF /* NumberPlate */,
 				95AC248F23979B3A001145AF /* BankCard */,
+				95AC24942397A1E0001145AF /* BusinessLicense */,
 				953576B3239124540014B2EB /* TencentAiOCR.h */,
 				953576B4239124540014B2EB /* Info.plist */,
 			);
@@ -157,6 +162,15 @@
 				95AC249223979B69001145AF /* BankCardOCRApi.swift */,
 			);
 			path = BankCard;
+			sourceTree = "<group>";
+		};
+		95AC24942397A1E0001145AF /* BusinessLicense */ = {
+			isa = PBXGroup;
+			children = (
+				95AC24952397A201001145AF /* BusinessLicense.swift */,
+				95AC24972397A212001145AF /* BusinessLicenseOCRApi.swift */,
+			);
+			path = BusinessLicense;
 			sourceTree = "<group>";
 		};
 		95CDA2D523966A47003142AD /* BusinessCard */ = {
@@ -297,9 +311,11 @@
 				95AC24892397918A001145AF /* CommonOCR.swift in Sources */,
 				95AC248C2397969D001145AF /* NumberPlate.swift in Sources */,
 				953576D0239126120014B2EB /* IDCardOCRApi.swift in Sources */,
+				95AC24982397A212001145AF /* BusinessLicenseOCRApi.swift in Sources */,
 				953576CE239125770014B2EB /* IDCard.swift in Sources */,
 				95CDA2D723966A6D003142AD /* BusinessCard.swift in Sources */,
 				95CDA2DE239678E2003142AD /* DriverLisence.swift in Sources */,
+				95AC24962397A201001145AF /* BusinessLicense.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

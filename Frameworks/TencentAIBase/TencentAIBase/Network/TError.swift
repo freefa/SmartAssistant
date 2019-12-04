@@ -29,6 +29,8 @@ public enum TErrorCode: Int {
     case success = 0
     /// qps超过限制
     case outOfQps = 9
+    /// 识别失败 "youtu handle failed"
+    case businessFailed = 30
     /// 参数非法,请检查请求参数是否符合要求
     case illegalParam = 4096
     /// 应用不存在,请检查app_id是否有效的应用标识（AppId）
