@@ -16,13 +16,42 @@ public let IMAGE_SIZE_MAX = 512
 public let IMAGE_MEMORY_SIZE: Float = 1
 /// 1MB的字节数
 public let BYTES_PER_MB: Float = 1 * 1024 * 1024
+public let BYTES_PER_PIXEL: CGFloat = 4
+public let BINARY_UNIT: CGFloat = 1024.0
 
 public extension UIImage {
     /// 压缩图片到接口支持的最大大小
-    func compressForBase64Encoding() -> UIImage {
-        let resized = self.compressToSize(maxSize: CGSize(width: IMAGE_SIZE_MAX, height: IMAGE_SIZE_MAX))
-        let compressed = resized.compressToMemery(memory: IMAGE_MEMORY_SIZE)
-        return compressed
+    func compressForBase64Encoding(memory: Float = IMAGE_MEMORY_SIZE) -> UIImage {
+        if self.shouldCompressSize(memory: memory) {
+            let size = self.sizeForMemory(memory)
+            let compressed = self.compressToSize(maxSize: size)
+            TLog.d("compressed final memory: \(compressed.size.width * compressed.size.height * BYTES_PER_PIXEL / BINARY_UNIT / BINARY_UNIT) MB")
+            return compressed
+        }
+        return self
+    }
+    
+    /// 计算图片占用的内存是否超过指定大小(适用于一个像素占4个字节的图片,如RGBA/ARGB等)
+    /// - Parameter memory: 指定内存大小(MB)
+    func shouldCompressSize(memory: Float) -> Bool {
+        let size = self.size.width * self.size.height * BYTES_PER_PIXEL / BINARY_UNIT / BINARY_UNIT
+        TLog.d("source image memory is: \(size) MB")
+        return Float(size) > memory
+    }
+    
+    /// 根据自身宽高比计算压缩到指定内存大小后的图片宽高
+    /// - Parameter memory: 指定内存大小(MB)
+    func sizeForMemory(_ memory: Float) -> CGSize {
+        TLog.d("source image size: {\(self.size.width), \(self.size.height)}")
+        TLog.d("source image memory: \(self.size.width * self.size.height * BYTES_PER_PIXEL / BINARY_UNIT / BINARY_UNIT) MB")
+        let baseMemory = Double(self.size.width * self.size.height * BYTES_PER_PIXEL / BINARY_UNIT / BINARY_UNIT) / Double(memory)
+        TLog.d("baseMemory : \(baseMemory)")
+        let scale = CGFloat(sqrt(ceil(baseMemory * 100.0) / 100.0))
+        TLog.d("scale: \(scale)")
+        let size = CGSize(width: floor(self.size.width / scale), height: floor(self.size.height / scale))
+        TLog.d("calculated image size: {\(size.width), \(size.height)}")
+        TLog.d("calculated memory: \(size.width * size.height * BYTES_PER_PIXEL / BINARY_UNIT / BINARY_UNIT) MB")
+        return size
     }
     
     /// 按照宽高比例压缩至指定尺寸
@@ -53,25 +82,6 @@ public extension UIImage {
         UIGraphicsEndImageContext()
         TLog.d("resized image: {\(resized.size.width), \(resized.size.height)}")
         return resized
-    }
-    
-    /// 压缩图片到指定内存大小(质量压缩,如果压缩比太高要先进行尺寸压缩再调用此方法)
-    /// - Parameter memory: 内存大小:MB
-    func compressToMemery(memory: Float) -> UIImage {
-        var quality: CGFloat = 1.0
-        let maxBytes = Int(memory * BYTES_PER_MB)
-        var data = self.jpegData(compressionQuality: quality)!
-        if data.count <= maxBytes {
-            TLog.d("image does not need to compress memory")
-            return self
-        }
-        
-        while data.count > maxBytes {
-            quality -= 0.1
-            data = self.jpegData(compressionQuality: quality)!
-        }
-        TLog.d("compressed memory to: \(Float(data.count) / 1024.0 / 1024.0) MB")
-        return UIImage(data: data)!
     }
     
     func toBase64() -> String {
