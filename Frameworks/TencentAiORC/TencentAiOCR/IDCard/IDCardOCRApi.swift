@@ -8,15 +8,6 @@
 
 import Foundation
 
-let TPATH_IDCARD_ORC = "ocr/ocr_idcardocr"
-
-public enum IDCardType: Int {
-    /// 正面
-    case front
-    /// 反面
-    case back
-}
-
 open class IDCardOCRApi: TencentAiApi {
     /// 身份证图片data
     public var image: UIImage?

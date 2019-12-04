@@ -8,8 +8,6 @@
 
 import Foundation
 
-let kPATH_DRIVER_LISENCE_OCR = "ocr/ocr_driverlicenseocr"
-
 open class DriverLisenceOCRApi: TencentAiApi {
     var image: UIImage?
     var type: DriverLisenceType?
