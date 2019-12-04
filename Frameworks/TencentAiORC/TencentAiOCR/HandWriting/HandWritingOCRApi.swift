@@ -1,5 +1,5 @@
 //
-//  NumberPlateOCRApi.swift
+//  HandWritingOCRApi.swift
 //  TencentAiOCR
 //
 //  Created by Louis.B on 2019/12/4.
@@ -8,12 +8,11 @@
 
 import Foundation
 
-open class NumberPlateOCRApi: GeneralOCRApi {
-    
+open class HandWritingOCRApi: GeneralOCRApi {
     var imageUrl: String?
     
     open override func urlPath() -> String {
-        return kPATH_NUMBER_PLATE_OCR
+        return kPATH_HAND_WRITING_OCR
     }
     
     open override func businessParams() -> Dictionary<String, Paramable> {

@@ -22,6 +22,7 @@ enum ActionType {
     case numberPlateOcr
     case bankCardOcr
     case businessLicenseOcr
+    case handWritingOcr
     case imageTest
 }
 
@@ -52,6 +53,7 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
         dataSouce.append([ROW_NAME_KEY : "车牌号识别", ROW_TYPE_KEY : ActionType.numberPlateOcr])
         dataSouce.append([ROW_NAME_KEY : "银行卡识别", ROW_TYPE_KEY : ActionType.bankCardOcr])
         dataSouce.append([ROW_NAME_KEY : "营业执照识别", ROW_TYPE_KEY : ActionType.businessLicenseOcr])
+        dataSouce.append([ROW_NAME_KEY : "手写体文字识别", ROW_TYPE_KEY : ActionType.handWritingOcr])
         dataSouce.append([ROW_NAME_KEY : "通用文字识别", ROW_TYPE_KEY : ActionType.generalOcr])
         dataSouce.append([ROW_NAME_KEY : "图片压缩测试", ROW_TYPE_KEY : ActionType.imageTest])
     }
@@ -122,6 +124,15 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
         }
     }
     
+    func handWritingOcr() {
+        ocr.handWritingOCR(image: UIImage.init(named: "hand_writing")!) { (result, handWriting) in
+            Log("handWritingOCR success: \(result.success)")
+            if !result.success {
+                Log(result.error!.description)
+            }
+        }
+    }
+    
     func generalOcr() {
         ocr.generalOCR(image: UIImage.init(named: "translate_image")!) { (result, GeneralOCR) in
             Log("generalOCR success: \(result.success)")
@@ -173,6 +184,8 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
             bankCardOcr()
         case .businessLicenseOcr:
             businessLicenseOcr()
+        case .handWritingOcr:
+            handWritingOcr()
         case .generalOcr:
             generalOcr()
         case .imageTest:

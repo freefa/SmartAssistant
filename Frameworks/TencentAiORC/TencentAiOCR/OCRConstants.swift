@@ -10,6 +10,7 @@ import Foundation
 
 // MARK: 图片参数key
 public let kIMG_PARAM = "image"
+public let kIMG_URL = "image_url"
 public let kCOMMON_TYPE = "type"
 
 // MARK: 身份证
@@ -41,4 +42,6 @@ let kPATH_BANK_CARD_OCR = "ocr/ocr_creditcardocr"
 // MARK: 营业执照OCR
 let kPATH_BUSINESS_LICENSE_OCR = "ocr/ocr_bizlicenseocr"
 
+// MARK: 手写体OCR
+let kPATH_HAND_WRITING_OCR = "ocr/ocr_handwritingocr"
 
