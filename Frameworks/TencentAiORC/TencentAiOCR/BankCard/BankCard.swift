@@ -8,4 +8,4 @@
 
 import Foundation
 
-open class BankCard: CommonOCR {}
+open class BankCard: GeneralOCR {}

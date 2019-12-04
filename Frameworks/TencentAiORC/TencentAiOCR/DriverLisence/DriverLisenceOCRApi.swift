@@ -8,8 +8,7 @@
 
 import Foundation
 
-open class DriverLisenceOCRApi: TencentAiApi {
-    var image: UIImage?
+open class DriverLisenceOCRApi: GeneralOCRApi {
     var type: DriverLisenceType?
     
     open override func urlPath() -> String {
@@ -17,8 +16,8 @@ open class DriverLisenceOCRApi: TencentAiApi {
     }
     
     open override func businessParams() -> Dictionary<String, Paramable> {
-        let compressedImage = image!.compressForBase64Encoding()
-        return [kIMG_PARAM : compressedImage.toBase64(),
-                kCOMMON_TYPE : type!.rawValue]
+        var param = super.businessParams()
+        param[kCOMMON_TYPE] = type!.rawValue
+        return param
     }
 }

@@ -15,4 +15,4 @@ public enum DriverLisenceType: Int {
     case driverLisence
 }
 
-open class DriverLisence: CommonOCR {}
+open class DriverLisence: GeneralOCR {}

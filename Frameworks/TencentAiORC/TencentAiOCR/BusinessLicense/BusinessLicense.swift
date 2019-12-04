@@ -8,4 +8,4 @@
 
 import Foundation
 
-open class BusinessLicense: CommonOCR {}
+open class BusinessLicense: GeneralOCR {}

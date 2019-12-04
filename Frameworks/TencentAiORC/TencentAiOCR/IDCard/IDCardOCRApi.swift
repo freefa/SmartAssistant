@@ -8,9 +8,7 @@
 
 import Foundation
 
-open class IDCardOCRApi: TencentAiApi {
-    /// 身份证图片data
-    public var image: UIImage?
+open class IDCardOCRApi: GeneralOCRApi {
     /// 正反面
     public var type: IDCardType?
     
@@ -20,8 +18,8 @@ open class IDCardOCRApi: TencentAiApi {
     }
     
     public override func businessParams() -> Dictionary<String, Paramable> {
-        let compressed = image!.compressForBase64Encoding()
-        return [kIMG_PARAM : compressed.toBase64(),
-                kIMG_ID_CARD_TYPE : type!.rawValue]
+        var param = super.businessParams()
+        param[kIMG_ID_CARD_TYPE] = type!.rawValue
+        return param
     }
 }

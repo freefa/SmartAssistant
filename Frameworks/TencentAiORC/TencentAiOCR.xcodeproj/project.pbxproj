@@ -13,13 +13,14 @@
 		953576CE239125770014B2EB /* IDCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953576CD239125770014B2EB /* IDCard.swift */; };
 		953576D0239126120014B2EB /* IDCardOCRApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953576CF239126120014B2EB /* IDCardOCRApi.swift */; };
 		9579F1E7239198E8002763DC /* TencentAiBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9579F1E6239198E8002763DC /* TencentAiBase.framework */; };
-		95AC24892397918A001145AF /* CommonOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC24882397918A001145AF /* CommonOCR.swift */; };
+		95AC24892397918A001145AF /* GeneralOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC24882397918A001145AF /* GeneralOCR.swift */; };
 		95AC248C2397969D001145AF /* NumberPlate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC248B2397969D001145AF /* NumberPlate.swift */; };
 		95AC248E23979701001145AF /* NumberPlateOCRApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC248D23979701001145AF /* NumberPlateOCRApi.swift */; };
 		95AC249123979B59001145AF /* BankCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC249023979B59001145AF /* BankCard.swift */; };
 		95AC249323979B69001145AF /* BankCardOCRApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC249223979B69001145AF /* BankCardOCRApi.swift */; };
 		95AC24962397A201001145AF /* BusinessLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC24952397A201001145AF /* BusinessLicense.swift */; };
 		95AC24982397A212001145AF /* BusinessLicenseOCRApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC24972397A212001145AF /* BusinessLicenseOCRApi.swift */; };
+		95AC249B2397A79B001145AF /* GeneralOCRApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC249A2397A79B001145AF /* GeneralOCRApi.swift */; };
 		95CDA2D423964DAD003142AD /* TencentAiOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDA2D323964DAD003142AD /* TencentAiOCR.swift */; };
 		95CDA2D723966A6D003142AD /* BusinessCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDA2D623966A6D003142AD /* BusinessCard.swift */; };
 		95CDA2D923966AA6003142AD /* BusinessCardOCRApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDA2D823966AA6003142AD /* BusinessCardOCRApi.swift */; };
@@ -48,13 +49,14 @@
 		953576CD239125770014B2EB /* IDCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDCard.swift; sourceTree = "<group>"; };
 		953576CF239126120014B2EB /* IDCardOCRApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDCardOCRApi.swift; sourceTree = "<group>"; };
 		9579F1E6239198E8002763DC /* TencentAiBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TencentAiBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		95AC24882397918A001145AF /* CommonOCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonOCR.swift; sourceTree = "<group>"; };
+		95AC24882397918A001145AF /* GeneralOCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralOCR.swift; sourceTree = "<group>"; };
 		95AC248B2397969D001145AF /* NumberPlate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPlate.swift; sourceTree = "<group>"; };
 		95AC248D23979701001145AF /* NumberPlateOCRApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPlateOCRApi.swift; sourceTree = "<group>"; };
 		95AC249023979B59001145AF /* BankCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCard.swift; sourceTree = "<group>"; };
 		95AC249223979B69001145AF /* BankCardOCRApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCardOCRApi.swift; sourceTree = "<group>"; };
 		95AC24952397A201001145AF /* BusinessLicense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessLicense.swift; sourceTree = "<group>"; };
 		95AC24972397A212001145AF /* BusinessLicenseOCRApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessLicenseOCRApi.swift; sourceTree = "<group>"; };
+		95AC249A2397A79B001145AF /* GeneralOCRApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralOCRApi.swift; sourceTree = "<group>"; };
 		95CDA2D323964DAD003142AD /* TencentAiOCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TencentAiOCR.swift; sourceTree = "<group>"; };
 		95CDA2D623966A6D003142AD /* BusinessCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCard.swift; sourceTree = "<group>"; };
 		95CDA2D823966AA6003142AD /* BusinessCardOCRApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCardOCRApi.swift; sourceTree = "<group>"; };
@@ -106,8 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				95CDA2D323964DAD003142AD /* TencentAiOCR.swift */,
-				95AC24882397918A001145AF /* CommonOCR.swift */,
 				95CDA2DA23966CE6003142AD /* OCRConstants.swift */,
+				95AC24992397A770001145AF /* Common */,
 				953576CA239124760014B2EB /* IDCard */,
 				95CDA2D523966A47003142AD /* BusinessCard */,
 				95CDA2DC239678B7003142AD /* DriverLisence */,
@@ -171,6 +173,15 @@
 				95AC24972397A212001145AF /* BusinessLicenseOCRApi.swift */,
 			);
 			path = BusinessLicense;
+			sourceTree = "<group>";
+		};
+		95AC24992397A770001145AF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				95AC24882397918A001145AF /* GeneralOCR.swift */,
+				95AC249A2397A79B001145AF /* GeneralOCRApi.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		95CDA2D523966A47003142AD /* BusinessCard */ = {
@@ -305,10 +316,11 @@
 				95CDA2E0239678FB003142AD /* DriverLisenceOCRApi.swift in Sources */,
 				95CDA2D423964DAD003142AD /* TencentAiOCR.swift in Sources */,
 				95AC249123979B59001145AF /* BankCard.swift in Sources */,
+				95AC249B2397A79B001145AF /* GeneralOCRApi.swift in Sources */,
 				95AC248E23979701001145AF /* NumberPlateOCRApi.swift in Sources */,
 				95AC249323979B69001145AF /* BankCardOCRApi.swift in Sources */,
 				95CDA2DB23966CE6003142AD /* OCRConstants.swift in Sources */,
-				95AC24892397918A001145AF /* CommonOCR.swift in Sources */,
+				95AC24892397918A001145AF /* GeneralOCR.swift in Sources */,
 				95AC248C2397969D001145AF /* NumberPlate.swift in Sources */,
 				953576D0239126120014B2EB /* IDCardOCRApi.swift in Sources */,
 				95AC24982397A212001145AF /* BusinessLicenseOCRApi.swift in Sources */,

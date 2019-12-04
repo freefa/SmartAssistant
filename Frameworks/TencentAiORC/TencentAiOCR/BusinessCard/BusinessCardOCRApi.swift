@@ -8,16 +8,10 @@
 
 import Foundation
 
-open class BusinessCardOCRApi: TencentAiApi {
-    
-    var image: UIImage?
+open class BusinessCardOCRApi: GeneralOCRApi {
     
     open override func urlPath() -> String {
         return TPATH_BUSINESS_CARD_OCR
     }
     
-    open override func businessParams() -> Dictionary<String, Paramable> {
-        let compressed = image!.compressForBase64Encoding()
-        return [kIMG_PARAM : compressed.toBase64()]
-    }
 }

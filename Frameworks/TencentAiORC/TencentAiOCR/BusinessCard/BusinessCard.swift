@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class BusinessCard: CommonOCR {
+open class BusinessCard: GeneralOCR {
     var angle: String?
     
     private enum CodingKeys: String, CodingKey {

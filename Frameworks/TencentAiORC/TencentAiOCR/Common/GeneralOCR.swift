@@ -1,5 +1,5 @@
 //
-//  CommonOCR.swift
+//  GeneralOCR.swift
 //  TencentAiOCR
 //
 //  Created by Louis.B on 2019/12/4.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class CommonOCR: TBaseModel {
+open class GeneralOCR: TBaseModel {
     var itemList: [OCRItem]?
     
     private enum CodingKeys: String, CodingKey {

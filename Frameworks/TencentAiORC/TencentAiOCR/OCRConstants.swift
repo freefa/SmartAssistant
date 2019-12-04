@@ -23,19 +23,22 @@ public enum IDCardType: Int {
     case back
 }
 
-// MARK: 名片
+// MARK: 通用OCR
+let KPATH_GENERAL_OCR = "ocr/ocr_generalocr"
+
+// MARK: 名片OCR
 let TPATH_BUSINESS_CARD_OCR = "ocr/ocr_bcocr"
 
-// MARK: 行驶证/驾驶证
+// MARK: 行驶证/驾驶证OCR
 let kPATH_DRIVER_LISENCE_OCR = "ocr/ocr_driverlicenseocr"
 
-// MARK: 车牌号
+// MARK: 车牌号OCR
 let kPATH_NUMBER_PLATE_OCR = "ocr/ocr_plateocr"
 
-// MARK: 银行卡
+// MARK: 银行卡OCR
 let kPATH_BANK_CARD_OCR = "ocr/ocr_creditcardocr"
 
-// MARK: 营业执照
+// MARK: 营业执照OCR
 let kPATH_BUSINESS_LICENSE_OCR = "ocr/ocr_bizlicenseocr"
 
 

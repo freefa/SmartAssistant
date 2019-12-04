@@ -8,4 +8,4 @@
 
 import Foundation
 
-open class NumberPlate: CommonOCR {}
+open class NumberPlate: GeneralOCR {}
