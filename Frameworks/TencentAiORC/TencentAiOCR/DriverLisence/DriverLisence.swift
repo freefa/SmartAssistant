@@ -46,8 +46,8 @@ open class DriverLisenceItem: TBaseModel {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         name = try container.decode(String.self, forKey: .name)
         value = try container.decode(String.self, forKey: .value)
-        position = try container.decode([[String : Int]].self, forKey: .name)
-        confidence = try container.decode(Float.self, forKey: .name)
+        position = try container.decode([[String : Int]].self, forKey: .position)
+        confidence = try container.decode(Float.self, forKey: .confidence)
         try super.init(from: decoder)
     }
 }

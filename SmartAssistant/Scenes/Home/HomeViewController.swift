@@ -11,11 +11,12 @@ import UIKit
 fileprivate let ROW_NAME_KEY = "name"
 fileprivate let ROW_TYPE_KEY = "type"
 
-fileprivate enum ActionType {
+enum ActionType {
     case textTranslate
     case imgTranslate
     case idCardOcr
     case businessCardOcr
+    case carLisenceOcr
     case driverLisenceOcr
 }
 
@@ -41,7 +42,8 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
         dataSouce.append([ROW_NAME_KEY : "图片翻译", ROW_TYPE_KEY : ActionType.imgTranslate])
         dataSouce.append([ROW_NAME_KEY : "身份证识别", ROW_TYPE_KEY : ActionType.idCardOcr])
         dataSouce.append([ROW_NAME_KEY : "名片识别", ROW_TYPE_KEY : ActionType.businessCardOcr])
-        dataSouce.append([ROW_NAME_KEY : "行驾驶证识别", ROW_TYPE_KEY : ActionType.driverLisenceOcr])
+        dataSouce.append([ROW_NAME_KEY : "行驶证识别", ROW_TYPE_KEY : ActionType.carLisenceOcr])
+        dataSouce.append([ROW_NAME_KEY : "驾驶证识别", ROW_TYPE_KEY : ActionType.driverLisenceOcr])
     }
     
     // MARK: action method
@@ -73,8 +75,9 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
         }
     }
     
-    func driverLisenceOcr() {
-        ocr.driverLisenceOCR(image: UIImage.init(named: "car_lisence")!, type: .driverLisence) { (result, driverLisence) in
+    func driverLisenceOcr(type: DriverLisenceType) {
+        let imgName = type == .carLisence ? "car_lisence" : "driver_lisence"
+        ocr.driverLisenceOCR(image: UIImage.init(named: imgName)!, type: type) { (result, driverLisence) in
             Log("driverLisenceOCR success: \(result.success)")
             if !result.success {
                 Log(result.error!.description)
@@ -114,8 +117,10 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
             testIdCardOCR()
         case .businessCardOcr:
             businessCardOcr()
+        case .carLisenceOcr:
+            driverLisenceOcr(type: .carLisence)
         case .driverLisenceOcr:
-            driverLisenceOcr()
+            driverLisenceOcr(type: .driverLisence)
         }
     }
 }

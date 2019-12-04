@@ -23,6 +23,8 @@ public struct TError {
 public enum TErrorCode: Int {
     /// system error code < 0
     
+    /// system busy, please try again later
+    case systemBusy = -30
     /// business success
     case success
     /// qps超过限制

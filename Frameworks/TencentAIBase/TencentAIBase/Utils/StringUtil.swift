@@ -21,7 +21,6 @@ public extension String {
                 result += String(format: "%02X", buffer[i])
             }
         }
-        TLog.d("random String:\(result)")
         return result
     }
     

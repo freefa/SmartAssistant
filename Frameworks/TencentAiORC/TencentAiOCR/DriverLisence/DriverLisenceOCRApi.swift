@@ -19,7 +19,8 @@ open class DriverLisenceOCRApi: TencentAiApi {
     }
     
     open override func businessParams() -> Dictionary<String, Paramable> {
-        return [kIMG_PARAM : image!.toBase64(),
+        let compressedImage = image!.compressForBase64Encoding()
+        return [kIMG_PARAM : compressedImage.toBase64(),
                 kCOMMON_TYPE : type!.rawValue]
     }
 }
