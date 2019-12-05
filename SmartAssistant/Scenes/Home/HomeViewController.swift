@@ -87,7 +87,7 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
         }
     }
     
-    func driverLisenceOcr(type: DriverLisenceType) {
+    func driverLisenceOcr(type: DriverLicenseType) {
         let imgName = type == .carLisence ? "car_lisence" : "driver_lisence"
         ocr.driverLisenceOCR(image: UIImage.init(named: imgName)!, type: type) { (result, driverLisence) in
             Log("driverLisenceOCR success: \(result.success)")

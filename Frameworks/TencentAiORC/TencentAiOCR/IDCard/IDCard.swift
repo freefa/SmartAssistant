@@ -8,7 +8,14 @@
 
 import Foundation
 
-open class IDCard: TBaseModel {
+public enum IDCardType: Int {
+    /// 正面
+    case front
+    /// 反面
+    case back
+}
+
+open class IDCard: TencentAiBaseModel {
     public var name: String?
     public var gender: String?
     public var nation: String?

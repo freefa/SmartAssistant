@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class TextTranslateResult: TBaseModel {
+open class TextTranslateResult: TencentAiBaseModel {
     /// 原字符串
     public var source: String?
     /// 翻译结果

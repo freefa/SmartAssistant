@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class ImageTranslateResult: TBaseModel {
+open class ImageTranslateResult: TencentAiBaseModel {
     public var results: [ImageTranslateItem]?
     
     private enum KeysMap: String, CodingKey {
@@ -22,7 +22,7 @@ open class ImageTranslateResult: TBaseModel {
     }
 }
 
-open class ImageTranslateItem: TBaseModel {
+open class ImageTranslateItem: TencentAiBaseModel {
     public var source: String?
     
     public var target: String?

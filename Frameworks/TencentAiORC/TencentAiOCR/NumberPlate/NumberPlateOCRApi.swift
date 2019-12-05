@@ -18,7 +18,7 @@ open class NumberPlateOCRApi: GeneralOCRApi {
     
     open override func businessParams() -> Dictionary<String, Paramable> {
         if let url = imageUrl {
-            return [kIMG_URL : url]
+            return [kTENCENT_AI_IMAGE_URL : url]
         }
         return super.businessParams()
     }

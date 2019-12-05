@@ -27,8 +27,8 @@
 		95CDA2D723966A6D003142AD /* BusinessCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDA2D623966A6D003142AD /* BusinessCard.swift */; };
 		95CDA2D923966AA6003142AD /* BusinessCardOCRApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDA2D823966AA6003142AD /* BusinessCardOCRApi.swift */; };
 		95CDA2DB23966CE6003142AD /* OCRConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDA2DA23966CE6003142AD /* OCRConstants.swift */; };
-		95CDA2DE239678E2003142AD /* DriverLisence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDA2DD239678E2003142AD /* DriverLisence.swift */; };
-		95CDA2E0239678FB003142AD /* DriverLisenceOCRApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDA2DF239678FB003142AD /* DriverLisenceOCRApi.swift */; };
+		95CDA2DE239678E2003142AD /* DriverLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDA2DD239678E2003142AD /* DriverLicense.swift */; };
+		95CDA2E0239678FB003142AD /* DriverLicenseOCRApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDA2DF239678FB003142AD /* DriverLicenseOCRApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,8 +65,8 @@
 		95CDA2D623966A6D003142AD /* BusinessCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCard.swift; sourceTree = "<group>"; };
 		95CDA2D823966AA6003142AD /* BusinessCardOCRApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCardOCRApi.swift; sourceTree = "<group>"; };
 		95CDA2DA23966CE6003142AD /* OCRConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRConstants.swift; sourceTree = "<group>"; };
-		95CDA2DD239678E2003142AD /* DriverLisence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverLisence.swift; sourceTree = "<group>"; };
-		95CDA2DF239678FB003142AD /* DriverLisenceOCRApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverLisenceOCRApi.swift; sourceTree = "<group>"; };
+		95CDA2DD239678E2003142AD /* DriverLicense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverLicense.swift; sourceTree = "<group>"; };
+		95CDA2DF239678FB003142AD /* DriverLicenseOCRApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverLicenseOCRApi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +116,7 @@
 				95AC24992397A770001145AF /* Common */,
 				953576CA239124760014B2EB /* IDCard */,
 				95CDA2D523966A47003142AD /* BusinessCard */,
-				95CDA2DC239678B7003142AD /* DriverLisence */,
+				95CDA2DC239678B7003142AD /* DriverLicense */,
 				95AC248A239795FA001145AF /* NumberPlate */,
 				95AC248F23979B3A001145AF /* BankCard */,
 				95AC24942397A1E0001145AF /* BusinessLicense */,
@@ -207,13 +207,13 @@
 			path = BusinessCard;
 			sourceTree = "<group>";
 		};
-		95CDA2DC239678B7003142AD /* DriverLisence */ = {
+		95CDA2DC239678B7003142AD /* DriverLicense */ = {
 			isa = PBXGroup;
 			children = (
-				95CDA2DD239678E2003142AD /* DriverLisence.swift */,
-				95CDA2DF239678FB003142AD /* DriverLisenceOCRApi.swift */,
+				95CDA2DD239678E2003142AD /* DriverLicense.swift */,
+				95CDA2DF239678FB003142AD /* DriverLicenseOCRApi.swift */,
 			);
-			path = DriverLisence;
+			path = DriverLicense;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,7 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95CDA2D923966AA6003142AD /* BusinessCardOCRApi.swift in Sources */,
-				95CDA2E0239678FB003142AD /* DriverLisenceOCRApi.swift in Sources */,
+				95CDA2E0239678FB003142AD /* DriverLicenseOCRApi.swift in Sources */,
 				95CDA2D423964DAD003142AD /* TencentAiOCR.swift in Sources */,
 				95AC249123979B59001145AF /* BankCard.swift in Sources */,
 				95AC249B2397A79B001145AF /* GeneralOCRApi.swift in Sources */,
@@ -342,7 +342,7 @@
 				95AC24A02397AFE9001145AF /* HandWritingOCRApi.swift in Sources */,
 				953576CE239125770014B2EB /* IDCard.swift in Sources */,
 				95CDA2D723966A6D003142AD /* BusinessCard.swift in Sources */,
-				95CDA2DE239678E2003142AD /* DriverLisence.swift in Sources */,
+				95CDA2DE239678E2003142AD /* DriverLicense.swift in Sources */,
 				95AC24962397A201001145AF /* BusinessLicense.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

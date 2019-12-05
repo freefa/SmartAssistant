@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class GeneralOCR: TBaseModel {
+open class GeneralOCR: TencentAiBaseModel {
     var itemList: [OCRItem]?
     
     private enum CodingKeys: String, CodingKey {
@@ -23,7 +23,7 @@ open class GeneralOCR: TBaseModel {
     }
 }
 
-open class OCRItem: TBaseModel {
+open class OCRItem: TencentAiBaseModel {
     var name: String?
     var value: String?
     var position: [[String : Int]]?

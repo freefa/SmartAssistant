@@ -1,5 +1,5 @@
 //
-//  DriverLisenceOCRApi.swift
+//  DriverLicenseOCRApi.swift
 //  TencentAiOCR
 //
 //  Created by Louis.B on 2019/12/3.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-open class DriverLisenceOCRApi: GeneralOCRApi {
-    var type: DriverLisenceType?
+open class DriverLicenseOCRApi: GeneralOCRApi {
+    var type: DriverLicenseType?
     
     open override func urlPath() -> String {
         return kPATH_DRIVER_LISENCE_OCR
@@ -17,7 +17,7 @@ open class DriverLisenceOCRApi: GeneralOCRApi {
     
     open override func businessParams() -> Dictionary<String, Paramable> {
         var param = super.businessParams()
-        param[kCOMMON_TYPE] = type!.rawValue
+        param[kTENCENT_AI_TYPE] = type!.rawValue
         return param
     }
 }

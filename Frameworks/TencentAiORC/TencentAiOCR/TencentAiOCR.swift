@@ -21,23 +21,8 @@ open class TencentAiOCR: TBaseManager {
                 callback((false, rspError), nil)
                 return
             }
-            
-            let dict = try? JSONSerialization .jsonObject(with: data!, options: .allowFragments)
-            if let info = dict as? Dictionary<String, Any> {
-                if let code = info[kRESP_CODE] as? Int, code == TErrorCode.success.rawValue {
-                    let resultInfo = info[kRESP_DATA] as! Dictionary<String, Any>
-                    let resultData = try! JSONSerialization.data(withJSONObject: resultInfo, options: .fragmentsAllowed)
-                    do {
-                        let model = try JSONDecoder().decode(GeneralOCR.self, from: resultData)
-                        callback((true, rspError), model)
-                    } catch {
-                        TLog.d("decode json to model error: \(error.localizedDescription)")
-                        callback((false, rspError), nil)
-                    }
-                } else {
-                    callback((false, rspError), nil)
-                }
-            }
+            let parseResult = GeneralOCR.decodeFrom(data: data!)
+            callback((parseResult.success, rspError), parseResult.model)
         }
     }
     
@@ -51,23 +36,8 @@ open class TencentAiOCR: TBaseManager {
                 callback((false, rspError), nil)
                 return
             }
-            
-            let dict = try? JSONSerialization .jsonObject(with: data!, options: .allowFragments)
-            if let info = dict as? Dictionary<String, Any> {
-                if let code = info[kRESP_CODE] as? Int, code == TErrorCode.success.rawValue {
-                    let resultInfo = info[kRESP_DATA] as! Dictionary<String, Any>
-                    let resultData = try! JSONSerialization.data(withJSONObject: resultInfo, options: .fragmentsAllowed)
-                    do {
-                        let model = try JSONDecoder().decode(IDCard.self, from: resultData)
-                        callback((true, rspError), model)
-                    } catch {
-                        TLog.d("decode json to model error: \(error.localizedDescription)")
-                        callback((false, rspError), nil)
-                    }
-                } else {
-                    callback((false, rspError), nil)
-                }
-            }
+            let parseResult = IDCard.decodeFrom(data: data!)
+            callback((parseResult.success, rspError), parseResult.model)
         }
     }
     
@@ -80,28 +50,13 @@ open class TencentAiOCR: TBaseManager {
                 callback((false, rspError), nil)
                 return
             }
-            
-            let dict = try? JSONSerialization .jsonObject(with: data!, options: .allowFragments)
-            if let info = dict as? Dictionary<String, Any> {
-                if let code = info[kRESP_CODE] as? Int, code == TErrorCode.success.rawValue {
-                    let resultInfo = info[kRESP_DATA] as! Dictionary<String, Any>
-                    let resultData = try! JSONSerialization.data(withJSONObject: resultInfo, options: .fragmentsAllowed)
-                    do {
-                        let model = try JSONDecoder().decode(BusinessCard.self, from: resultData)
-                        callback((true, rspError), model)
-                    } catch {
-                        TLog.d("decode json to model error: \(error.localizedDescription)")
-                        callback((false, rspError), nil)
-                    }
-                } else {
-                    callback((false, rspError), nil)
-                }
-            }
+            let parseResult = BusinessCard.decodeFrom(data: data!)
+            callback((parseResult.success, rspError), parseResult.model)
         }
     }
     
-    public func driverLisenceOCR(image: UIImage, type: DriverLisenceType, callback: @escaping (TResult, DriverLisence?) -> ()) {
-        let api = DriverLisenceOCRApi()
+    public func driverLisenceOCR(image: UIImage, type: DriverLicenseType, callback: @escaping (TResult, DriverLicense?) -> ()) {
+        let api = DriverLicenseOCRApi()
         api.image = image
         api.type = type
         TSessionManager.default.request(api: api) { (data, rspError) in
@@ -110,23 +65,8 @@ open class TencentAiOCR: TBaseManager {
                 callback((false, rspError), nil)
                 return
             }
-            
-            let dict = try? JSONSerialization .jsonObject(with: data!, options: .allowFragments)
-            if let info = dict as? Dictionary<String, Any> {
-                if let code = info[kRESP_CODE] as? Int, code == TErrorCode.success.rawValue {
-                    let resultInfo = info[kRESP_DATA] as! Dictionary<String, Any>
-                    let resultData = try! JSONSerialization.data(withJSONObject: resultInfo, options: .fragmentsAllowed)
-                    do {
-                        let model = try JSONDecoder().decode(DriverLisence.self, from: resultData)
-                        callback((true, rspError), model)
-                    } catch {
-                        TLog.d("decode json to model error: \(error.localizedDescription)")
-                        callback((false, rspError), nil)
-                    }
-                } else {
-                    callback((false, rspError), nil)
-                }
-            }
+            let parseResult = DriverLicense.decodeFrom(data: data!)
+            callback((parseResult.success, rspError), parseResult.model)
         }
     }
     
@@ -139,23 +79,8 @@ open class TencentAiOCR: TBaseManager {
                 callback((false, rspError), nil)
                 return
             }
-            
-            let dict = try? JSONSerialization .jsonObject(with: data!, options: .allowFragments)
-            if let info = dict as? Dictionary<String, Any> {
-                if let code = info[kRESP_CODE] as? Int, code == TErrorCode.success.rawValue {
-                    let resultInfo = info[kRESP_DATA] as! Dictionary<String, Any>
-                    let resultData = try! JSONSerialization.data(withJSONObject: resultInfo, options: .fragmentsAllowed)
-                    do {
-                        let model = try JSONDecoder().decode(NumberPlate.self, from: resultData)
-                        callback((true, rspError), model)
-                    } catch {
-                        TLog.d("decode json to model error: \(error.localizedDescription)")
-                        callback((false, rspError), nil)
-                    }
-                } else {
-                    callback((false, rspError), nil)
-                }
-            }
+            let parseResult = NumberPlate.decodeFrom(data: data!)
+            callback((parseResult.success, rspError), parseResult.model)
         }
     }
     
@@ -168,23 +93,8 @@ open class TencentAiOCR: TBaseManager {
                 callback((false, rspError), nil)
                 return
             }
-            
-            let dict = try? JSONSerialization .jsonObject(with: data!, options: .allowFragments)
-            if let info = dict as? Dictionary<String, Any> {
-                if let code = info[kRESP_CODE] as? Int, code == TErrorCode.success.rawValue {
-                    let resultInfo = info[kRESP_DATA] as! Dictionary<String, Any>
-                    let resultData = try! JSONSerialization.data(withJSONObject: resultInfo, options: .fragmentsAllowed)
-                    do {
-                        let model = try JSONDecoder().decode(BankCard.self, from: resultData)
-                        callback((true, rspError), model)
-                    } catch {
-                        TLog.d("decode json to model error: \(error.localizedDescription)")
-                        callback((false, rspError), nil)
-                    }
-                } else {
-                    callback((false, rspError), nil)
-                }
-            }
+            let parseResult = BankCard.decodeFrom(data: data!)
+            callback((parseResult.success, rspError), parseResult.model)
         }
     }
     
@@ -193,27 +103,12 @@ open class TencentAiOCR: TBaseManager {
         api.image = image
         TSessionManager.default.request(api: api) { (data, rspError) in
             guard rspError == nil else {
-                TLog.d("driverLisenceOCR failed: \(rspError!.description)")
+                TLog.d("businessLicenseOCR failed: \(rspError!.description)")
                 callback((false, rspError), nil)
                 return
             }
-            
-            let dict = try? JSONSerialization .jsonObject(with: data!, options: .allowFragments)
-            if let info = dict as? Dictionary<String, Any> {
-                if let code = info[kRESP_CODE] as? Int, code == TErrorCode.success.rawValue {
-                    let resultInfo = info[kRESP_DATA] as! Dictionary<String, Any>
-                    let resultData = try! JSONSerialization.data(withJSONObject: resultInfo, options: .fragmentsAllowed)
-                    do {
-                        let model = try JSONDecoder().decode(BusinessLicense.self, from: resultData)
-                        callback((true, rspError), model)
-                    } catch {
-                        TLog.d("decode json to model error: \(error.localizedDescription)")
-                        callback((false, rspError), nil)
-                    }
-                } else {
-                    callback((false, rspError), nil)
-                }
-            }
+            let parseResult = BusinessLicense.decodeFrom(data: data!)
+            callback((parseResult.success, rspError), parseResult.model)
         }
     }
     
@@ -226,23 +121,8 @@ open class TencentAiOCR: TBaseManager {
                 callback((false, rspError), nil)
                 return
             }
-            
-            let dict = try? JSONSerialization .jsonObject(with: data!, options: .allowFragments)
-            if let info = dict as? Dictionary<String, Any> {
-                if let code = info[kRESP_CODE] as? Int, code == TErrorCode.success.rawValue {
-                    let resultInfo = info[kRESP_DATA] as! Dictionary<String, Any>
-                    let resultData = try! JSONSerialization.data(withJSONObject: resultInfo, options: .fragmentsAllowed)
-                    do {
-                        let model = try JSONDecoder().decode(HandWriting.self, from: resultData)
-                        callback((true, rspError), model)
-                    } catch {
-                        TLog.d("decode json to model error: \(error.localizedDescription)")
-                        callback((false, rspError), nil)
-                    }
-                } else {
-                    callback((false, rspError), nil)
-                }
-            }
+            let parseResult = HandWriting.decodeFrom(data: data!)
+            callback((parseResult.success, rspError), parseResult.model)
         }
     }
 }

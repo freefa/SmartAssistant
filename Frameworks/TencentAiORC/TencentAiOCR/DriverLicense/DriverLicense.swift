@@ -1,5 +1,5 @@
 //
-//  DriverLisence.swift
+//  DriverLicense.swift
 //  TencentAiOCR
 //
 //  Created by Louis.B on 2019/12/3.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-public enum DriverLisenceType: Int {
+public enum DriverLicenseType: Int {
     /// 行驶证
     case carLisence
     /// 驾驶证
     case driverLisence
 }
 
-open class DriverLisence: GeneralOCR {}
+open class DriverLicense: GeneralOCR {}

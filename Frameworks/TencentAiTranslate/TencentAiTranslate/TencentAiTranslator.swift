@@ -33,23 +33,8 @@ open class TencentAiTranslator: TBaseManager {
                 callback((false, rspError), nil)
                 return
             }
-            let dict = try? JSONSerialization .jsonObject(with: data!, options: .allowFragments)
-            if let info = dict as? Dictionary<String, Any> {
-                let code = info[kRESP_CODE] as! Int
-                if code == TErrorCode.success.rawValue {
-                    let resultInfo = info[kRESP_DATA] as! Dictionary<String, Any>
-                    let resultData = try! JSONSerialization.data(withJSONObject: resultInfo, options: .fragmentsAllowed)
-                    do {
-                        let model = try JSONDecoder().decode(TextTranslateResult.self, from: resultData)
-                        callback((true, nil), model)
-                    } catch {
-                        TLog.d("decode json to model error: \(error.localizedDescription)")
-                        callback((false, rspError), nil)
-                    }
-                } else {
-                    callback((false, rspError), nil)
-                }
-            }
+            let parseResult = TextTranslateResult.decodeFrom(data: data!)
+            callback((parseResult.success, rspError), parseResult.model)
         }
     }
     
@@ -67,24 +52,8 @@ open class TencentAiTranslator: TBaseManager {
                 callback((false, rspError), nil)
                 return
             }
-            
-            let dict = try? JSONSerialization .jsonObject(with: data!, options: .allowFragments)
-            if let info = dict as? Dictionary<String, Any> {
-                let code = info[kRESP_CODE] as! Int
-                if code == TErrorCode.success.rawValue {
-                    let resultInfo = info[kRESP_DATA] as! Dictionary<String, Any>
-                    let resultData = try! JSONSerialization.data(withJSONObject: resultInfo, options: .fragmentsAllowed)
-                    do {
-                        let model = try JSONDecoder().decode(ImageTranslateResult.self, from: resultData)
-                        callback((true, nil), model)
-                    } catch {
-                        TLog.d("decode json to model error: \(error.localizedDescription)")
-                        callback((false, rspError), nil)
-                    }
-                } else {
-                    callback((false, rspError), nil)
-                }
-            }
+            let parseResult = ImageTranslateResult.decodeFrom(data: data!)
+            callback((parseResult.success, rspError), parseResult.model)
         }
     }
 }

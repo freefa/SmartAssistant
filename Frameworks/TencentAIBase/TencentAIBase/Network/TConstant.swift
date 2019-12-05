@@ -20,6 +20,10 @@ public let kRESP_CODE = "ret"
 public let kRESP_MSG = "msg"
 public let kRESP_DATA = "data"
 
+public let kTENCENT_AI_IMAGE = "image"
+public let kTENCENT_AI_TYPE = "type"
+public let kTENCENT_AI_IMAGE_URL = "image_url"
+
 
 
 

@@ -8,24 +8,12 @@
 
 import Foundation
 
-// MARK: 图片参数key
-public let kIMG_PARAM = "image"
-public let kIMG_URL = "image_url"
-public let kCOMMON_TYPE = "type"
+// MARK: 通用OCR
+let KPATH_GENERAL_OCR = "ocr/ocr_generalocr"
 
 // MARK: 身份证
 let TPATH_IDCARD_ORC = "ocr/ocr_idcardocr"
 public let kIMG_ID_CARD_TYPE = "card_type"
-
-public enum IDCardType: Int {
-    /// 正面
-    case front
-    /// 反面
-    case back
-}
-
-// MARK: 通用OCR
-let KPATH_GENERAL_OCR = "ocr/ocr_generalocr"
 
 // MARK: 名片OCR
 let TPATH_BUSINESS_CARD_OCR = "ocr/ocr_bcocr"

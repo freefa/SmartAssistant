@@ -23,6 +23,7 @@
 		9579F1F023919998002763DC /* TencentAiTranslate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9579F1EF23919998002763DC /* TencentAiTranslate.framework */; };
 		95AC2486239760CF001145AF /* ImageTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC2484239760CF001145AF /* ImageTestViewController.swift */; };
 		95AC2487239760CF001145AF /* ImageTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AC2485239760CF001145AF /* ImageTestViewController.xib */; };
+		95BEF4952398A47800EC5027 /* TencentAiImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BEF4942398A47800EC5027 /* TencentAiImage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		9579F1EF23919998002763DC /* TencentAiTranslate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TencentAiTranslate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95AC2484239760CF001145AF /* ImageTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTestViewController.swift; sourceTree = "<group>"; };
 		95AC2485239760CF001145AF /* ImageTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageTestViewController.xib; sourceTree = "<group>"; };
+		95BEF4942398A47800EC5027 /* TencentAiImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TencentAiImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95BEF4952398A47800EC5027 /* TencentAiImage.framework in Frameworks */,
 				9579F1F023919998002763DC /* TencentAiTranslate.framework in Frameworks */,
 				9579F1EE23919992002763DC /* TencentAiOCR.framework in Frameworks */,
 				9579F1EC23919988002763DC /* Log.framework in Frameworks */,
@@ -131,6 +134,7 @@
 		9561EF07238FD93400B5194F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95BEF4942398A47800EC5027 /* TencentAiImage.framework */,
 				9579F1EF23919998002763DC /* TencentAiTranslate.framework */,
 				9579F1ED23919992002763DC /* TencentAiOCR.framework */,
 				9579F1EB23919988002763DC /* Log.framework */,

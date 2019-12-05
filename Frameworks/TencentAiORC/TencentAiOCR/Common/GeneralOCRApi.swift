@@ -17,6 +17,6 @@ open class GeneralOCRApi: TencentAiApi {
     
     open override func businessParams() -> Dictionary<String, Paramable> {
         let compressed = image!.compressForBase64Encoding()
-        return [kIMG_PARAM : compressed.toBase64()]
+        return [kTENCENT_AI_IMAGE : compressed.toBase64()]
     }
 }

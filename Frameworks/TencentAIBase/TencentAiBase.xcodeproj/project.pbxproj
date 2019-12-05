@@ -14,7 +14,7 @@
 		9535769B2390EB530014B2EB /* TencentAiApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9535769A2390EB530014B2EB /* TencentAiApi.swift */; };
 		9535769D2390F7D80014B2EB /* TConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9535769C2390F7D80014B2EB /* TConstant.swift */; };
 		9535769F23910DAC0014B2EB /* TBaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9535769E23910DAC0014B2EB /* TBaseRequest.swift */; };
-		953576D8239128DA0014B2EB /* TBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953576D7239128DA0014B2EB /* TBaseModel.swift */; };
+		953576D8239128DA0014B2EB /* TencentAiBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953576D7239128DA0014B2EB /* TencentAiBaseModel.swift */; };
 		953576DA239129380014B2EB /* DataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953576D9239129380014B2EB /* DataUtil.swift */; };
 		953576DC239136050014B2EB /* ImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953576DB239136050014B2EB /* ImageUtil.swift */; };
 		9561EF54238FE52600B5194F /* TencentAiBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9561EF4A238FE52600B5194F /* TencentAiBase.framework */; };
@@ -46,7 +46,7 @@
 		9535769A2390EB530014B2EB /* TencentAiApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TencentAiApi.swift; sourceTree = "<group>"; };
 		9535769C2390F7D80014B2EB /* TConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TConstant.swift; sourceTree = "<group>"; };
 		9535769E23910DAC0014B2EB /* TBaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBaseRequest.swift; sourceTree = "<group>"; };
-		953576D7239128DA0014B2EB /* TBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBaseModel.swift; sourceTree = "<group>"; };
+		953576D7239128DA0014B2EB /* TencentAiBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TencentAiBaseModel.swift; sourceTree = "<group>"; };
 		953576D9239129380014B2EB /* DataUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUtil.swift; sourceTree = "<group>"; };
 		953576DB239136050014B2EB /* ImageUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtil.swift; sourceTree = "<group>"; };
 		9561EF4A238FE52600B5194F /* TencentAiBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TencentAiBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,7 +85,7 @@
 		953576D6239128CC0014B2EB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				953576D7239128DA0014B2EB /* TBaseModel.swift */,
+				953576D7239128DA0014B2EB /* TencentAiBaseModel.swift */,
 				95CD0C56239176FC00E1CB78 /* TBaseManager.swift */,
 			);
 			path = Model;
@@ -301,7 +301,7 @@
 			files = (
 				9535769D2390F7D80014B2EB /* TConstant.swift in Sources */,
 				9535769F23910DAC0014B2EB /* TBaseRequest.swift in Sources */,
-				953576D8239128DA0014B2EB /* TBaseModel.swift in Sources */,
+				953576D8239128DA0014B2EB /* TencentAiBaseModel.swift in Sources */,
 				95CAFDB62390216A0093E5B4 /* StringUtil.swift in Sources */,
 				9535769B2390EB530014B2EB /* TencentAiApi.swift in Sources */,
 				95CAFDB8239021BC0093E5B4 /* DateUtil.swift in Sources */,
