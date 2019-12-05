@@ -106,6 +106,7 @@
 				9561EEF9238FD41500B5194F /* Base */,
 				9561EEF6238FD41500B5194F /* Home */,
 				95BEF49E2398DB0800EC5027 /* Filter */,
+				95BEF4C12399196600EC5027 /* Cosmetic */,
 				95AC24832397606F001145AF /* Test */,
 			);
 			path = Scenes;
@@ -179,24 +180,15 @@
 				95BEF4B02398FB1800EC5027 /* FilterViewController.xib */,
 				95BEF4B52398FC0000EC5027 /* FilterSelectController.swift */,
 				95BEF4B62398FC0000EC5027 /* FilterSelectController.xib */,
-				95BEF4A92398F4EA00EC5027 /* Face */,
-				95BEF4AE2398FA8400EC5027 /* Scenery */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
 		};
-		95BEF4A92398F4EA00EC5027 /* Face */ = {
+		95BEF4C12399196600EC5027 /* Cosmetic */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Face;
-			sourceTree = "<group>";
-		};
-		95BEF4AE2398FA8400EC5027 /* Scenery */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Scenery;
+			path = Cosmetic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

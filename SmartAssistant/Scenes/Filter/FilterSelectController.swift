@@ -36,6 +36,10 @@ class FilterSelectController: SABaseViewController, UITableViewDelegate, UITable
                 let title = String(format: "效果%ld", i)
                 dataSource.append([i : title])
             }
+        case .cosmetic:
+            for info in COSMETIC_TYPES {
+                dataSource.append([info.keys.first!.rawValue : info.values.first!])
+            }
         }
     }
 

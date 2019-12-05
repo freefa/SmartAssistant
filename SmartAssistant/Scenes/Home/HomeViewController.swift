@@ -26,6 +26,7 @@ enum ActionType {
     case imageTest
     case faceFilter
     case sceneryFilter
+    case cosmetic
 }
 
 class HomeViewController: SABaseViewController, UITableViewDelegate, UITableViewDataSource {
@@ -60,6 +61,7 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
         dataSouce.append([ROW_NAME_KEY : "图片压缩测试", ROW_TYPE_KEY : ActionType.imageTest])
         dataSouce.append([ROW_NAME_KEY : "人脸滤镜", ROW_TYPE_KEY : ActionType.faceFilter])
         dataSouce.append([ROW_NAME_KEY : "风景滤镜", ROW_TYPE_KEY : ActionType.sceneryFilter])
+        dataSouce.append([ROW_NAME_KEY : "人脸美妆", ROW_TYPE_KEY : ActionType.cosmetic])
     }
     
     // MARK: action method
@@ -201,6 +203,9 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
         case .sceneryFilter:
             controller = FilterViewController()
             FilterViewController.filterType = .scenery
+        case .cosmetic:
+            controller = FilterViewController()
+            FilterViewController.filterType = .cosmetic
         }
         if let vc = controller {
             self.navigationController?.pushViewController(vc, animated: true)

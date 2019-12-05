@@ -1,5 +1,5 @@
 //
-//  SceneryFilter.swift
+//  FaceCosmetic.swift
 //  TencentAiImage
 //
 //  Created by Louis.B on 2019/12/5.
@@ -8,4 +8,4 @@
 
 import Foundation
 
-open class SceneryFilterResult: ImageEffectResult {}
+open class FaceCosmetic: ImageEffectResult {}

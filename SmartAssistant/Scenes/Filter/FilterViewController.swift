@@ -12,6 +12,7 @@ import UIKit
 enum FilterType {
     case face
     case scenery
+    case cosmetic
 }
 
 class FilterViewController: SABaseViewController, FilterSelectDelegate {
@@ -20,30 +21,39 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate {
     
     @IBOutlet weak var filterImageView: UIImageView!
     
+    @IBOutlet weak var selectButton: UIButton!
+    
     static var filterType: FilterType = .face
     
-    let filter = TencentAiImageEffect()
+    let imageEffector = TencentAiImageEffect()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         switch FilterViewController.filterType {
         case .face:
+            self.title = "选择滤镜"
             self.sourceImageView.image = UIImage.init(named: "face_filter")
         case .scenery:
+            self.title = "选择效果"
             self.sourceImageView.image = UIImage.init(named: "scenery_filter")
+        case .cosmetic:
+            self.title = "选择美妆"
+            self.sourceImageView.image = UIImage.init(named: "face_filter")
         }
+        self.selectButton.setTitle(self.title, for: .normal)
     }
     
     @IBAction func filterButtonTouched(_ sender: Any) {
         let controller = FilterSelectController()
         controller.delegate = self
+        controller.title = self.selectButton.title(for: .normal)
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
     
     func doFaceFilter(filterNumber: Int) {
         let filter = FaceFilter.init(rawValue: filterNumber)
-        self.filter.faceFilter(image: self.sourceImageView.image!, filter: filter!) { (result, model) in
+        self.imageEffector.faceFilter(image: self.sourceImageView.image!, filter: filter!) { (result, model) in
             DispatchQueue.main.async {
                 if result.success {
                     self.filterImageView.image = model!.image
@@ -55,13 +65,26 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate {
     }
     
     func doSceneryFilter(filterNumber: Int) {
-        self.filter.sceneryFilter(image: self.sourceImageView.image!, filter: filterNumber) { (result, model) in
+        self.imageEffector.sceneryFilter(image: self.sourceImageView.image!, filter: filterNumber) { (result, model) in
             DispatchQueue.main.async {
                 if result.success {
                     self.filterImageView.image = model!.image
                 } else {
                     Log("sceneryFilter failed: \(result.error!.description)")
-                }                
+                }
+            }
+        }
+    }
+    
+    func doFaceCosmetic(cosmeticNumber: Int) {
+        let cosmetic = CosmeticType.init(rawValue: cosmeticNumber)
+        self.imageEffector.faceCosmetic(image: self.sourceImageView.image!, cosmetic: cosmetic!) { (result, model) in
+            DispatchQueue.main.async {
+                if result.success {
+                    self.filterImageView.image = model!.image
+                } else {
+                    Log("faceCosmetic failed: \(result.error!.description)")
+                }
             }
         }
     }
@@ -73,6 +96,8 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate {
             doFaceFilter(filterNumber: index)
         case .scenery:
             doSceneryFilter(filterNumber: index)
+        case .cosmetic:
+            doFaceCosmetic(cosmeticNumber: index)
         }
     }
 }

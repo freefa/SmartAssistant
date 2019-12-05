@@ -19,6 +19,10 @@
 		95BEF49D2398BA4A00EC5027 /* ImageEffectResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BEF49C2398BA4A00EC5027 /* ImageEffectResult.swift */; };
 		95BEF4AB2398F82F00EC5027 /* SceneryFilterResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BEF4AA2398F82F00EC5027 /* SceneryFilterResult.swift */; };
 		95BEF4AD2398F87800EC5027 /* SceneryFilterApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BEF4AC2398F87800EC5027 /* SceneryFilterApi.swift */; };
+		95BEF4BA23990D9E00EC5027 /* FaceCosmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BEF4B923990D9E00EC5027 /* FaceCosmetic.swift */; };
+		95BEF4BC23990DC600EC5027 /* FaceCosmeticApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BEF4BB23990DC600EC5027 /* FaceCosmeticApi.swift */; };
+		95BEF4BE23990E0D00EC5027 /* ImageEffectDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BEF4BD23990E0D00EC5027 /* ImageEffectDefine.swift */; };
+		95BEF4C0239913B700EC5027 /* CosmeticDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BEF4BF239913B700EC5027 /* CosmeticDefine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		95BEF49C2398BA4A00EC5027 /* ImageEffectResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEffectResult.swift; sourceTree = "<group>"; };
 		95BEF4AA2398F82F00EC5027 /* SceneryFilterResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneryFilterResult.swift; sourceTree = "<group>"; };
 		95BEF4AC2398F87800EC5027 /* SceneryFilterApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneryFilterApi.swift; sourceTree = "<group>"; };
+		95BEF4B923990D9E00EC5027 /* FaceCosmetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCosmetic.swift; sourceTree = "<group>"; };
+		95BEF4BB23990DC600EC5027 /* FaceCosmeticApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCosmeticApi.swift; sourceTree = "<group>"; };
+		95BEF4BD23990E0D00EC5027 /* ImageEffectDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEffectDefine.swift; sourceTree = "<group>"; };
+		95BEF4BF239913B700EC5027 /* CosmeticDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmeticDefine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +129,7 @@
 				95BEF48A23989D3D00EC5027 /* TencentAiImageEffect.swift */,
 				95BEF49A2398B5E100EC5027 /* ImageEffectApi.swift */,
 				95BEF49C2398BA4A00EC5027 /* ImageEffectResult.swift */,
+				95BEF4BD23990E0D00EC5027 /* ImageEffectDefine.swift */,
 				95BEF48D23989F0800EC5027 /* Filter */,
 				95BEF48E23989F1000EC5027 /* Cosmetic */,
 				95BEF48F23989F3900EC5027 /* Decoration */,
@@ -145,6 +154,9 @@
 		95BEF48E23989F1000EC5027 /* Cosmetic */ = {
 			isa = PBXGroup;
 			children = (
+				95BEF4BF239913B700EC5027 /* CosmeticDefine.swift */,
+				95BEF4B923990D9E00EC5027 /* FaceCosmetic.swift */,
+				95BEF4BB23990DC600EC5027 /* FaceCosmeticApi.swift */,
 			);
 			path = Cosmetic;
 			sourceTree = "<group>";
@@ -281,9 +293,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				95BEF4932398A0E900EC5027 /* FilterDefine.swift in Sources */,
+				95BEF4C0239913B700EC5027 /* CosmeticDefine.swift in Sources */,
 				95BEF49D2398BA4A00EC5027 /* ImageEffectResult.swift in Sources */,
+				95BEF4BE23990E0D00EC5027 /* ImageEffectDefine.swift in Sources */,
+				95BEF4BC23990DC600EC5027 /* FaceCosmeticApi.swift in Sources */,
 				95BEF49B2398B5E100EC5027 /* ImageEffectApi.swift in Sources */,
 				95BEF4992398B53100EC5027 /* FaceFilterApi.swift in Sources */,
+				95BEF4BA23990D9E00EC5027 /* FaceCosmetic.swift in Sources */,
 				95BEF48B23989D3D00EC5027 /* TencentAiImageEffect.swift in Sources */,
 				95BEF4AD2398F87800EC5027 /* SceneryFilterApi.swift in Sources */,
 				95BEF4AB2398F82F00EC5027 /* SceneryFilterResult.swift in Sources */,

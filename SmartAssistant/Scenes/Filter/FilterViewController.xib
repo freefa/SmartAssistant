@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterViewController" customModule="SmartAssistant" customModuleProvider="target">
             <connections>
                 <outlet property="filterImageView" destination="1Ar-CT-fUL" id="Zm7-eu-byq"/>
+                <outlet property="selectButton" destination="9yW-tl-EzE" id="eb9-a0-XcY"/>
                 <outlet property="sourceImageView" destination="wYq-O5-HHm" id="jKb-DT-dEL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -25,7 +26,7 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Ar-CT-fUL" userLabel="FilterImageView">
                     <rect key="frame" x="0.0" y="481" width="414" height="381"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yW-tl-EzE" userLabel="FilterButton">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yW-tl-EzE" userLabel="SelectButton">
                     <rect key="frame" x="166" y="430" width="82" height="36"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="选择滤镜"/>

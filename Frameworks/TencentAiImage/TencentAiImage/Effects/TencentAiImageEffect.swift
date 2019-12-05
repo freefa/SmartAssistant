@@ -40,4 +40,19 @@ open class TencentAiImageEffect: TBaseManager {
             callback((parseResult.success, rspError), parseResult.model)
         }
     }
+    
+    public func faceCosmetic(image: UIImage, cosmetic: CosmeticType, callback: @escaping (TResult, FaceCosmetic?) -> ()) {
+        let api = FaceCosmeticApi()
+        api.image = image
+        api.cosmetic = cosmetic
+        TSessionManager.default.request(api: api) { (data, rspError) in
+            guard rspError == nil else {
+                TLog.d("faceFilter failed: \(rspError!.description)")
+                callback((false, rspError), nil)
+                return
+            }
+            let parseResult = FaceCosmetic.decodeFrom(data: data!)
+            callback((parseResult.success, rspError), parseResult.model)
+        }
+    }
 }

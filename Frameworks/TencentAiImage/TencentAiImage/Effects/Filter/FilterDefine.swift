@@ -81,11 +81,5 @@ public let SceneryFilter = 1 ... 65
 
 let kIMAGE_EFFECT_FILTER = "filter"
 
-/// 滤镜:天天P图,适用于人脸
-let kPATH_FACE_FILTER = "ptu/ptu_imgfilter"
-
-/// 滤镜:腾讯AI LAB,适用于风景
-let kPATH_SCENERY_FILTER = "vision/vision_imgfilter"
-
 let kSCENERY_SESSION_ID = "session_id"
 
