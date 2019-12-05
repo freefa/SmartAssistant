@@ -9,7 +9,7 @@
 import Foundation
 
 open class ImageEffectResult: TencentAiBaseModel {
-    var image: UIImage?
+    public var image: UIImage?
     
     private enum CodingKeys: String, CodingKey {
         case image

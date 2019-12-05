@@ -24,6 +24,7 @@ enum ActionType {
     case businessLicenseOcr
     case handWritingOcr
     case imageTest
+    case faceFilter
 }
 
 class HomeViewController: SABaseViewController, UITableViewDelegate, UITableViewDataSource {
@@ -56,6 +57,7 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
         dataSouce.append([ROW_NAME_KEY : "手写体文字识别", ROW_TYPE_KEY : ActionType.handWritingOcr])
         dataSouce.append([ROW_NAME_KEY : "通用文字识别", ROW_TYPE_KEY : ActionType.generalOcr])
         dataSouce.append([ROW_NAME_KEY : "图片压缩测试", ROW_TYPE_KEY : ActionType.imageTest])
+        dataSouce.append([ROW_NAME_KEY : "人脸滤镜", ROW_TYPE_KEY : ActionType.faceFilter])
     }
     
     // MARK: action method
@@ -165,6 +167,7 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let action = dataSouce[indexPath.row][ROW_TYPE_KEY] as! ActionType
+        var controller: SABaseViewController?
         switch action {
         case .textTranslate:
             translateText()
@@ -189,8 +192,12 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
         case .generalOcr:
             generalOcr()
         case .imageTest:
-            let controller = ImageTestViewController()
-            self.navigationController?.pushViewController(controller, animated: true)
+            controller = ImageTestViewController()
+        case .faceFilter:
+            controller = FaceViewController()
+        }
+        if let vc = controller {
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
