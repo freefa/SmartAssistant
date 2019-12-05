@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterViewController" customModule="SmartAssistant" customModuleProvider="target">
+            <connections>
+                <outlet property="filterImageView" destination="1Ar-CT-fUL" id="Zm7-eu-byq"/>
+                <outlet property="sourceImageView" destination="wYq-O5-HHm" id="jKb-DT-dEL"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="face_filter" translatesAutoresizingMaskIntoConstraints="NO" id="wYq-O5-HHm" userLabel="SourceImageView">
+                    <rect key="frame" x="0.0" y="59" width="414" height="356"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Ar-CT-fUL" userLabel="FilterImageView">
+                    <rect key="frame" x="0.0" y="481" width="414" height="381"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yW-tl-EzE" userLabel="FilterButton">
+                    <rect key="frame" x="166" y="430" width="82" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="选择滤镜"/>
+                    <connections>
+                        <action selector="filterButtonTouched:" destination="-1" eventType="touchUpInside" id="FLW-h2-qz3"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="9yW-tl-EzE" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="4PW-WP-329"/>
+                <constraint firstItem="wYq-O5-HHm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="4rz-pA-uQc"/>
+                <constraint firstItem="wYq-O5-HHm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="7Px-WK-Rhe"/>
+                <constraint firstItem="9yW-tl-EzE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Fvb-RC-oMG"/>
+                <constraint firstItem="9yW-tl-EzE" firstAttribute="top" secondItem="wYq-O5-HHm" secondAttribute="bottom" constant="15" id="ION-fL-khz"/>
+                <constraint firstItem="1Ar-CT-fUL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Jsh-jP-JgO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wYq-O5-HHm" secondAttribute="trailing" id="NRy-tx-lon"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="1Ar-CT-fUL" secondAttribute="bottom" id="SP6-lq-ofR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1Ar-CT-fUL" secondAttribute="trailing" id="k54-Aj-nu2"/>
+                <constraint firstItem="1Ar-CT-fUL" firstAttribute="top" secondItem="9yW-tl-EzE" secondAttribute="bottom" constant="15" id="x3N-R2-rIi"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="125"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="face_filter" width="1932" height="2576"/>
+    </resources>
+</document>

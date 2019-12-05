@@ -24,11 +24,11 @@
 		95AC2486239760CF001145AF /* ImageTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC2484239760CF001145AF /* ImageTestViewController.swift */; };
 		95AC2487239760CF001145AF /* ImageTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AC2485239760CF001145AF /* ImageTestViewController.xib */; };
 		95BEF4952398A47800EC5027 /* TencentAiImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BEF4942398A47800EC5027 /* TencentAiImage.framework */; };
-		95BEF4A12398DBA000EC5027 /* FaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BEF49F2398DBA000EC5027 /* FaceViewController.swift */; };
-		95BEF4A22398DBA000EC5027 /* FaceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95BEF4A02398DBA000EC5027 /* FaceViewController.xib */; };
-		95BEF4A42398DF9100EC5027 /* FaceViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BEF4A32398DF9100EC5027 /* FaceViewExtension.swift */; };
-		95BEF4A72398E2C400EC5027 /* FaceFilterSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BEF4A52398E2C400EC5027 /* FaceFilterSelectController.swift */; };
-		95BEF4A82398E2C400EC5027 /* FaceFilterSelectController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95BEF4A62398E2C400EC5027 /* FaceFilterSelectController.xib */; };
+		95BEF4B12398FB1800EC5027 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BEF4AF2398FB1700EC5027 /* FilterViewController.swift */; };
+		95BEF4B22398FB1800EC5027 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95BEF4B02398FB1800EC5027 /* FilterViewController.xib */; };
+		95BEF4B42398FB5B00EC5027 /* FilterDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BEF4B32398FB5B00EC5027 /* FilterDefine.swift */; };
+		95BEF4B72398FC0000EC5027 /* FilterSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BEF4B52398FC0000EC5027 /* FilterSelectController.swift */; };
+		95BEF4B82398FC0000EC5027 /* FilterSelectController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95BEF4B62398FC0000EC5027 /* FilterSelectController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,11 +51,11 @@
 		95AC2484239760CF001145AF /* ImageTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTestViewController.swift; sourceTree = "<group>"; };
 		95AC2485239760CF001145AF /* ImageTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageTestViewController.xib; sourceTree = "<group>"; };
 		95BEF4942398A47800EC5027 /* TencentAiImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TencentAiImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		95BEF49F2398DBA000EC5027 /* FaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceViewController.swift; sourceTree = "<group>"; };
-		95BEF4A02398DBA000EC5027 /* FaceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaceViewController.xib; sourceTree = "<group>"; };
-		95BEF4A32398DF9100EC5027 /* FaceViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceViewExtension.swift; sourceTree = "<group>"; };
-		95BEF4A52398E2C400EC5027 /* FaceFilterSelectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceFilterSelectController.swift; sourceTree = "<group>"; };
-		95BEF4A62398E2C400EC5027 /* FaceFilterSelectController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaceFilterSelectController.xib; sourceTree = "<group>"; };
+		95BEF4AF2398FB1700EC5027 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterViewController.swift; path = SmartAssistant/Scenes/Filter/FilterViewController.swift; sourceTree = SOURCE_ROOT; };
+		95BEF4B02398FB1800EC5027 /* FilterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FilterViewController.xib; path = SmartAssistant/Scenes/Filter/FilterViewController.xib; sourceTree = SOURCE_ROOT; };
+		95BEF4B32398FB5B00EC5027 /* FilterDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDefine.swift; sourceTree = "<group>"; };
+		95BEF4B52398FC0000EC5027 /* FilterSelectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSelectController.swift; sourceTree = "<group>"; };
+		95BEF4B62398FC0000EC5027 /* FilterSelectController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterSelectController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +174,13 @@
 		95BEF49E2398DB0800EC5027 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
+				95BEF4B32398FB5B00EC5027 /* FilterDefine.swift */,
+				95BEF4AF2398FB1700EC5027 /* FilterViewController.swift */,
+				95BEF4B02398FB1800EC5027 /* FilterViewController.xib */,
+				95BEF4B52398FC0000EC5027 /* FilterSelectController.swift */,
+				95BEF4B62398FC0000EC5027 /* FilterSelectController.xib */,
 				95BEF4A92398F4EA00EC5027 /* Face */,
+				95BEF4AE2398FA8400EC5027 /* Scenery */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -182,13 +188,15 @@
 		95BEF4A92398F4EA00EC5027 /* Face */ = {
 			isa = PBXGroup;
 			children = (
-				95BEF49F2398DBA000EC5027 /* FaceViewController.swift */,
-				95BEF4A02398DBA000EC5027 /* FaceViewController.xib */,
-				95BEF4A32398DF9100EC5027 /* FaceViewExtension.swift */,
-				95BEF4A52398E2C400EC5027 /* FaceFilterSelectController.swift */,
-				95BEF4A62398E2C400EC5027 /* FaceFilterSelectController.xib */,
 			);
 			path = Face;
+			sourceTree = "<group>";
+		};
+		95BEF4AE2398FA8400EC5027 /* Scenery */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scenery;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,11 +257,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95BEF4A82398E2C400EC5027 /* FaceFilterSelectController.xib in Resources */,
+				95BEF4B22398FB1800EC5027 /* FilterViewController.xib in Resources */,
 				9561EEEE238FD3DB00B5194F /* LaunchScreen.storyboard in Resources */,
 				9561EEEB238FD3DB00B5194F /* Assets.xcassets in Resources */,
 				95AC2487239760CF001145AF /* ImageTestViewController.xib in Resources */,
-				95BEF4A22398DBA000EC5027 /* FaceViewController.xib in Resources */,
+				95BEF4B82398FC0000EC5027 /* FilterSelectController.xib in Resources */,
 				9561EEFE238FD41600B5194F /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,16 +273,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95BEF4A72398E2C400EC5027 /* FaceFilterSelectController.swift in Sources */,
 				9561EF03238FD41600B5194F /* BaseNavigationController.swift in Sources */,
-				95BEF4A42398DF9100EC5027 /* FaceViewExtension.swift in Sources */,
+				95BEF4B42398FB5B00EC5027 /* FilterDefine.swift in Sources */,
 				9561EF00238FD41600B5194F /* SABaseViewController.swift in Sources */,
 				95AC2486239760CF001145AF /* ImageTestViewController.swift in Sources */,
+				95BEF4B72398FC0000EC5027 /* FilterSelectController.swift in Sources */,
 				9561EEFF238FD41600B5194F /* HomeViewController.swift in Sources */,
 				9561EF01238FD41600B5194F /* BaseViewController.swift in Sources */,
+				95BEF4B12398FB1800EC5027 /* FilterViewController.swift in Sources */,
 				9561EF38238FE0B500B5194F /* AppDelegate.swift in Sources */,
 				9561EF06238FD7D800B5194F /* HomeSubView.swift in Sources */,
-				95BEF4A12398DBA000EC5027 /* FaceViewController.swift in Sources */,
 				9561EF02238FD41600B5194F /* SABaseNavigationController.swift in Sources */,
 				9561EF3A238FE0DD00B5194F /* AppConstant.swift in Sources */,
 			);

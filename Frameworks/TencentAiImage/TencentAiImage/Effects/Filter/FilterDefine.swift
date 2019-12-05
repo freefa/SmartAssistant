@@ -87,3 +87,5 @@ let kPATH_FACE_FILTER = "ptu/ptu_imgfilter"
 /// 滤镜:腾讯AI LAB,适用于风景
 let kPATH_SCENERY_FILTER = "vision/vision_imgfilter"
 
+let kSCENERY_SESSION_ID = "session_id"
+

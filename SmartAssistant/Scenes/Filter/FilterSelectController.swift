@@ -1,5 +1,5 @@
 //
-//  FaceFilterSelectController.swift
+//  FilterSelectController.swift
 //  SmartAssistant
 //
 //  Created by Louis.B on 2019/12/5.
@@ -8,22 +8,40 @@
 
 import UIKit
 
-protocol FaceFilterSelectDelegate: NSObjectProtocol {
-    func didSelectFilter(filter: FaceFilter)
+protocol FilterSelectDelegate: NSObjectProtocol {
+    func didSelectFilterAtIndex(index: Int)
 }
 
-class FaceFilterSelectController: SABaseViewController, UITableViewDelegate, UITableViewDataSource {
+class FilterSelectController: SABaseViewController, UITableViewDelegate, UITableViewDataSource {
     
-    weak var delegate: FaceFilterSelectDelegate?
-
+    @IBOutlet weak var tableView: UITableView!
+    
+    var dataSource = [[Int : String]]()
+    
+    weak var delegate: FilterSelectDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "选择效果"
+        initDataSource()
     }
     
+    func initDataSource() {
+        switch FilterViewController.filterType {
+        case .face:
+            for info in FaceFilters {
+                dataSource.append([info.keys.first!.rawValue : info.values.first!])
+            }
+        case .scenery:
+            for i in SceneryFilter {
+                let title = String(format: "效果%ld", i)
+                dataSource.append([i : title])
+            }
+        }
+    }
+
     // MARK: UITableViewDelegate & dataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return FaceFilters.count
+        return dataSource.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -37,19 +55,17 @@ class FaceFilterSelectController: SABaseViewController, UITableViewDelegate, UIT
             cell = UITableViewCell(style: .default, reuseIdentifier: identifier)
             cell?.textLabel?.font = UIFont.systemFont(ofSize: 16)
         }
-        let info = FaceFilters[indexPath.row]
-        let filter = FaceFilter.init(rawValue: indexPath.row + 1)
-        cell?.textLabel?.text = info[filter!]
+        let info = dataSource[indexPath.row]
+        cell?.textLabel?.text = info.values.first
         return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let filter = FaceFilter.init(rawValue: indexPath.row + 1)!
         if let callback = self.delegate {
-            callback.didSelectFilter(filter: filter)
+            let info = dataSource[indexPath.row]
+            callback.didSelectFilterAtIndex(index: info.keys.first!)
         }
         self.navigationController?.popViewController(animated: true)
     }
-
 }

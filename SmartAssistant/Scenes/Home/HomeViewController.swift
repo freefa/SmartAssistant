@@ -25,6 +25,7 @@ enum ActionType {
     case handWritingOcr
     case imageTest
     case faceFilter
+    case sceneryFilter
 }
 
 class HomeViewController: SABaseViewController, UITableViewDelegate, UITableViewDataSource {
@@ -58,6 +59,7 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
         dataSouce.append([ROW_NAME_KEY : "通用文字识别", ROW_TYPE_KEY : ActionType.generalOcr])
         dataSouce.append([ROW_NAME_KEY : "图片压缩测试", ROW_TYPE_KEY : ActionType.imageTest])
         dataSouce.append([ROW_NAME_KEY : "人脸滤镜", ROW_TYPE_KEY : ActionType.faceFilter])
+        dataSouce.append([ROW_NAME_KEY : "风景滤镜", ROW_TYPE_KEY : ActionType.sceneryFilter])
     }
     
     // MARK: action method
@@ -194,7 +196,11 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
         case .imageTest:
             controller = ImageTestViewController()
         case .faceFilter:
-            controller = FaceViewController()
+            controller = FilterViewController()
+            FilterViewController.filterType = .face
+        case .sceneryFilter:
+            controller = FilterViewController()
+            FilterViewController.filterType = .scenery
         }
         if let vc = controller {
             self.navigationController?.pushViewController(vc, animated: true)

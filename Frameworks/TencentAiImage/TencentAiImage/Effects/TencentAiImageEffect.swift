@@ -25,4 +25,19 @@ open class TencentAiImageEffect: TBaseManager {
             callback((parseResult.success, rspError), parseResult.model)
         }
     }
+    
+    public func sceneryFilter(image: UIImage, filter: Int, callback: @escaping (TResult, SceneryFilterResult?) -> ()) {
+        let api = SceneryFilterApi()
+        api.image = image
+        api.filter = filter
+        TSessionManager.default.request(api: api) { (data, rspError) in
+            guard rspError == nil else {
+                TLog.d("faceFilter failed: \(rspError!.description)")
+                callback((false, rspError), nil)
+                return
+            }
+            let parseResult = SceneryFilterResult.decodeFrom(data: data!)
+            callback((parseResult.success, rspError), parseResult.model)
+        }
+    }
 }
