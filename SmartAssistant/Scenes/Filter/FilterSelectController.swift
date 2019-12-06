@@ -37,11 +37,15 @@ class FilterSelectController: SABaseViewController, UITableViewDelegate, UITable
                 dataSource.append([i : title])
             }
         case .cosmetic:
-            for info in COSMETIC_TYPES {
+            for info in FACE_COSMETICS {
                 dataSource.append([info.keys.first!.rawValue : info.values.first!])
             }
         case .decoration:
             for info in FACE_DECORATIONS {
+                dataSource.append([info.keys.first!.rawValue : info.values.first!])
+            }
+        case .sticker:
+            for info in FACE_STICKERS {
                 dataSource.append([info.keys.first!.rawValue : info.values.first!])
             }
         }

@@ -82,4 +82,22 @@ open class TencentAiImageEffect: TBaseManager {
             callback((parseResult.success, rspError), parseResult.model)
         }
     }
+    
+    /// 获取图片大头贴效果
+    /// - Parameters:
+    ///   - image: 待处理图片
+    ///   - sticker: 大头贴类型 @see enum StickerType
+    ///   - callback: 回调
+    public func faceSticker(image: UIImage, sticker: StickerType, callback: @escaping (TResult, FaceSticker?) -> ()) {
+        let api = FaceStickerApi(image: image, sticker: sticker)
+        TSessionManager.default.request(api: api) { (data, rspError) in
+            guard rspError == nil else {
+                TLog.d("FaceSticker failed: \(rspError!.description)")
+                callback((false, rspError), nil)
+                return
+            }
+            let parseResult = FaceSticker.decodeFrom(data: data!)
+            callback((parseResult.success, rspError), parseResult.model)
+        }
+    }
 }

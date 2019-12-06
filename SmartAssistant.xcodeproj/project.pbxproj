@@ -29,7 +29,6 @@
 		95BEF4B42398FB5B00EC5027 /* FilterDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BEF4B32398FB5B00EC5027 /* FilterDefine.swift */; };
 		95BEF4B72398FC0000EC5027 /* FilterSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BEF4B52398FC0000EC5027 /* FilterSelectController.swift */; };
 		95BEF4B82398FC0000EC5027 /* FilterSelectController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95BEF4B62398FC0000EC5027 /* FilterSelectController.xib */; };
-		95BEF4C323991F2200EC5027 /* CosmeticDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BEF4C223991F2200EC5027 /* CosmeticDefine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +56,6 @@
 		95BEF4B32398FB5B00EC5027 /* FilterDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDefine.swift; sourceTree = "<group>"; };
 		95BEF4B52398FC0000EC5027 /* FilterSelectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSelectController.swift; sourceTree = "<group>"; };
 		95BEF4B62398FC0000EC5027 /* FilterSelectController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterSelectController.xib; sourceTree = "<group>"; };
-		95BEF4C223991F2200EC5027 /* CosmeticDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmeticDefine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +106,6 @@
 				9561EEF9238FD41500B5194F /* Base */,
 				9561EEF6238FD41500B5194F /* Home */,
 				95BEF49E2398DB0800EC5027 /* Filter */,
-				95BEF4C12399196600EC5027 /* Cosmetic */,
 				95AC24832397606F001145AF /* Test */,
 			);
 			path = Scenes;
@@ -184,14 +181,6 @@
 				95BEF4B62398FC0000EC5027 /* FilterSelectController.xib */,
 			);
 			path = Filter;
-			sourceTree = "<group>";
-		};
-		95BEF4C12399196600EC5027 /* Cosmetic */ = {
-			isa = PBXGroup;
-			children = (
-				95BEF4C223991F2200EC5027 /* CosmeticDefine.swift */,
-			);
-			path = Cosmetic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,7 +268,6 @@
 				9561EF38238FE0B500B5194F /* AppDelegate.swift in Sources */,
 				9561EF06238FD7D800B5194F /* HomeSubView.swift in Sources */,
 				9561EF02238FD41600B5194F /* SABaseNavigationController.swift in Sources */,
-				95BEF4C323991F2200EC5027 /* CosmeticDefine.swift in Sources */,
 				9561EF3A238FE0DD00B5194F /* AppConstant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

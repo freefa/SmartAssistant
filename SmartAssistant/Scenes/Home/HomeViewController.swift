@@ -28,6 +28,7 @@ enum ActionType {
     case sceneryFilter
     case cosmetic
     case decoration
+    case sticker
 }
 
 class HomeViewController: SABaseViewController, UITableViewDelegate, UITableViewDataSource {
@@ -63,6 +64,7 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
         dataSouce.append([ROW_NAME_KEY : "风景滤镜", ROW_TYPE_KEY : ActionType.sceneryFilter])
         dataSouce.append([ROW_NAME_KEY : "人脸美妆", ROW_TYPE_KEY : ActionType.cosmetic])
         dataSouce.append([ROW_NAME_KEY : "人脸变妆", ROW_TYPE_KEY : ActionType.decoration])
+        dataSouce.append([ROW_NAME_KEY : "大头贴", ROW_TYPE_KEY : ActionType.sticker])
         dataSouce.append([ROW_NAME_KEY : "图片压缩测试", ROW_TYPE_KEY : ActionType.imageTest])
     }
     
@@ -211,6 +213,9 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
         case .decoration:
             controller = FilterViewController()
             FilterViewController.filterType = .decoration
+        case .sticker:
+            controller = FilterViewController()
+            FilterViewController.filterType = .sticker
         }
         if let vc = controller {
             self.navigationController?.pushViewController(vc, animated: true)
