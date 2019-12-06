@@ -27,6 +27,7 @@ enum ActionType {
     case faceFilter
     case sceneryFilter
     case cosmetic
+    case decoration
 }
 
 class HomeViewController: SABaseViewController, UITableViewDelegate, UITableViewDataSource {
@@ -58,10 +59,11 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
         dataSouce.append([ROW_NAME_KEY : "营业执照识别", ROW_TYPE_KEY : ActionType.businessLicenseOcr])
         dataSouce.append([ROW_NAME_KEY : "手写体文字识别", ROW_TYPE_KEY : ActionType.handWritingOcr])
         dataSouce.append([ROW_NAME_KEY : "通用文字识别", ROW_TYPE_KEY : ActionType.generalOcr])
-        dataSouce.append([ROW_NAME_KEY : "图片压缩测试", ROW_TYPE_KEY : ActionType.imageTest])
         dataSouce.append([ROW_NAME_KEY : "人脸滤镜", ROW_TYPE_KEY : ActionType.faceFilter])
         dataSouce.append([ROW_NAME_KEY : "风景滤镜", ROW_TYPE_KEY : ActionType.sceneryFilter])
         dataSouce.append([ROW_NAME_KEY : "人脸美妆", ROW_TYPE_KEY : ActionType.cosmetic])
+        dataSouce.append([ROW_NAME_KEY : "人脸变妆", ROW_TYPE_KEY : ActionType.decoration])
+        dataSouce.append([ROW_NAME_KEY : "图片压缩测试", ROW_TYPE_KEY : ActionType.imageTest])
     }
     
     // MARK: action method
@@ -206,6 +208,9 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
         case .cosmetic:
             controller = FilterViewController()
             FilterViewController.filterType = .cosmetic
+        case .decoration:
+            controller = FilterViewController()
+            FilterViewController.filterType = .decoration
         }
         if let vc = controller {
             self.navigationController?.pushViewController(vc, animated: true)

@@ -77,7 +77,7 @@ public enum FaceFilter: Int {
 }
 
 
-public let SceneryFilter = 1 ... 65
+public let SCENERY_FILTER_CODE = 1 ... 65
 
 let kIMAGE_EFFECT_FILTER = "filter"
 

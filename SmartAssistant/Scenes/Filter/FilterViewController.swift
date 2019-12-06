@@ -13,6 +13,7 @@ enum FilterType {
     case face
     case scenery
     case cosmetic
+    case decoration
 }
 
 class FilterViewController: SABaseViewController, FilterSelectDelegate {
@@ -38,6 +39,9 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate {
             self.sourceImageView.image = UIImage.init(named: "scenery_filter")
         case .cosmetic:
             self.title = "选择美妆"
+            self.sourceImageView.image = UIImage.init(named: "face_filter")
+        case .decoration:
+            self.title = "选择变妆"
             self.sourceImageView.image = UIImage.init(named: "face_filter")
         }
         self.selectButton.setTitle(self.title, for: .normal)
@@ -89,6 +93,19 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate {
         }
     }
     
+    func doFaceDecoration(decorationNumber: Int) {
+        let decoration = DecorationType.init(rawValue: decorationNumber)
+        self.imageEffector.faceDecoration(image: self.sourceImageView.image!, decoration: decoration!) { (result, model) in
+            DispatchQueue.main.async {
+                if result.success {
+                    self.filterImageView.image = model!.image
+                } else {
+                    Log("faceDecoration failed: \(result.error!.description)")
+                }
+            }
+        }
+    }
+    
     // MARK:FilterSelectDelegate
     func didSelectFilterAtIndex(index: Int) {
         switch FilterViewController.filterType {
@@ -98,6 +115,8 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate {
             doSceneryFilter(filterNumber: index)
         case .cosmetic:
             doFaceCosmetic(cosmeticNumber: index)
+        case .decoration:
+            doFaceDecoration(decorationNumber: index)
         }
     }
 }

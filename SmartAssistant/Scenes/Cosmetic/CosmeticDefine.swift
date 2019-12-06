@@ -33,3 +33,28 @@ public let COSMETIC_TYPES = [
     [CosmeticType.BrightEyes : "主题妆:炫彩明眸"],
     [CosmeticType.purpleCharm : "主题妆:紫色魅惑"]
 ]
+
+let FACE_DECORATIONS = [
+    [DecorationType.Egypt : "埃及妆"],
+    [DecorationType.Brazilian : "巴西土著妆"],
+    [DecorationType.Cinderella : "灰姑娘妆"],
+    [DecorationType.Demon : "恶魔妆"],
+    [DecorationType.WuMeiNiang : "武媚娘妆"],
+    [DecorationType.StarlightLavender : "星光薰衣草"],
+    [DecorationType.HuaQianGu : "花千骨"],
+    [DecorationType.Zombie : "僵尸妆"],
+    [DecorationType.Patriotic : "爱国妆"],
+    [DecorationType.Moustache : "小胡子妆"],
+    [DecorationType.BeautySheep : "美羊羊妆"],
+    [DecorationType.Naruto : "火影鸣人妆"],
+    [DecorationType.PekingOpera : "刀马旦妆"],
+    [DecorationType.Bubble : "泡泡妆"],
+    [DecorationType.PeachBlossom : "桃花妆"],
+    [DecorationType.Empress : "女皇妆"],
+    [DecorationType.GDragon : "权志龙"],
+    [DecorationType.TeaseGirl : "撩妹妆"],
+    [DecorationType.Indian : "印第安妆"],
+    [DecorationType.India : "印度妆"],
+    [DecorationType.CuteRabbit : "萌兔妆"],
+    [DecorationType.MonkeyKing : "大圣妆"],
+]

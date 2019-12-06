@@ -9,8 +9,13 @@
 import Foundation
 
 class SceneryFilterApi: ImageEffectApi {
-    /// 滤镜编码 SceneryFilter = 1 ... 65
+    /// 滤镜编码 SCENERY_FILTER_CODE = 1 ... 65
     var filter: Int = 1
+    
+    public init(image: UIImage, filter: Int) {
+        self.filter = filter
+        super.init(image: image)
+    }
     
     override func urlPath() -> String {
         return kPATH_SCENERY_FILTER

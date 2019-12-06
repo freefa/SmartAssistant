@@ -10,7 +10,12 @@ import Foundation
 
 class FaceCosmeticApi: ImageEffectApi {
     
-    var cosmetic: CosmeticType?
+    var cosmetic = CosmeticType.JpBarbiePink
+    
+    public init(image: UIImage, cosmetic: CosmeticType) {
+        self.cosmetic = cosmetic
+        super.init(image: image)
+    }
     
     override func urlPath() -> String {
         return kPATH_FACE_COSMETIC
@@ -18,7 +23,7 @@ class FaceCosmeticApi: ImageEffectApi {
     
     override func businessParams() -> Dictionary<String, Paramable> {
         var param = super.businessParams()
-        param[kIMAGE_EFFECT_COSMETIC] = cosmetic!.rawValue
+        param[kIMAGE_EFFECT_COSMETIC] = cosmetic.rawValue
         return param
     }
 }

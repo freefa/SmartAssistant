@@ -17,3 +17,5 @@ let kPATH_SCENERY_FILTER = "vision/vision_imgfilter"
 /// 人脸美妆
 let kPATH_FACE_COSMETIC = "ptu/ptu_facecosmetic"
 
+let kPATH_FACE_DECORATION = "ptu/ptu_facedecoration"
+

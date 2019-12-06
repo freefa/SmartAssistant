@@ -11,6 +11,11 @@ import Foundation
 class FaceFilterApi: ImageEffectApi {
     var filter = FaceFilter.natural
     
+    public init(image: UIImage, filter: FaceFilter) {
+        self.filter = filter
+        super.init(image: image)
+    }
+    
     override func urlPath() -> String {
         return kPATH_FACE_FILTER
     }

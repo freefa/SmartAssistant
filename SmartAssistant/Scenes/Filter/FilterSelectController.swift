@@ -28,16 +28,20 @@ class FilterSelectController: SABaseViewController, UITableViewDelegate, UITable
     func initDataSource() {
         switch FilterViewController.filterType {
         case .face:
-            for info in FaceFilters {
+            for info in FACE_FILTERS {
                 dataSource.append([info.keys.first!.rawValue : info.values.first!])
             }
         case .scenery:
-            for i in SceneryFilter {
+            for i in SCENERY_FILTER_CODE {
                 let title = String(format: "效果%ld", i)
                 dataSource.append([i : title])
             }
         case .cosmetic:
             for info in COSMETIC_TYPES {
+                dataSource.append([info.keys.first!.rawValue : info.values.first!])
+            }
+        case .decoration:
+            for info in FACE_DECORATIONS {
                 dataSource.append([info.keys.first!.rawValue : info.values.first!])
             }
         }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95A55A282399EA1A007DBA0C /* DecorationDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A55A272399EA1A007DBA0C /* DecorationDefine.swift */; };
+		95A55A2A2399EA31007DBA0C /* FaceDecoration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A55A292399EA31007DBA0C /* FaceDecoration.swift */; };
+		95A55A2C2399EA42007DBA0C /* FaceDecorationApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A55A2B2399EA42007DBA0C /* FaceDecorationApi.swift */; };
 		95BEF47423989C9600EC5027 /* TencentAiImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BEF46A23989C9600EC5027 /* TencentAiImage.framework */; };
 		95BEF47923989C9600EC5027 /* TencentAiImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BEF47823989C9600EC5027 /* TencentAiImageTests.swift */; };
 		95BEF47B23989C9600EC5027 /* TencentAiImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 95BEF46D23989C9600EC5027 /* TencentAiImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		95A55A272399EA1A007DBA0C /* DecorationDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorationDefine.swift; sourceTree = "<group>"; };
+		95A55A292399EA31007DBA0C /* FaceDecoration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceDecoration.swift; sourceTree = "<group>"; };
+		95A55A2B2399EA42007DBA0C /* FaceDecorationApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceDecorationApi.swift; sourceTree = "<group>"; };
 		95BEF46A23989C9600EC5027 /* TencentAiImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TencentAiImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95BEF46D23989C9600EC5027 /* TencentAiImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TencentAiImage.h; sourceTree = "<group>"; };
 		95BEF46E23989C9600EC5027 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -164,6 +170,9 @@
 		95BEF48F23989F3900EC5027 /* Decoration */ = {
 			isa = PBXGroup;
 			children = (
+				95A55A272399EA1A007DBA0C /* DecorationDefine.swift */,
+				95A55A292399EA31007DBA0C /* FaceDecoration.swift */,
+				95A55A2B2399EA42007DBA0C /* FaceDecorationApi.swift */,
 			);
 			path = Decoration;
 			sourceTree = "<group>";
@@ -296,14 +305,17 @@
 				95BEF4C0239913B700EC5027 /* CosmeticDefine.swift in Sources */,
 				95BEF49D2398BA4A00EC5027 /* ImageEffectResult.swift in Sources */,
 				95BEF4BE23990E0D00EC5027 /* ImageEffectDefine.swift in Sources */,
+				95A55A2A2399EA31007DBA0C /* FaceDecoration.swift in Sources */,
 				95BEF4BC23990DC600EC5027 /* FaceCosmeticApi.swift in Sources */,
 				95BEF49B2398B5E100EC5027 /* ImageEffectApi.swift in Sources */,
+				95A55A2C2399EA42007DBA0C /* FaceDecorationApi.swift in Sources */,
 				95BEF4992398B53100EC5027 /* FaceFilterApi.swift in Sources */,
 				95BEF4BA23990D9E00EC5027 /* FaceCosmetic.swift in Sources */,
 				95BEF48B23989D3D00EC5027 /* TencentAiImageEffect.swift in Sources */,
 				95BEF4AD2398F87800EC5027 /* SceneryFilterApi.swift in Sources */,
 				95BEF4AB2398F82F00EC5027 /* SceneryFilterResult.swift in Sources */,
 				95BEF4972398B52100EC5027 /* FaceFilterResult.swift in Sources */,
+				95A55A282399EA1A007DBA0C /* DecorationDefine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

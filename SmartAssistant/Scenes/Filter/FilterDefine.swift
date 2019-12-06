@@ -8,7 +8,7 @@
 
 import Foundation
 
-let FaceFilters = [
+let FACE_FILTERS = [
     [FaceFilter.dimPurple : "黛紫"],
     [FaceFilter.iwai : "岩井"],
     [FaceFilter.pink : "粉嫩"],
