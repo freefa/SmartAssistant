@@ -48,6 +48,8 @@ class FilterSelectController: SABaseViewController, UITableViewDelegate, UITable
             for info in FACE_STICKERS {
                 dataSource.append([info.keys.first!.rawValue : info.values.first!])
             }
+        default:
+            Log("")
         }
     }
 

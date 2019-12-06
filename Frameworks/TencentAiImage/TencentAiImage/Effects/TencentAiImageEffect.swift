@@ -100,4 +100,21 @@ open class TencentAiImageEffect: TBaseManager {
             callback((parseResult.success, rspError), parseResult.model)
         }
     }
+    
+    /// 颜龄检测
+    /// - Parameters:
+    ///   - image: 待检测图片
+    ///   - callback: 回调
+    public func detectFaceAge(image: UIImage, callback: @escaping (TResult, FaceAge?) -> ()) {
+        let api = FaceAgeApi(image: image)
+        TSessionManager.default.request(api: api) { (data, rspError) in
+            guard rspError == nil else {
+                TLog.d("FaceAge failed: \(rspError!.description)")
+                callback((false, rspError), nil)
+                return
+            }
+            let parseResult = FaceAge.decodeFrom(data: data!)
+            callback((parseResult.success, rspError), parseResult.model)
+        }
+    }
 }

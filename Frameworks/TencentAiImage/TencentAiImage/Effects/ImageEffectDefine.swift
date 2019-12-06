@@ -276,3 +276,7 @@ public enum StickerType: Int {
     /// 狼人杀狼人
     case Werewolves
 }
+
+// MARK: 颜龄检测
+let kPATH_FACE_AGE = "ptu/ptu_faceage"
+

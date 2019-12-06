@@ -29,6 +29,7 @@ enum ActionType {
     case cosmetic
     case decoration
     case sticker
+    case faceAge
 }
 
 class HomeViewController: SABaseViewController, UITableViewDelegate, UITableViewDataSource {
@@ -65,6 +66,7 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
         dataSouce.append([ROW_NAME_KEY : "人脸美妆", ROW_TYPE_KEY : ActionType.cosmetic])
         dataSouce.append([ROW_NAME_KEY : "人脸变妆", ROW_TYPE_KEY : ActionType.decoration])
         dataSouce.append([ROW_NAME_KEY : "大头贴", ROW_TYPE_KEY : ActionType.sticker])
+        dataSouce.append([ROW_NAME_KEY : "颜龄检测", ROW_TYPE_KEY : ActionType.faceAge])
         dataSouce.append([ROW_NAME_KEY : "图片压缩测试", ROW_TYPE_KEY : ActionType.imageTest])
     }
     
@@ -216,6 +218,9 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
         case .sticker:
             controller = FilterViewController()
             FilterViewController.filterType = .sticker
+        case .faceAge:
+            controller = FilterViewController()
+            FilterViewController.filterType = .faceAge
         }
         if let vc = controller {
             self.navigationController?.pushViewController(vc, animated: true)

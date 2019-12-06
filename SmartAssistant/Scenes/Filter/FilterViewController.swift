@@ -15,6 +15,7 @@ enum FilterType {
     case cosmetic
     case decoration
     case sticker
+    case faceAge
 }
 
 class FilterViewController: SABaseViewController, FilterSelectDelegate {
@@ -47,15 +48,23 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate {
         case .sticker:
             self.title = "选择大头贴"
             self.sourceImageView.image = UIImage.init(named: "face_filter")
+        case .faceAge:
+            self.title = "颜龄检测"
+            self.sourceImageView.image = UIImage.init(named: "face_filter")
         }
         self.selectButton.setTitle(self.title, for: .normal)
     }
     
     @IBAction func filterButtonTouched(_ sender: Any) {
-        let controller = FilterSelectController()
-        controller.delegate = self
-        controller.title = self.selectButton.title(for: .normal)
-        self.navigationController?.pushViewController(controller, animated: true)
+        switch FilterViewController.filterType {
+        case .faceAge:
+            doFaceAge()
+        default:
+            let controller = FilterSelectController()
+            controller.delegate = self
+            controller.title = self.selectButton.title(for: .normal)
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
     }
     
     
@@ -123,6 +132,18 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate {
         }
     }
     
+    func doFaceAge() {
+        self.imageEffector.detectFaceAge(image: self.sourceImageView.image!) { (result, model) in
+            DispatchQueue.main.async {
+                if result.success {
+                    self.filterImageView.image = model!.image
+                } else {
+                    Log("detectFaceAge failed: \(result.error!.description)")
+                }
+            }
+        }
+    }
+    
     // MARK:FilterSelectDelegate
     func didSelectFilterAtIndex(index: Int) {
         switch FilterViewController.filterType {
@@ -136,6 +157,8 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate {
             doFaceDecoration(decorationNumber: index)
         case .sticker:
             doFaceSticker(stickerNumber: index)
+        default:
+            Log("do nothing")
         }
     }
 }
