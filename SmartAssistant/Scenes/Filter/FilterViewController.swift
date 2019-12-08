@@ -69,6 +69,7 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate {
     
     
     func doFaceFilter(filterNumber: Int) {
+        LBToast.showLoading()
         let filter = FaceFilter.init(rawValue: filterNumber)
         self.imageEffector.faceFilter(image: self.sourceImageView.image!, filter: filter!) { (result, model) in
             DispatchQueue.main.async {
@@ -76,24 +77,30 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate {
                     self.filterImageView.image = model!.image
                 } else {
                     Log("faceFilter failed: \(result.error!.description)")
+                    LBToast.show("\(result.error!.description)")
                 }
+                LBToast.hideLoading()
             }
         }
     }
     
     func doSceneryFilter(filterNumber: Int) {
+        LBToast.showLoading()
         self.imageEffector.sceneryFilter(image: self.sourceImageView.image!, filter: filterNumber) { (result, model) in
             DispatchQueue.main.async {
                 if result.success {
                     self.filterImageView.image = model!.image
                 } else {
                     Log("sceneryFilter failed: \(result.error!.description)")
+                    LBToast.show("\(result.error!.description)")
                 }
+                LBToast.hideLoading()
             }
         }
     }
     
     func doFaceCosmetic(cosmeticNumber: Int) {
+        LBToast.showLoading()
         let cosmetic = CosmeticType.init(rawValue: cosmeticNumber)
         self.imageEffector.faceCosmetic(image: self.sourceImageView.image!, cosmetic: cosmetic!) { (result, model) in
             DispatchQueue.main.async {
@@ -101,12 +108,15 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate {
                     self.filterImageView.image = model!.image
                 } else {
                     Log("faceCosmetic failed: \(result.error!.description)")
+                    LBToast.show("\(result.error!.description)")
                 }
+                LBToast.hideLoading()
             }
         }
     }
     
     func doFaceDecoration(decorationNumber: Int) {
+        LBToast.showLoading()
         let decoration = DecorationType.init(rawValue: decorationNumber)
         self.imageEffector.faceDecoration(image: self.sourceImageView.image!, decoration: decoration!) { (result, model) in
             DispatchQueue.main.async {
@@ -114,12 +124,15 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate {
                     self.filterImageView.image = model!.image
                 } else {
                     Log("faceDecoration failed: \(result.error!.description)")
+                    LBToast.show("\(result.error!.description)")
                 }
+                LBToast.hideLoading()
             }
         }
     }
     
     func doFaceSticker(stickerNumber: Int) {
+        LBToast.showLoading("")
         let sticker = StickerType.init(rawValue: stickerNumber)
         self.imageEffector.faceSticker(image: self.sourceImageView.image!, sticker: sticker!) { (result, model) in
             DispatchQueue.main.async {
@@ -127,19 +140,24 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate {
                     self.filterImageView.image = model!.image
                 } else {
                     Log("faceSticker failed: \(result.error!.description)")
+                    LBToast.show("\(result.error!.description)")
                 }
+                LBToast.hideLoading()
             }
         }
     }
     
     func doFaceAge() {
+        LBToast.showLoading()
         self.imageEffector.detectFaceAge(image: self.sourceImageView.image!) { (result, model) in
             DispatchQueue.main.async {
                 if result.success {
                     self.filterImageView.image = model!.image
                 } else {
                     Log("detectFaceAge failed: \(result.error!.description)")
+                    LBToast.show("\(result.error!.description)")
                 }
+                LBToast.hideLoading()
             }
         }
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95228F2A239BD880001CC2B5 /* LBToast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95228F29239BD880001CC2B5 /* LBToast.framework */; };
 		9561EEEB238FD3DB00B5194F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9561EEEA238FD3DB00B5194F /* Assets.xcassets */; };
 		9561EEEE238FD3DB00B5194F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9561EEEC238FD3DB00B5194F /* LaunchScreen.storyboard */; };
 		9561EEFE238FD41600B5194F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9561EEF7238FD41500B5194F /* HomeViewController.xib */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95228F29239BD880001CC2B5 /* LBToast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LBToast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9561EEDE238FD3DA00B5194F /* SmartAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9561EEEA238FD3DB00B5194F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9561EEED238FD3DB00B5194F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95228F2A239BD880001CC2B5 /* LBToast.framework in Frameworks */,
 				95BEF4952398A47800EC5027 /* TencentAiImage.framework in Frameworks */,
 				9579F1F023919998002763DC /* TencentAiTranslate.framework in Frameworks */,
 				9579F1EE23919992002763DC /* TencentAiOCR.framework in Frameworks */,
@@ -145,6 +148,7 @@
 		9561EF07238FD93400B5194F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95228F29239BD880001CC2B5 /* LBToast.framework */,
 				95BEF4942398A47800EC5027 /* TencentAiImage.framework */,
 				9579F1EF23919998002763DC /* TencentAiTranslate.framework */,
 				9579F1ED23919992002763DC /* TencentAiOCR.framework */,

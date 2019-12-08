@@ -7,6 +7,7 @@
 //
 
 import UIKit
+@_exported import LBToast
 
 fileprivate let ROW_NAME_KEY = "name"
 fileprivate let ROW_TYPE_KEY = "type"
@@ -30,6 +31,7 @@ enum ActionType {
     case decoration
     case sticker
     case faceAge
+    case toast
 }
 
 class HomeViewController: SABaseViewController, UITableViewDelegate, UITableViewDataSource {
@@ -67,15 +69,23 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
         dataSouce.append([ROW_NAME_KEY : "人脸变妆", ROW_TYPE_KEY : ActionType.decoration])
         dataSouce.append([ROW_NAME_KEY : "大头贴", ROW_TYPE_KEY : ActionType.sticker])
         dataSouce.append([ROW_NAME_KEY : "颜龄检测", ROW_TYPE_KEY : ActionType.faceAge])
+        dataSouce.append([ROW_NAME_KEY : "Toast测试", ROW_TYPE_KEY : ActionType.toast])
         dataSouce.append([ROW_NAME_KEY : "图片压缩测试", ROW_TYPE_KEY : ActionType.imageTest])
     }
     
     // MARK: action method
     func translateText() {
+        LBToast.showLoading("正在加载...")
         translator.translate(text: "今天天气怎么样",
                              source: TLanguage.Chinese,
                              target: TLanguage.English) { (result, model) in
-            Log("text translate success: \(result.success)")
+                                DispatchQueue.main.async {
+                                    Log("text translate success: \(result.success)")
+                                    if !result.success {
+                                        LBToast.show("\(result.error!.description)")
+                                    }
+                                    LBToast.hideLoading()
+                                }
         }
     }
     
@@ -84,18 +94,27 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
                              source: TLanguage.Chinese,
                              target: TLanguage.English) { (result, model) in
                                 Log("translate success: \(result.success)")
+                                if !result.success {
+                                    LBToast.show("\(result.error!.description)")
+                                }
         }
     }
     
     func testIdCardOCR() {
         ocr.IDCardOCR(image: UIImage.init(named: "idcard_front")!, type: .front) { (result, idCard) in
             Log("IDCardOCR success: \(result.success)")
+            if !result.success {
+                LBToast.show("\(result.error!.description)")
+            }
         }
     }
     
     func businessCardOcr() {
         ocr.businessCardOCR(image: UIImage.init(named: "bc_card")!) { (result, businessCard) in
             Log("businessCardOCR success: \(result.success)")
+            if !result.success {
+                LBToast.show("\(result.error!.description)")
+            }
         }
     }
     
@@ -105,6 +124,7 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
             Log("driverLisenceOCR success: \(result.success)")
             if !result.success {
                 Log(result.error!.description)
+                LBToast.show("\(result.error!.description)")
             }
         }
     }
@@ -114,6 +134,8 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
             Log("numberPlateOCR success: \(result.success)")
             if !result.success {
                 Log(result.error!.description)
+                LBToast.show("\(result.error!.description)")
+                LBToast.show("\(result.error!.description)")
             }
         }
     }
@@ -123,6 +145,7 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
             Log("bankCardOCR success: \(result.success)")
             if !result.success {
                 Log(result.error!.description)
+                LBToast.show("\(result.error!.description)")
             }
         }
     }
@@ -132,6 +155,7 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
             Log("businessLicenseOCR success: \(result.success)")
             if !result.success {
                 Log(result.error!.description)
+                LBToast.show("\(result.error!.description)")
             }
         }
     }
@@ -141,6 +165,7 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
             Log("handWritingOCR success: \(result.success)")
             if !result.success {
                 Log(result.error!.description)
+                LBToast.show("\(result.error!.description)")
             }
         }
     }
@@ -150,6 +175,7 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
             Log("generalOCR success: \(result.success)")
             if !result.success {
                 Log(result.error!.description)
+                LBToast.show("\(result.error!.description)")
             }
         }
     }
@@ -221,6 +247,8 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
         case .faceAge:
             controller = FilterViewController()
             FilterViewController.filterType = .faceAge
+        case .toast:
+            LBToast.show("网络异常,请稍后重试")
         }
         if let vc = controller {
             self.navigationController?.pushViewController(vc, animated: true)
