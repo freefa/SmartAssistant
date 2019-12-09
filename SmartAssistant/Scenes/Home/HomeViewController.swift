@@ -93,27 +93,33 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
         translator.translate(image: UIImage.init(named: "translate_image")!,
                              source: TLanguage.Chinese,
                              target: TLanguage.English) { (result, model) in
-                                Log("translate success: \(result.success)")
-                                if !result.success {
-                                    LBToast.show("\(result.error!.description)")
+                                DispatchQueue.main.async {
+                                    Log("translate success: \(result.success)")
+                                    if !result.success {
+                                        LBToast.show("\(result.error!.description)")
+                                    }
                                 }
         }
     }
     
     func testIdCardOCR() {
         ocr.IDCardOCR(image: UIImage.init(named: "idcard_front")!, type: .front) { (result, idCard) in
-            Log("IDCardOCR success: \(result.success)")
-            if !result.success {
-                LBToast.show("\(result.error!.description)")
+            DispatchQueue.main.async {
+                Log("IDCardOCR success: \(result.success)")
+                if !result.success {
+                    LBToast.show("\(result.error!.description)")
+                }
             }
         }
     }
     
     func businessCardOcr() {
         ocr.businessCardOCR(image: UIImage.init(named: "bc_card")!) { (result, businessCard) in
-            Log("businessCardOCR success: \(result.success)")
-            if !result.success {
-                LBToast.show("\(result.error!.description)")
+            DispatchQueue.main.async {
+                Log("businessCardOCR success: \(result.success)")
+                if !result.success {
+                    LBToast.show("\(result.error!.description)")
+                }
             }
         }
     }
@@ -121,61 +127,73 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
     func driverLisenceOcr(type: DriverLicenseType) {
         let imgName = type == .carLisence ? "car_lisence" : "driver_lisence"
         ocr.driverLisenceOCR(image: UIImage.init(named: imgName)!, type: type) { (result, driverLisence) in
-            Log("driverLisenceOCR success: \(result.success)")
-            if !result.success {
-                Log(result.error!.description)
-                LBToast.show("\(result.error!.description)")
+            DispatchQueue.main.async {
+                Log("driverLisenceOCR success: \(result.success)")
+                if !result.success {
+                    Log(result.error!.description)
+                    LBToast.show("\(result.error!.description)")
+                }
             }
         }
     }
     
     func numberPlateOcr() {
         ocr.numberPlateOCR(image: UIImage.init(named: "number_plate")!) { (result, numberPlate) in
-            Log("numberPlateOCR success: \(result.success)")
-            if !result.success {
-                Log(result.error!.description)
-                LBToast.show("\(result.error!.description)")
-                LBToast.show("\(result.error!.description)")
+            DispatchQueue.main.async {
+                Log("numberPlateOCR success: \(result.success)")
+                if !result.success {
+                    Log(result.error!.description)
+                    LBToast.show("\(result.error!.description)")
+                    LBToast.show("\(result.error!.description)")
+                }
             }
         }
     }
     
     func bankCardOcr() {
         ocr.bankCardOCR(image: UIImage.init(named: "bank_card")!) { (result, bankCard) in
-            Log("bankCardOCR success: \(result.success)")
-            if !result.success {
-                Log(result.error!.description)
-                LBToast.show("\(result.error!.description)")
+            DispatchQueue.main.async {
+                Log("bankCardOCR success: \(result.success)")
+                if !result.success {
+                    Log(result.error!.description)
+                    LBToast.show("\(result.error!.description)")
+                }                
             }
         }
     }
     
     func businessLicenseOcr() {
         ocr.businessLicenseOCR(image: UIImage.init(named: "business_license")!) { (result, businessLicense) in
-            Log("businessLicenseOCR success: \(result.success)")
-            if !result.success {
-                Log(result.error!.description)
-                LBToast.show("\(result.error!.description)")
+            DispatchQueue.main.async {
+                Log("businessLicenseOCR success: \(result.success)")
+                if !result.success {
+                    Log(result.error!.description)
+                    LBToast.show("\(result.error!.description)")
+                }
             }
         }
     }
     
     func handWritingOcr() {
         ocr.handWritingOCR(image: UIImage.init(named: "hand_writing")!) { (result, handWriting) in
-            Log("handWritingOCR success: \(result.success)")
-            if !result.success {
-                Log(result.error!.description)
-                LBToast.show("\(result.error!.description)")
+            DispatchQueue.main.async {
+                Log("handWritingOCR success: \(result.success)")
+                if !result.success {
+                    Log(result.error!.description)
+                    LBToast.show("\(result.error!.description)")
+                }
             }
         }
     }
     
     func generalOcr() {
         ocr.generalOCR(image: UIImage.init(named: "translate_image")!) { (result, GeneralOCR) in
-            Log("generalOCR success: \(result.success)")
-            if !result.success {
-                Log(result.error!.description)
-                LBToast.show("\(result.error!.description)")
+            DispatchQueue.main.async {
+                Log("generalOCR success: \(result.success)")
+                if !result.success {
+                    Log(result.error!.description)
+                    LBToast.show("\(result.error!.description)")
+                }                
             }
         }
     }

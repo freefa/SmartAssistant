@@ -8,7 +8,7 @@
 
 import Foundation
 
-public func Log<T>(_ content: T, file: String = #file, func: String = #function, line: Int = #line) {
+public func Log(_ content: String, file: String = #file, func: String = #function, line: Int = #line) {
     if LOG_OUTPUT == LogConfig.none {
         return
     }
@@ -26,8 +26,7 @@ public func Log<T>(_ content: T, file: String = #file, func: String = #function,
 }
 
 func logToFile(_ content: String) {
-    // TODO: open log file and start at new line
-    print("file log output")
+    LogFileHelper.shared.logToFile(content)
 }
 
 func logTime() -> String {

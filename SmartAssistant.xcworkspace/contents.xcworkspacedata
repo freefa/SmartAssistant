@@ -8,19 +8,19 @@
       location = "group:Frameworks"
       name = "Frameworks">
       <FileRef
-         location = "group:LBToast/LBToast.xcodeproj">
-      </FileRef>
-      <FileRef
          location = "group:/Users/lubiao/Desktop/SmartAssistant/Frameworks/TencentAIBase/TencentAiBase.xcodeproj">
       </FileRef>
       <FileRef
          location = "group:TencentAiTranslate/TencentAiTranslate.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:/Users/lubiao/Desktop/SmartAssistant/Frameworks/TencentAiORC/TencentAiOCR.xcodeproj">
+         location = "group:TencentAiOCR/TencentAiOCR.xcodeproj">
       </FileRef>
       <FileRef
          location = "group:TencentAiImage/TencentAiImage.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:LBToast/LBToast.xcodeproj">
       </FileRef>
       <FileRef
          location = "group:Log/Log.xcodeproj">

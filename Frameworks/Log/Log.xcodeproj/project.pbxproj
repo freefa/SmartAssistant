@@ -11,6 +11,7 @@
 		959946A6238021900047408E /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959946A5238021900047408E /* Configuration.swift */; };
 		959946A8238022370047408E /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959946A7238022370047408E /* Log.swift */; };
 		959946AF238025B60047408E /* Log.swift in Headers */ = {isa = PBXBuildFile; fileRef = 959946A7238022370047408E /* Log.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		95B86D9E239E367A002A49C2 /* LogFileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B86D9D239E367A002A49C2 /* LogFileHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		95994698238021190047408E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		959946A5238021900047408E /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		959946A7238022370047408E /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		95B86D9D239E367A002A49C2 /* LogFileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFileHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +53,11 @@
 		95994696238021190047408E /* Log */ = {
 			isa = PBXGroup;
 			children = (
+				959946A7238022370047408E /* Log.swift */,
+				95B86D9D239E367A002A49C2 /* LogFileHelper.swift */,
 				95994697238021190047408E /* Log.h */,
 				95994698238021190047408E /* Info.plist */,
 				959946A5238021900047408E /* Configuration.swift */,
-				959946A7238022370047408E /* Log.swift */,
 			);
 			path = Log;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				959946A8238022370047408E /* Log.swift in Sources */,
+				95B86D9E239E367A002A49C2 /* LogFileHelper.swift in Sources */,
 				959946A6238021900047408E /* Configuration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

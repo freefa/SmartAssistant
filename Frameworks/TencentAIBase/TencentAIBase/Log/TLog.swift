@@ -7,13 +7,14 @@
 //
 
 import Foundation
+import Log
 
 public enum TLog {
     public static func d(_ string: String, file: String = #file, func: String = #function, line: Int = #line) {
         #if DEBUG
         let fileName = (file as NSString).lastPathComponent
         let msg = "\(nowTimeString())|TencentAI|DEBUG|\(fileName):\(line)| \(string)"
-        print("\(msg)")
+        Log("\(msg)")
         #endif
     }
     

@@ -8,7 +8,7 @@
 
 import Foundation
 
-let LOG_OUTPUT = LogConfig.console
+let LOG_OUTPUT = LogConfig.all
 
 enum LogConfig: Int {
     case none = 0

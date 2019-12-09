@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+        Log("application didFinishLaunching sandbox:\n\(NSHomeDirectory())")
         TencentAiConfig.register(appId: TENCENT_AI_APP_ID, appKey: TENCENT_AI_APP_KEY)
         
         self.window = UIWindow(frame: UIScreen.main.bounds)

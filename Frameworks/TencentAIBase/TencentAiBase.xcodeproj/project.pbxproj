@@ -23,6 +23,7 @@
 		9561EF6C238FE60D00B5194F /* TencentAiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561EF6B238FE60D00B5194F /* TencentAiConfig.swift */; };
 		9561EF70238FE70500B5194F /* TLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561EF6F238FE70400B5194F /* TLog.swift */; };
 		9561EF73238FE89A00B5194F /* TencentAiSignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561EF72238FE89A00B5194F /* TencentAiSignature.swift */; };
+		95B86DA0239E86ED002A49C2 /* Log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95B86D9F239E86ED002A49C2 /* Log.framework */; };
 		95CAFDB62390216A0093E5B4 /* StringUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CAFDB52390216A0093E5B4 /* StringUtil.swift */; };
 		95CAFDB8239021BC0093E5B4 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CAFDB7239021BC0093E5B4 /* DateUtil.swift */; };
 		95CD0C57239176FC00E1CB78 /* TBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD0C56239176FC00E1CB78 /* TBaseManager.swift */; };
@@ -58,6 +59,7 @@
 		9561EF6B238FE60D00B5194F /* TencentAiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TencentAiConfig.swift; sourceTree = "<group>"; };
 		9561EF6F238FE70400B5194F /* TLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLog.swift; sourceTree = "<group>"; };
 		9561EF72238FE89A00B5194F /* TencentAiSignature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TencentAiSignature.swift; sourceTree = "<group>"; };
+		95B86D9F239E86ED002A49C2 /* Log.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Log.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CAFDB52390216A0093E5B4 /* StringUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtil.swift; sourceTree = "<group>"; };
 		95CAFDB7239021BC0093E5B4 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		95CD0C56239176FC00E1CB78 /* TBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBaseManager.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95B86DA0239E86ED002A49C2 /* Log.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +189,7 @@
 		95CAFDB9239022420093E5B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95B86D9F239E86ED002A49C2 /* Log.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
