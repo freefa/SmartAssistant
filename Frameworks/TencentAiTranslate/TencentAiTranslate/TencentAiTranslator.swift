@@ -48,7 +48,7 @@ open class TencentAiTranslator: TBaseManager {
         api.target = target
         TSessionManager.default.request(api: api) { (data, rspError) in
             guard rspError == nil else {
-                TLog.d("imageTranslateError: \(rspError!.description)")
+                TLog.d("imageTranslateError: \(rspError?.description ?? "unkown error")")
                 callback((false, rspError), nil)
                 return
             }

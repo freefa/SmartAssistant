@@ -32,7 +32,7 @@ open class OCRItem: TencentAiBaseModel {
         case name = "item"
         case value = "itemstring"
         case position = "itemcoord"
-        }
+    }
     
     public required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)

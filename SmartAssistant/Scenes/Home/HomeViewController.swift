@@ -75,31 +75,13 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
     
     // MARK: action method
     func translateText() {
-        LBToast.showLoading("正在加载...")
-        translator.translate(text: "今天天气怎么样",
-                             source: TLanguage.Chinese,
-                             target: TLanguage.English) { (result, model) in
-                                DispatchQueue.main.async {
-                                    Log("text translate success: \(result.success)")
-                                    if !result.success {
-                                        LBToast.show("\(result.error!.description)")
-                                    }
-                                    LBToast.hideLoading()
-                                }
-        }
+        let vc = TextTranslateViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func translateImage() {
-        translator.translate(image: UIImage.init(named: "translate_image")!,
-                             source: TLanguage.Chinese,
-                             target: TLanguage.English) { (result, model) in
-                                DispatchQueue.main.async {
-                                    Log("translate success: \(result.success)")
-                                    if !result.success {
-                                        LBToast.show("\(result.error!.description)")
-                                    }
-                                }
-        }
+        let vc = ImageTranslateViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func testIdCardOCR() {

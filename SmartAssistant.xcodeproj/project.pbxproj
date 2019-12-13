@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		950B1ED023A35F78003CB72D /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950B1ECE23A35F78003CB72D /* SelectViewController.swift */; };
+		950B1ED123A35F78003CB72D /* SelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 950B1ECF23A35F78003CB72D /* SelectViewController.xib */; };
+		950B1ED323A36399003CB72D /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950B1ED223A36399003CB72D /* LanguageCell.swift */; };
 		95228F2A239BD880001CC2B5 /* LBToast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95228F29239BD880001CC2B5 /* LBToast.framework */; };
+		9548488F23A1D7A400631C42 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9548488D23A1D7A400631C42 /* TranslateViewController.swift */; };
+		9548489023A1D7A400631C42 /* TranslateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9548488E23A1D7A400631C42 /* TranslateViewController.xib */; };
+		9548489223A1D7C200631C42 /* TextTranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9548489123A1D7C200631C42 /* TextTranslateViewController.swift */; };
+		9548489423A1D7E100631C42 /* ImageTranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9548489323A1D7E100631C42 /* ImageTranslateViewController.swift */; };
 		9561EEEB238FD3DB00B5194F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9561EEEA238FD3DB00B5194F /* Assets.xcassets */; };
 		9561EEEE238FD3DB00B5194F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9561EEEC238FD3DB00B5194F /* LaunchScreen.storyboard */; };
 		9561EEFE238FD41600B5194F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9561EEF7238FD41500B5194F /* HomeViewController.xib */; };
@@ -33,7 +40,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		950B1ECE23A35F78003CB72D /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
+		950B1ECF23A35F78003CB72D /* SelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectViewController.xib; sourceTree = "<group>"; };
+		950B1ED223A36399003CB72D /* LanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCell.swift; sourceTree = "<group>"; };
 		95228F29239BD880001CC2B5 /* LBToast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LBToast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9548488D23A1D7A400631C42 /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
+		9548488E23A1D7A400631C42 /* TranslateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TranslateViewController.xib; sourceTree = "<group>"; };
+		9548489123A1D7C200631C42 /* TextTranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTranslateViewController.swift; sourceTree = "<group>"; };
+		9548489323A1D7E100631C42 /* ImageTranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTranslateViewController.swift; sourceTree = "<group>"; };
 		9561EEDE238FD3DA00B5194F /* SmartAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9561EEEA238FD3DB00B5194F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9561EEED238FD3DB00B5194F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,6 +90,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9528880923A32F4C00BE78E7 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				950B1ECE23A35F78003CB72D /* SelectViewController.swift */,
+				950B1ECF23A35F78003CB72D /* SelectViewController.xib */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		9548488C23A1D72500631C42 /* Translate */ = {
+			isa = PBXGroup;
+			children = (
+				9548488D23A1D7A400631C42 /* TranslateViewController.swift */,
+				9548488E23A1D7A400631C42 /* TranslateViewController.xib */,
+				9548489123A1D7C200631C42 /* TextTranslateViewController.swift */,
+				9548489323A1D7E100631C42 /* ImageTranslateViewController.swift */,
+				950B1ED223A36399003CB72D /* LanguageCell.swift */,
+			);
+			path = Translate;
+			sourceTree = "<group>";
+		};
 		9561EED5238FD3DA00B5194F = {
 			isa = PBXGroup;
 			children = (
@@ -106,8 +141,10 @@
 		9561EEF5238FD41500B5194F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				9528880923A32F4C00BE78E7 /* Common */,
 				9561EEF9238FD41500B5194F /* Base */,
 				9561EEF6238FD41500B5194F /* Home */,
+				9548488C23A1D72500631C42 /* Translate */,
 				95BEF49E2398DB0800EC5027 /* Filter */,
 				95AC24832397606F001145AF /* Test */,
 			);
@@ -245,9 +282,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				950B1ED123A35F78003CB72D /* SelectViewController.xib in Resources */,
 				95BEF4B22398FB1800EC5027 /* FilterViewController.xib in Resources */,
 				9561EEEE238FD3DB00B5194F /* LaunchScreen.storyboard in Resources */,
 				9561EEEB238FD3DB00B5194F /* Assets.xcassets in Resources */,
+				9548489023A1D7A400631C42 /* TranslateViewController.xib in Resources */,
 				95AC2487239760CF001145AF /* ImageTestViewController.xib in Resources */,
 				95BEF4B82398FC0000EC5027 /* FilterSelectController.xib in Resources */,
 				9561EEFE238FD41600B5194F /* HomeViewController.xib in Resources */,
@@ -261,16 +300,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9548489223A1D7C200631C42 /* TextTranslateViewController.swift in Sources */,
 				9561EF03238FD41600B5194F /* BaseNavigationController.swift in Sources */,
+				950B1ED323A36399003CB72D /* LanguageCell.swift in Sources */,
 				95BEF4B42398FB5B00EC5027 /* FilterDefine.swift in Sources */,
 				9561EF00238FD41600B5194F /* SABaseViewController.swift in Sources */,
+				950B1ED023A35F78003CB72D /* SelectViewController.swift in Sources */,
 				95AC2486239760CF001145AF /* ImageTestViewController.swift in Sources */,
 				95BEF4B72398FC0000EC5027 /* FilterSelectController.swift in Sources */,
 				9561EEFF238FD41600B5194F /* HomeViewController.swift in Sources */,
 				9561EF01238FD41600B5194F /* BaseViewController.swift in Sources */,
 				95BEF4B12398FB1800EC5027 /* FilterViewController.swift in Sources */,
+				9548489423A1D7E100631C42 /* ImageTranslateViewController.swift in Sources */,
 				9561EF38238FE0B500B5194F /* AppDelegate.swift in Sources */,
 				9561EF06238FD7D800B5194F /* HomeSubView.swift in Sources */,
+				9548488F23A1D7A400631C42 /* TranslateViewController.swift in Sources */,
 				9561EF02238FD41600B5194F /* SABaseNavigationController.swift in Sources */,
 				9561EF3A238FE0DD00B5194F /* AppConstant.swift in Sources */,
 			);

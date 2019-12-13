@@ -64,3 +64,21 @@ public let IMG_TRANSLATE_SUPPORTED: [TLanguage : [TLanguage]]
        .Chinese : [.English, .Japanese, .Korean],
        .Japanese : [.Chinese],
        .Korean : [.Chinese],]
+
+public let LANGUAGE_DISPLAY_MAP: [TLanguage : String] = [
+    .Chinese: "简体中文",
+    .English: "英文",
+    .French: "法语",
+    .Spanish: "西班牙语",
+    .Italian: "意大利语",
+    .German: "德语",
+    .Turkish: "土耳其语",
+    .Russian: "俄罗斯语",
+    .Portuguese: "葡萄牙语",
+    .Vietnamese: "越南语",
+    .Indonesian: "印度尼西亚语",
+    .Malaysian: "马来西亚语",
+    .Thai: "泰语",
+    .Japanese: "日语",
+    .Korean: "韩语"
+]
