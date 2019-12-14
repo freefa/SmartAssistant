@@ -43,7 +43,8 @@ open class TSessionManager: TBaseSessionManager, URLSessionDelegate {
             } else {
                 let urlRsp = response as! HTTPURLResponse
                 if urlRsp.statusCode != HTTP_RESP_CODE_SUCCESS {
-                    let e = TError(code: urlRsp.statusCode, description: "HTTP response error")
+                    let e = TError(code: urlRsp.statusCode, description: urlRsp.description)
+                    TLog.d("statusCode = \(urlRsp.statusCode), \(urlRsp.description)")
                     callback(data, e)
                 } else {
                     self.handleResponse(url: request.url!.absoluteString,

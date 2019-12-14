@@ -37,6 +37,8 @@
 		95BEF4B42398FB5B00EC5027 /* FilterDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BEF4B32398FB5B00EC5027 /* FilterDefine.swift */; };
 		95BEF4B72398FC0000EC5027 /* FilterSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BEF4B52398FC0000EC5027 /* FilterSelectController.swift */; };
 		95BEF4B82398FC0000EC5027 /* FilterSelectController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95BEF4B62398FC0000EC5027 /* FilterSelectController.xib */; };
+		95F9976F23A5230500627508 /* OCRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F9976D23A5230500627508 /* OCRViewController.swift */; };
+		95F9977023A5230500627508 /* OCRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F9976E23A5230500627508 /* OCRViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		95BEF4B32398FB5B00EC5027 /* FilterDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDefine.swift; sourceTree = "<group>"; };
 		95BEF4B52398FC0000EC5027 /* FilterSelectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSelectController.swift; sourceTree = "<group>"; };
 		95BEF4B62398FC0000EC5027 /* FilterSelectController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterSelectController.xib; sourceTree = "<group>"; };
+		95F9976D23A5230500627508 /* OCRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRViewController.swift; sourceTree = "<group>"; };
+		95F9976E23A5230500627508 /* OCRViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OCRViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,7 @@
 				9561EEF9238FD41500B5194F /* Base */,
 				9561EEF6238FD41500B5194F /* Home */,
 				9548488C23A1D72500631C42 /* Translate */,
+				95F9976C23A522B700627508 /* OCR */,
 				95BEF49E2398DB0800EC5027 /* Filter */,
 				95AC24832397606F001145AF /* Test */,
 			);
@@ -224,6 +229,15 @@
 			path = Filter;
 			sourceTree = "<group>";
 		};
+		95F9976C23A522B700627508 /* OCR */ = {
+			isa = PBXGroup;
+			children = (
+				95F9976D23A5230500627508 /* OCRViewController.swift */,
+				95F9976E23A5230500627508 /* OCRViewController.xib */,
+			);
+			path = OCR;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -289,6 +303,7 @@
 				9548489023A1D7A400631C42 /* TranslateViewController.xib in Resources */,
 				95AC2487239760CF001145AF /* ImageTestViewController.xib in Resources */,
 				95BEF4B82398FC0000EC5027 /* FilterSelectController.xib in Resources */,
+				95F9977023A5230500627508 /* OCRViewController.xib in Resources */,
 				9561EEFE238FD41600B5194F /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,6 +326,7 @@
 				9561EEFF238FD41600B5194F /* HomeViewController.swift in Sources */,
 				9561EF01238FD41600B5194F /* BaseViewController.swift in Sources */,
 				95BEF4B12398FB1800EC5027 /* FilterViewController.swift in Sources */,
+				95F9976F23A5230500627508 /* OCRViewController.swift in Sources */,
 				9548489423A1D7E100631C42 /* ImageTranslateViewController.swift in Sources */,
 				9561EF38238FE0B500B5194F /* AppDelegate.swift in Sources */,
 				9561EF06238FD7D800B5194F /* HomeSubView.swift in Sources */,

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OCRViewController" customModule="SmartAssistant" customModuleProvider="target">
+            <connections>
+                <outlet property="idcardSwitchButton" destination="ggu-4e-jjz" id="uSw-jB-q7p"/>
+                <outlet property="sourceImageView" destination="QbN-Aq-ZDC" id="khh-Fs-oJu"/>
+                <outlet property="tableView" destination="n00-vN-5j0" id="YEF-iy-rDa"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QbN-Aq-ZDC" userLabel="SourceImageView">
+                    <rect key="frame" x="0.0" y="44" width="414" height="299"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CsP-c9-g8k" userLabel="MidView">
+                    <rect key="frame" x="0.0" y="343" width="414" height="10"/>
+                    <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="Nj4-yp-tz6"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="n00-vN-5j0" userLabel="TableView">
+                    <rect key="frame" x="0.0" y="353" width="414" height="509"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="DzM-Z4-bcj"/>
+                        <outlet property="delegate" destination="-1" id="h9e-T6-QKb"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggu-4e-jjz" userLabel="IdcardTypeButton">
+                    <rect key="frame" x="10" y="295" width="40" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="Xxe-f7-t3d"/>
+                        <constraint firstAttribute="height" constant="38" id="Z1v-L4-f0b"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="正面"/>
+                    <connections>
+                        <action selector="idcardSwitchButtonTouched:" destination="-1" eventType="touchUpInside" id="RYH-pz-guW"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBF-E4-xSi" userLabel="AddButton">
+                    <rect key="frame" x="364" y="293" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="IIE-Mt-q1T"/>
+                        <constraint firstAttribute="width" constant="40" id="pMq-fH-Zfa"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="+"/>
+                    <connections>
+                        <action selector="addButtonTouched:" destination="-1" eventType="touchUpInside" id="LBg-vS-ejK"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CsP-c9-g8k" secondAttribute="trailing" id="1Gg-Th-c6z"/>
+                <constraint firstItem="n00-vN-5j0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1XJ-Ee-Bo6"/>
+                <constraint firstItem="OBF-E4-xSi" firstAttribute="trailing" secondItem="QbN-Aq-ZDC" secondAttribute="trailing" constant="-10" id="5D5-tH-M3a"/>
+                <constraint firstItem="ggu-4e-jjz" firstAttribute="leading" secondItem="QbN-Aq-ZDC" secondAttribute="leading" constant="10" id="9MZ-Ig-Kfs"/>
+                <constraint firstItem="ggu-4e-jjz" firstAttribute="bottom" secondItem="QbN-Aq-ZDC" secondAttribute="bottom" constant="-10" id="Ijj-us-IB8"/>
+                <constraint firstItem="CsP-c9-g8k" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-100" id="NmB-5q-Dbb"/>
+                <constraint firstItem="n00-vN-5j0" firstAttribute="top" secondItem="CsP-c9-g8k" secondAttribute="bottom" id="P44-nt-Eae"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="n00-vN-5j0" secondAttribute="trailing" id="WmZ-uJ-C2e"/>
+                <constraint firstItem="QbN-Aq-ZDC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="bEE-Lh-yIF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QbN-Aq-ZDC" secondAttribute="trailing" id="ecF-MI-1jZ"/>
+                <constraint firstItem="CsP-c9-g8k" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gG8-Vg-5B1"/>
+                <constraint firstItem="QbN-Aq-ZDC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="i3x-VV-2dB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="n00-vN-5j0" secondAttribute="bottom" id="wg4-co-KRT"/>
+                <constraint firstItem="OBF-E4-xSi" firstAttribute="bottom" secondItem="QbN-Aq-ZDC" secondAttribute="bottom" constant="-10" id="xii-eV-XPt"/>
+                <constraint firstItem="CsP-c9-g8k" firstAttribute="top" secondItem="QbN-Aq-ZDC" secondAttribute="bottom" id="zYY-c0-WE4"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-341" y="33"/>
+        </view>
+    </objects>
+</document>

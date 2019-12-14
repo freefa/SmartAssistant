@@ -88,6 +88,9 @@ extension FileManager {
         let manager = FileManager.default
         var fileNumber = 1
         var lastLogFile = self.getLatestLogFile()
+        if !manager.fileExists(atPath: lastLogFile) {
+            manager.createFile(atPath: lastLogFile, contents: nil, attributes: nil)
+        }
         do {
             fileNumber = Int(lastLogFile.split(separator: "/").last!.split(separator: ".").first!)!
             let attr = try manager.attributesOfItem(atPath: lastLogFile)

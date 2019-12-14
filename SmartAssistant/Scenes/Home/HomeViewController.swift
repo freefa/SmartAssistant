@@ -84,100 +84,10 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    func testIdCardOCR() {
-        ocr.IDCardOCR(image: UIImage.init(named: "idcard_front")!, type: .front) { (result, idCard) in
-            DispatchQueue.main.async {
-                Log("IDCardOCR success: \(result.success)")
-                if !result.success {
-                    LBToast.show("\(result.error!.description)")
-                }
-            }
-        }
-    }
-    
-    func businessCardOcr() {
-        ocr.businessCardOCR(image: UIImage.init(named: "bc_card")!) { (result, businessCard) in
-            DispatchQueue.main.async {
-                Log("businessCardOCR success: \(result.success)")
-                if !result.success {
-                    LBToast.show("\(result.error!.description)")
-                }
-            }
-        }
-    }
-    
-    func driverLisenceOcr(type: DriverLicenseType) {
-        let imgName = type == .carLisence ? "car_lisence" : "driver_lisence"
-        ocr.driverLisenceOCR(image: UIImage.init(named: imgName)!, type: type) { (result, driverLisence) in
-            DispatchQueue.main.async {
-                Log("driverLisenceOCR success: \(result.success)")
-                if !result.success {
-                    Log(result.error!.description)
-                    LBToast.show("\(result.error!.description)")
-                }
-            }
-        }
-    }
-    
-    func numberPlateOcr() {
-        ocr.numberPlateOCR(image: UIImage.init(named: "number_plate")!) { (result, numberPlate) in
-            DispatchQueue.main.async {
-                Log("numberPlateOCR success: \(result.success)")
-                if !result.success {
-                    Log(result.error!.description)
-                    LBToast.show("\(result.error!.description)")
-                    LBToast.show("\(result.error!.description)")
-                }
-            }
-        }
-    }
-    
-    func bankCardOcr() {
-        ocr.bankCardOCR(image: UIImage.init(named: "bank_card")!) { (result, bankCard) in
-            DispatchQueue.main.async {
-                Log("bankCardOCR success: \(result.success)")
-                if !result.success {
-                    Log(result.error!.description)
-                    LBToast.show("\(result.error!.description)")
-                }                
-            }
-        }
-    }
-    
-    func businessLicenseOcr() {
-        ocr.businessLicenseOCR(image: UIImage.init(named: "business_license")!) { (result, businessLicense) in
-            DispatchQueue.main.async {
-                Log("businessLicenseOCR success: \(result.success)")
-                if !result.success {
-                    Log(result.error!.description)
-                    LBToast.show("\(result.error!.description)")
-                }
-            }
-        }
-    }
-    
-    func handWritingOcr() {
-        ocr.handWritingOCR(image: UIImage.init(named: "hand_writing")!) { (result, handWriting) in
-            DispatchQueue.main.async {
-                Log("handWritingOCR success: \(result.success)")
-                if !result.success {
-                    Log(result.error!.description)
-                    LBToast.show("\(result.error!.description)")
-                }
-            }
-        }
-    }
-    
-    func generalOcr() {
-        ocr.generalOCR(image: UIImage.init(named: "translate_image")!) { (result, GeneralOCR) in
-            DispatchQueue.main.async {
-                Log("generalOCR success: \(result.success)")
-                if !result.success {
-                    Log(result.error!.description)
-                    LBToast.show("\(result.error!.description)")
-                }                
-            }
-        }
+    func ocr(type: OCRType) {
+        let vc = OCRViewController()
+        vc.OcrType = type
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK: UITableViewDelegate & dataSource
@@ -210,23 +120,23 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
         case .imgTranslate:
             translateImage()
         case .idCardOcr:
-            testIdCardOCR()
+            ocr(type: .idcard)
         case .businessCardOcr:
-            businessCardOcr()
+            ocr(type: .businessCard)
         case .carLisenceOcr:
-            driverLisenceOcr(type: .carLisence)
+            ocr(type: .carLisence)
         case .driverLisenceOcr:
-            driverLisenceOcr(type: .driverLisence)
+            ocr(type: .driverLisence)
         case .numberPlateOcr:
-            numberPlateOcr()
+            ocr(type: .numberPlate)
         case .bankCardOcr:
-            bankCardOcr()
+            ocr(type: .bankCard)
         case .businessLicenseOcr:
-            businessLicenseOcr()
+            ocr(type: .businessLisence)
         case .handWritingOcr:
-            handWritingOcr()
+            ocr(type: .handWriting)
         case .generalOcr:
-            generalOcr()
+            ocr(type: .general)
         case .imageTest:
             controller = ImageTestViewController()
         case .faceFilter:

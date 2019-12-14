@@ -9,7 +9,7 @@
 import UIKit
 
 protocol FilterSelectDelegate: NSObjectProtocol {
-    func didSelectFilterAtIndex(index: Int)
+    func didSelectFilter(info: (index: Int, name: String))
 }
 
 class FilterSelectController: SABaseViewController, UITableViewDelegate, UITableViewDataSource {
@@ -78,7 +78,7 @@ class FilterSelectController: SABaseViewController, UITableViewDelegate, UITable
         tableView.deselectRow(at: indexPath, animated: true)
         if let callback = self.delegate {
             let info = dataSource[indexPath.row]
-            callback.didSelectFilterAtIndex(index: info.keys.first!)
+            callback.didSelectFilter(info: (info.keys.first!, info.values.first!))
         }
         self.navigationController?.popViewController(animated: true)
     }

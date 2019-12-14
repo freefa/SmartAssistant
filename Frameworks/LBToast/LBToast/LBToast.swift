@@ -20,15 +20,18 @@ let MSG_LENGTH_UNIT = 10
 let MAX_DURATION: ShowingTime = 3
 
 public struct LBToast {
-    public static func show(_ message: String,
+    public static func show(_ message: String?,
                             in view: UIView = UIApplication.shared.keyWindow!,
                             image: UIImage? = nil,
                             disappearAfer: ShowingTime? = nil) {
+        guard let msg = message else {
+            return
+        }
         var duration = disappearAfer
         if duration == nil {
-            duration = getDuration(message)
+            duration = getDuration(msg)
         }
-        let toast = LBToastView.create(message, on: view)
+        let toast = LBToastView.create(msg, on: view)
         toast.showThenDisappear(duration: duration!)
     }
     

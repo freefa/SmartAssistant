@@ -18,7 +18,7 @@ enum FilterType {
     case faceAge
 }
 
-class FilterViewController: SABaseViewController, FilterSelectDelegate {
+class FilterViewController: SABaseViewController, FilterSelectDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var sourceImageView: UIImageView!
     
@@ -28,10 +28,17 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate {
     
     static var filterType: FilterType = .face
     
+    var filterIndex = 1
+    
     let imageEffector = TencentAiImageEffect()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTitile()
+        setupNavbar()
+    }
+    
+    func setupTitile() {
         switch FilterViewController.filterType {
         case .face:
             self.title = "选择滤镜"
@@ -55,6 +62,42 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate {
         self.selectButton.setTitle(self.title, for: .normal)
     }
     
+    func setupNavbar() {
+        let commit = UIButton.init(type: .custom)
+        commit.setTitle("确定", for: .normal)
+        commit.setTitleColor(.black, for: .normal)
+        commit.addTarget(self, action: #selector(commitButtonTouched), for: .touchUpInside)
+        let item = UIBarButtonItem.init(customView: commit)
+        navigationItem.setRightBarButton(item, animated: false)
+    }
+    
+    func updateFilterNameButton(name: String) {
+        
+    }
+    
+    @IBAction func addButton(_ sender: Any) {
+        let pickerVC = UIImagePickerController()
+        pickerVC.delegate = self
+        present(pickerVC, animated: true, completion: nil)
+    }
+    
+    @objc func commitButtonTouched() {
+        switch FilterViewController.filterType {
+        case .face:
+            doFaceFilter()
+        case .scenery:
+            doSceneryFilter()
+        case .cosmetic:
+            doFaceCosmetic()
+        case .decoration:
+            doFaceDecoration()
+        case .sticker:
+            doFaceSticker()
+        default:
+            Log("do nothing")
+        }
+    }
+    
     @IBAction func filterButtonTouched(_ sender: Any) {
         switch FilterViewController.filterType {
         case .faceAge:
@@ -67,10 +110,9 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate {
         }
     }
     
-    
-    func doFaceFilter(filterNumber: Int) {
+    func doFaceFilter() {
         LBToast.showLoading()
-        let filter = FaceFilter.init(rawValue: filterNumber)
+        let filter = FaceFilter.init(rawValue: filterIndex)
         self.imageEffector.faceFilter(image: self.sourceImageView.image!, filter: filter!) { (result, model) in
             DispatchQueue.main.async {
                 if result.success {
@@ -84,9 +126,9 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate {
         }
     }
     
-    func doSceneryFilter(filterNumber: Int) {
+    func doSceneryFilter() {
         LBToast.showLoading()
-        self.imageEffector.sceneryFilter(image: self.sourceImageView.image!, filter: filterNumber) { (result, model) in
+        self.imageEffector.sceneryFilter(image: self.sourceImageView.image!, filter: filterIndex) { (result, model) in
             DispatchQueue.main.async {
                 if result.success {
                     self.filterImageView.image = model!.image
@@ -99,9 +141,9 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate {
         }
     }
     
-    func doFaceCosmetic(cosmeticNumber: Int) {
+    func doFaceCosmetic() {
         LBToast.showLoading()
-        let cosmetic = CosmeticType.init(rawValue: cosmeticNumber)
+        let cosmetic = CosmeticType.init(rawValue: filterIndex)
         self.imageEffector.faceCosmetic(image: self.sourceImageView.image!, cosmetic: cosmetic!) { (result, model) in
             DispatchQueue.main.async {
                 if result.success {
@@ -115,9 +157,9 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate {
         }
     }
     
-    func doFaceDecoration(decorationNumber: Int) {
+    func doFaceDecoration() {
         LBToast.showLoading()
-        let decoration = DecorationType.init(rawValue: decorationNumber)
+        let decoration = DecorationType.init(rawValue: filterIndex)
         self.imageEffector.faceDecoration(image: self.sourceImageView.image!, decoration: decoration!) { (result, model) in
             DispatchQueue.main.async {
                 if result.success {
@@ -131,9 +173,9 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate {
         }
     }
     
-    func doFaceSticker(stickerNumber: Int) {
+    func doFaceSticker() {
         LBToast.showLoading("")
-        let sticker = StickerType.init(rawValue: stickerNumber)
+        let sticker = StickerType.init(rawValue: filterIndex)
         self.imageEffector.faceSticker(image: self.sourceImageView.image!, sticker: sticker!) { (result, model) in
             DispatchQueue.main.async {
                 if result.success {
@@ -163,20 +205,19 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate {
     }
     
     // MARK:FilterSelectDelegate
-    func didSelectFilterAtIndex(index: Int) {
-        switch FilterViewController.filterType {
-        case .face:
-            doFaceFilter(filterNumber: index)
-        case .scenery:
-            doSceneryFilter(filterNumber: index)
-        case .cosmetic:
-            doFaceCosmetic(cosmeticNumber: index)
-        case .decoration:
-            doFaceDecoration(decorationNumber: index)
-        case .sticker:
-            doFaceSticker(stickerNumber: index)
-        default:
-            Log("do nothing")
+    func didSelectFilter(info: (index: Int, name: String)) {
+        filterIndex = info.index
+        self.selectButton.setTitle(info.name, for: .normal)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        if let image = info[.originalImage] as? UIImage {
+            self.sourceImageView.image = image
         }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
 }
