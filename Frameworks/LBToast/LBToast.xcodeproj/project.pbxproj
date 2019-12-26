@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9504A85C23A935D4001F728B /* Log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9504A85B23A935D4001F728B /* Log.framework */; };
 		95228F2C239CC188001CC2B5 /* LBLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95228F2B239CC188001CC2B5 /* LBLoadingView.swift */; };
 		95A55A4A239A62B3007DBA0C /* LBToast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A55A40239A62B3007DBA0C /* LBToast.framework */; };
 		95A55A4F239A62B3007DBA0C /* LBToastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A55A4E239A62B3007DBA0C /* LBToastTests.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9504A85B23A935D4001F728B /* Log.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Log.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95228F2B239CC188001CC2B5 /* LBLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBLoadingView.swift; sourceTree = "<group>"; };
 		95A55A40239A62B3007DBA0C /* LBToast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LBToast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A55A43239A62B3007DBA0C /* LBToast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBToast.h; sourceTree = "<group>"; };
@@ -42,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9504A85C23A935D4001F728B /* Log.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +59,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9504A85A23A935D4001F728B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9504A85B23A935D4001F728B /* Log.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		95A55A36239A62B3007DBA0C = {
 			isa = PBXGroup;
 			children = (
 				95A55A42239A62B3007DBA0C /* LBToast */,
 				95A55A4D239A62B3007DBA0C /* LBToastTests */,
 				95A55A41239A62B3007DBA0C /* Products */,
+				9504A85A23A935D4001F728B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

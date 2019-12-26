@@ -7,10 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9504A85923A920D8001F728B /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9504A85823A920D8001F728B /* ImagePicker.swift */; };
+		9504A85D23A937CC001F728B /* LBToast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95228F29239BD880001CC2B5 /* LBToast.framework */; };
+		9504A85E23A937CC001F728B /* LBToast.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95228F29239BD880001CC2B5 /* LBToast.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9504A86023A937CE001F728B /* Log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9579F1EB23919988002763DC /* Log.framework */; };
+		9504A86123A937CE001F728B /* Log.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9579F1EB23919988002763DC /* Log.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9504A86223A937D0001F728B /* TencentAiImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BEF4942398A47800EC5027 /* TencentAiImage.framework */; };
+		9504A86323A937D0001F728B /* TencentAiImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95BEF4942398A47800EC5027 /* TencentAiImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9504A86423A937D2001F728B /* TencentAiOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9579F1ED23919992002763DC /* TencentAiOCR.framework */; };
+		9504A86523A937D2001F728B /* TencentAiOCR.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9579F1ED23919992002763DC /* TencentAiOCR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9504A86623A937D4001F728B /* TencentAiTranslate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9579F1EF23919998002763DC /* TencentAiTranslate.framework */; };
+		9504A86723A937D4001F728B /* TencentAiTranslate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9579F1EF23919998002763DC /* TencentAiTranslate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9504A86F23A93A83001F728B /* TencentAiBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9504A86E23A93A83001F728B /* TencentAiBase.framework */; };
+		9504A87023A93A83001F728B /* TencentAiBase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9504A86E23A93A83001F728B /* TencentAiBase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		950B1ED023A35F78003CB72D /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950B1ECE23A35F78003CB72D /* SelectViewController.swift */; };
 		950B1ED123A35F78003CB72D /* SelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 950B1ECF23A35F78003CB72D /* SelectViewController.xib */; };
 		950B1ED323A36399003CB72D /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950B1ED223A36399003CB72D /* LanguageCell.swift */; };
-		95228F2A239BD880001CC2B5 /* LBToast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95228F29239BD880001CC2B5 /* LBToast.framework */; };
 		9548488F23A1D7A400631C42 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9548488D23A1D7A400631C42 /* TranslateViewController.swift */; };
 		9548489023A1D7A400631C42 /* TranslateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9548488E23A1D7A400631C42 /* TranslateViewController.xib */; };
 		9548489223A1D7C200631C42 /* TextTranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9548489123A1D7C200631C42 /* TextTranslateViewController.swift */; };
@@ -26,12 +38,8 @@
 		9561EF06238FD7D800B5194F /* HomeSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561EF05238FD7D800B5194F /* HomeSubView.swift */; };
 		9561EF38238FE0B500B5194F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561EF37238FE0B500B5194F /* AppDelegate.swift */; };
 		9561EF3A238FE0DD00B5194F /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561EF39238FE0DD00B5194F /* AppConstant.swift */; };
-		9579F1EC23919988002763DC /* Log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9579F1EB23919988002763DC /* Log.framework */; };
-		9579F1EE23919992002763DC /* TencentAiOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9579F1ED23919992002763DC /* TencentAiOCR.framework */; };
-		9579F1F023919998002763DC /* TencentAiTranslate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9579F1EF23919998002763DC /* TencentAiTranslate.framework */; };
 		95AC2486239760CF001145AF /* ImageTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC2484239760CF001145AF /* ImageTestViewController.swift */; };
 		95AC2487239760CF001145AF /* ImageTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AC2485239760CF001145AF /* ImageTestViewController.xib */; };
-		95BEF4952398A47800EC5027 /* TencentAiImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BEF4942398A47800EC5027 /* TencentAiImage.framework */; };
 		95BEF4B12398FB1800EC5027 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BEF4AF2398FB1700EC5027 /* FilterViewController.swift */; };
 		95BEF4B22398FB1800EC5027 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95BEF4B02398FB1800EC5027 /* FilterViewController.xib */; };
 		95BEF4B42398FB5B00EC5027 /* FilterDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BEF4B32398FB5B00EC5027 /* FilterDefine.swift */; };
@@ -41,7 +49,29 @@
 		95F9977023A5230500627508 /* OCRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F9976E23A5230500627508 /* OCRViewController.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9504A85F23A937CC001F728B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9504A85E23A937CC001F728B /* LBToast.framework in Embed Frameworks */,
+				9504A86723A937D4001F728B /* TencentAiTranslate.framework in Embed Frameworks */,
+				9504A86523A937D2001F728B /* TencentAiOCR.framework in Embed Frameworks */,
+				9504A87023A93A83001F728B /* TencentAiBase.framework in Embed Frameworks */,
+				9504A86123A937CE001F728B /* Log.framework in Embed Frameworks */,
+				9504A86323A937D0001F728B /* TencentAiImage.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		9504A85823A920D8001F728B /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		9504A86E23A93A83001F728B /* TencentAiBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TencentAiBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9504A87123A93CB7001F728B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		950B1ECE23A35F78003CB72D /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		950B1ECF23A35F78003CB72D /* SelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectViewController.xib; sourceTree = "<group>"; };
 		950B1ED223A36399003CB72D /* LanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCell.swift; sourceTree = "<group>"; };
@@ -83,11 +113,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95228F2A239BD880001CC2B5 /* LBToast.framework in Frameworks */,
-				95BEF4952398A47800EC5027 /* TencentAiImage.framework in Frameworks */,
-				9579F1F023919998002763DC /* TencentAiTranslate.framework in Frameworks */,
-				9579F1EE23919992002763DC /* TencentAiOCR.framework in Frameworks */,
-				9579F1EC23919988002763DC /* Log.framework in Frameworks */,
+				9504A86423A937D2001F728B /* TencentAiOCR.framework in Frameworks */,
+				9504A86623A937D4001F728B /* TencentAiTranslate.framework in Frameworks */,
+				9504A86223A937D0001F728B /* TencentAiImage.framework in Frameworks */,
+				9504A86F23A93A83001F728B /* TencentAiBase.framework in Frameworks */,
+				9504A86023A937CE001F728B /* Log.framework in Frameworks */,
+				9504A85D23A937CC001F728B /* LBToast.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +130,7 @@
 			children = (
 				950B1ECE23A35F78003CB72D /* SelectViewController.swift */,
 				950B1ECF23A35F78003CB72D /* SelectViewController.xib */,
+				9504A85823A920D8001F728B /* ImagePicker.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -190,6 +222,7 @@
 		9561EF07238FD93400B5194F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9504A86E23A93A83001F728B /* TencentAiBase.framework */,
 				95228F29239BD880001CC2B5 /* LBToast.framework */,
 				95BEF4942398A47800EC5027 /* TencentAiImage.framework */,
 				9579F1EF23919998002763DC /* TencentAiTranslate.framework */,
@@ -248,6 +281,7 @@
 				9561EEDA238FD3DA00B5194F /* Sources */,
 				9561EEDB238FD3DA00B5194F /* Frameworks */,
 				9561EEDC238FD3DA00B5194F /* Resources */,
+				9504A85F23A937CC001F728B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -280,6 +314,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 9561EED5238FD3DA00B5194F;
 			productRefGroup = 9561EEDF238FD3DA00B5194F /* Products */;
@@ -325,6 +360,7 @@
 				95BEF4B72398FC0000EC5027 /* FilterSelectController.swift in Sources */,
 				9561EEFF238FD41600B5194F /* HomeViewController.swift in Sources */,
 				9561EF01238FD41600B5194F /* BaseViewController.swift in Sources */,
+				9504A85923A920D8001F728B /* ImagePicker.swift in Sources */,
 				95BEF4B12398FB1800EC5027 /* FilterViewController.swift in Sources */,
 				95F9976F23A5230500627508 /* OCRViewController.swift in Sources */,
 				9548489423A1D7E100631C42 /* ImageTranslateViewController.swift in Sources */,
@@ -343,6 +379,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9561EEED238FD3DB00B5194F /* Base */,
+				9504A87123A93CB7001F728B /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -354,6 +391,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -414,6 +452,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -469,13 +508,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QCWT4PUQ2P;
 				FRAMEWORK_SEARCH_PATHS = $PROJECT_DIR/Frameworks/;
 				INFOPLIST_FILE = SmartAssistant/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.louis.smartassistant;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lubiao.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -487,13 +528,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QCWT4PUQ2P;
 				FRAMEWORK_SEARCH_PATHS = $PROJECT_DIR/Frameworks/;
 				INFOPLIST_FILE = SmartAssistant/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.louis.smartassistant;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lubiao.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

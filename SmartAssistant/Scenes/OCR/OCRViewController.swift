@@ -20,7 +20,7 @@ enum OCRType {
     case general
 }
 
-class OCRViewController: SABaseViewController, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class OCRViewController: SABaseViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var sourceImageView: UIImageView!
     
@@ -70,9 +70,9 @@ class OCRViewController: SABaseViewController, UITableViewDataSource, UITableVie
     }
     
     @IBAction func addButtonTouched(_ sender: Any) {
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        present(picker, animated: true, completion: nil)
+        ImagePicker.pickImage { (image) in
+            self.sourceImageView.image = image
+        }
     }
     
     @objc func recognizeButtonTouched(button: Any) {
@@ -141,7 +141,13 @@ class OCRViewController: SABaseViewController, UITableViewDataSource, UITableVie
     }
     
     func updateDataSource(ocrResult: GeneralOCR) {
-        
+        guard let items = ocrResult.itemList else {
+            return
+        }
+        dataSource.removeAll()
+        for item in items {
+            dataSource.append([item.name ?? "" : item.value ?? ""])
+        }
     }
     
     // MARK: actions
@@ -167,85 +173,113 @@ class OCRViewController: SABaseViewController, UITableViewDataSource, UITableVie
     }
     
     func businessCardOcr() {
-        ocr.businessCardOCR(image: self.sourceImageView.image!) { (result, businessCard) in
+        LBToast.showLoading()
+        ocr.businessCardOCR(image: self.sourceImageView.image!) { [weak self] (result, businessCard) in
             DispatchQueue.main.async {
+                LBToast.hideLoading()
                 Log("businessCardOCR success: \(result.success)")
-                if !result.success {
+                guard result.success else {
                     LBToast.show("\(result.error!.description)")
+                    return
                 }
+                self?.updateDataSource(ocrResult: businessCard!)
+                self?.tableView.reloadData()
             }
         }
     }
     
     func driverLisenceOcr(type: DriverLicenseType) {
-        ocr.driverLisenceOCR(image: self.sourceImageView.image!, type: type) { (result, driverLisence) in
+        LBToast.showLoading()
+        ocr.driverLisenceOCR(image: self.sourceImageView.image!, type: type) { [weak self] (result, driverLisence) in
             DispatchQueue.main.async {
+                LBToast.hideLoading()
                 Log("driverLisenceOCR success: \(result.success)")
-                if !result.success {
-                    Log(result.error!.description)
+                guard result.success else {
                     LBToast.show("\(result.error!.description)")
+                    return
                 }
+                self?.updateDataSource(ocrResult: driverLisence!)
+                self?.tableView.reloadData()
             }
         }
     }
     
     func numberPlateOcr() {
-        ocr.numberPlateOCR(image: self.sourceImageView.image!) { (result, numberPlate) in
+        LBToast.showLoading()
+        ocr.numberPlateOCR(image: self.sourceImageView.image!) { [weak self] (result, numberPlate) in
             DispatchQueue.main.async {
+                LBToast.hideLoading()
                 Log("numberPlateOCR success: \(result.success)")
-                if !result.success {
-                    Log(result.error!.description)
+                guard result.success else {
                     LBToast.show("\(result.error!.description)")
-                    LBToast.show("\(result.error!.description)")
+                    return
                 }
+                self?.updateDataSource(ocrResult: numberPlate!)
+                self?.tableView.reloadData()
             }
         }
     }
     
     func bankCardOcr() {
-        ocr.bankCardOCR(image: self.sourceImageView.image!) { (result, bankCard) in
+        LBToast.showLoading()
+        ocr.bankCardOCR(image: self.sourceImageView.image!) { [weak self] (result, bankCard) in
             DispatchQueue.main.async {
+                LBToast.hideLoading()
                 Log("bankCardOCR success: \(result.success)")
-                if !result.success {
-                    Log(result.error!.description)
+                guard result.success else {
                     LBToast.show("\(result.error!.description)")
+                    return
                 }
+                self?.updateDataSource(ocrResult: bankCard!)
+                self?.tableView.reloadData()
             }
         }
     }
     
     func businessLicenseOcr() {
-        ocr.businessLicenseOCR(image: self.sourceImageView.image!) { (result, businessLicense) in
+        LBToast.showLoading()
+        ocr.businessLicenseOCR(image: self.sourceImageView.image!) { [weak self] (result, businessLicense) in
             DispatchQueue.main.async {
+                LBToast.hideLoading()
                 Log("businessLicenseOCR success: \(result.success)")
-                if !result.success {
-                    Log(result.error!.description)
+                guard result.success else {
                     LBToast.show("\(result.error!.description)")
+                    return
                 }
+                self?.updateDataSource(ocrResult: businessLicense!)
+                self?.tableView.reloadData()
             }
         }
     }
     
     func handWritingOcr() {
-        ocr.handWritingOCR(image: self.sourceImageView.image!) { (result, handWriting) in
+        LBToast.hideLoading()
+        ocr.handWritingOCR(image: self.sourceImageView.image!) { [weak self] (result, handWriting) in
             DispatchQueue.main.async {
+                LBToast.hideLoading()
                 Log("handWritingOCR success: \(result.success)")
-                if !result.success {
-                    Log(result.error!.description)
+                guard result.success else {
                     LBToast.show("\(result.error!.description)")
+                    return
                 }
+                self?.updateDataSource(ocrResult: handWriting!)
+                self?.tableView.reloadData()
             }
         }
     }
     
     func generalOcr() {
-        ocr.generalOCR(image: self.sourceImageView.image!) { (result, GeneralOCR) in
+        LBToast.hideLoading()
+        ocr.generalOCR(image: self.sourceImageView.image!) { [weak self] (result, generalOCR) in
             DispatchQueue.main.async {
+                LBToast.hideLoading()
                 Log("generalOCR success: \(result.success)")
-                if !result.success {
-                    Log(result.error!.description)
+                guard result.success else {
                     LBToast.show("\(result.error!.description)")
+                    return
                 }
+                self?.updateDataSource(ocrResult: generalOCR!)
+                self?.tableView.reloadData()
             }
         }
     }
@@ -266,17 +300,7 @@ class OCRViewController: SABaseViewController, UITableViewDataSource, UITableVie
         return cell!
     }
     
-    // MARK: UIImagePickerControllerDelegate
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let image = info[.originalImage] as? UIImage else {
-            Log("originalImage nil")
-            return
-        }
-        sourceImageView.image = image
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

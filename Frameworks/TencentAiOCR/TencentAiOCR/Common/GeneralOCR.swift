@@ -9,7 +9,7 @@
 import Foundation
 
 open class GeneralOCR: TencentAiBaseModel {
-    var itemList: [OCRItem]?
+    public var itemList: [OCRItem]?
     
     private enum CodingKeys: String, CodingKey {
         case angle
@@ -24,9 +24,9 @@ open class GeneralOCR: TencentAiBaseModel {
 }
 
 open class OCRItem: TencentAiBaseModel {
-    var name: String?
-    var value: String?
-    var position: [[String : Int]]?
+    public var name: String?
+    public var value: String?
+    public var position: [[String : Int]]?
     
     private enum CodingKeys: String, CodingKey {
         case name = "item"

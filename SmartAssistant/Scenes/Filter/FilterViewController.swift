@@ -18,7 +18,7 @@ enum FilterType {
     case faceAge
 }
 
-class FilterViewController: SABaseViewController, FilterSelectDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class FilterViewController: SABaseViewController, FilterSelectDelegate {
     
     @IBOutlet weak var sourceImageView: UIImageView!
     
@@ -76,9 +76,9 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate, UIImageP
     }
     
     @IBAction func addButton(_ sender: Any) {
-        let pickerVC = UIImagePickerController()
-        pickerVC.delegate = self
-        present(pickerVC, animated: true, completion: nil)
+        ImagePicker.pickImage { [weak self] (image) in
+            self?.sourceImageView.image = image
+        }
     }
     
     @objc func commitButtonTouched() {
@@ -113,10 +113,10 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate, UIImageP
     func doFaceFilter() {
         LBToast.showLoading()
         let filter = FaceFilter.init(rawValue: filterIndex)
-        self.imageEffector.faceFilter(image: self.sourceImageView.image!, filter: filter!) { (result, model) in
+        self.imageEffector.faceFilter(image: self.sourceImageView.image!, filter: filter!) { [weak self] (result, model) in
             DispatchQueue.main.async {
                 if result.success {
-                    self.filterImageView.image = model!.image
+                    self?.filterImageView.image = model!.image
                 } else {
                     Log("faceFilter failed: \(result.error!.description)")
                     LBToast.show("\(result.error!.description)")
@@ -128,10 +128,10 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate, UIImageP
     
     func doSceneryFilter() {
         LBToast.showLoading()
-        self.imageEffector.sceneryFilter(image: self.sourceImageView.image!, filter: filterIndex) { (result, model) in
+        self.imageEffector.sceneryFilter(image: self.sourceImageView.image!, filter: filterIndex) { [weak self] (result, model) in
             DispatchQueue.main.async {
                 if result.success {
-                    self.filterImageView.image = model!.image
+                    self?.filterImageView.image = model!.image
                 } else {
                     Log("sceneryFilter failed: \(result.error!.description)")
                     LBToast.show("\(result.error!.description)")
@@ -144,10 +144,10 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate, UIImageP
     func doFaceCosmetic() {
         LBToast.showLoading()
         let cosmetic = CosmeticType.init(rawValue: filterIndex)
-        self.imageEffector.faceCosmetic(image: self.sourceImageView.image!, cosmetic: cosmetic!) { (result, model) in
+        self.imageEffector.faceCosmetic(image: self.sourceImageView.image!, cosmetic: cosmetic!) { [weak self] (result, model) in
             DispatchQueue.main.async {
                 if result.success {
-                    self.filterImageView.image = model!.image
+                    self?.filterImageView.image = model!.image
                 } else {
                     Log("faceCosmetic failed: \(result.error!.description)")
                     LBToast.show("\(result.error!.description)")
@@ -160,10 +160,10 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate, UIImageP
     func doFaceDecoration() {
         LBToast.showLoading()
         let decoration = DecorationType.init(rawValue: filterIndex)
-        self.imageEffector.faceDecoration(image: self.sourceImageView.image!, decoration: decoration!) { (result, model) in
+        self.imageEffector.faceDecoration(image: self.sourceImageView.image!, decoration: decoration!) { [weak self] (result, model) in
             DispatchQueue.main.async {
                 if result.success {
-                    self.filterImageView.image = model!.image
+                    self?.filterImageView.image = model!.image
                 } else {
                     Log("faceDecoration failed: \(result.error!.description)")
                     LBToast.show("\(result.error!.description)")
@@ -176,10 +176,10 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate, UIImageP
     func doFaceSticker() {
         LBToast.showLoading("")
         let sticker = StickerType.init(rawValue: filterIndex)
-        self.imageEffector.faceSticker(image: self.sourceImageView.image!, sticker: sticker!) { (result, model) in
+        self.imageEffector.faceSticker(image: self.sourceImageView.image!, sticker: sticker!) { [weak self] (result, model) in
             DispatchQueue.main.async {
                 if result.success {
-                    self.filterImageView.image = model!.image
+                    self?.filterImageView.image = model!.image
                 } else {
                     Log("faceSticker failed: \(result.error!.description)")
                     LBToast.show("\(result.error!.description)")
@@ -191,10 +191,10 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate, UIImageP
     
     func doFaceAge() {
         LBToast.showLoading()
-        self.imageEffector.detectFaceAge(image: self.sourceImageView.image!) { (result, model) in
+        self.imageEffector.detectFaceAge(image: self.sourceImageView.image!) { [weak self] (result, model) in
             DispatchQueue.main.async {
                 if result.success {
-                    self.filterImageView.image = model!.image
+                    self?.filterImageView.image = model!.image
                 } else {
                     Log("detectFaceAge failed: \(result.error!.description)")
                     LBToast.show("\(result.error!.description)")
@@ -208,16 +208,5 @@ class FilterViewController: SABaseViewController, FilterSelectDelegate, UIImageP
     func didSelectFilter(info: (index: Int, name: String)) {
         filterIndex = info.index
         self.selectButton.setTitle(info.name, for: .normal)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        picker.dismiss(animated: true, completion: nil)
-        if let image = info[.originalImage] as? UIImage {
-            self.sourceImageView.image = image
-        }
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
     }
 }

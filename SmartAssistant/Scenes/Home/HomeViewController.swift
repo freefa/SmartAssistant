@@ -45,7 +45,7 @@ class HomeViewController: SABaseViewController, UITableViewDelegate, UITableView
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Hello Smart Assistant"
+        self.title = "实用工具"
         Log("Hello Smart Assistant")
         tableView.tableFooterView = UIView(frame: .zero)
         configDataSouce()

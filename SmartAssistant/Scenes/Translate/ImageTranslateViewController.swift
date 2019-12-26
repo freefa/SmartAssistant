@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageTranslateViewController: TranslateViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ImageTranslateViewController: TranslateViewController {
     
     var sourceImageView: UIImageView!
     
@@ -75,9 +75,9 @@ class ImageTranslateViewController: TranslateViewController, UIImagePickerContro
     }
     
     @objc func selectImageButtonTouched() {
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        present(picker, animated: true, completion: nil)
+        ImagePicker.pickImage { (image) in
+            self.sourceImageView.image = image
+        }
     }
     
     override func commitTranslate() {
@@ -107,19 +107,5 @@ class ImageTranslateViewController: TranslateViewController, UIImagePickerContro
             text.append(item.target!)
         })
         resultTextView.text = text
-    }
-    
-    // MARK: UIImagePickerControllerDelegate
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let image = info[.originalImage] as? UIImage else {
-            Log("originalImage nil")
-            return
-        }
-        sourceImageView.image = image
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
     }
 }

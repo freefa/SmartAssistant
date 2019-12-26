@@ -62,13 +62,13 @@ class TextTranslateViewController: TranslateViewController, UITextViewDelegate {
         LBToast.showLoading("正在加载...")
         translator.translate(text: sourceTextView.text!,
                              source: sourceLanguage,
-                             target: targetLanguage) { (result, model) in
+                             target: targetLanguage) { [weak self] (result, model) in
                                 DispatchQueue.main.async {
                                     Log("text translate success: \(result.success)")
                                     if !result.success {
                                         LBToast.show("\(result.error!.description)")
                                     } else {
-                                        self.resultTextView.text = model?.target
+                                        self?.resultTextView.text = model?.target
                                     }
                                     LBToast.hideLoading()
                                 }
